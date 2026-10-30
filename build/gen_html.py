@@ -44,17 +44,32 @@ def inline_svg(html):
 
 
 def fmt_html(md_text):
-    r"""把公式片段包成 \(...\)，交给 MathJax 排版（整段表达式，不再切碎）。"""
-    pos, out = 0, []
+    r"""公式先换成占位符，等 Markdown 转换完再替换成 \(...\)。
+
+    直接插 \( 会被 Markdown 当作转义字符吃掉，这是之前的 bug 根源。
+    返回 (带占位符的文本, 公式列表)。
+    """
+    pos, out, store = 0, [], []
     for a, b, frag in mathfmt.spans(md_text, whole=True):
         out.append(md_text[pos:a])
-        try:
-            out.append("\\(" + mathfmt.to_latex(frag) + "\\)")
-        except Exception:
-            out.append(frag)
+        out.append("\u27e6M%d\u27e7" % len(store))
+        store.append(frag)
         pos = b
     out.append(md_text[pos:])
-    return "".join(out)
+    return "".join(out), store
+
+
+def restore_math(html, store):
+    """把占位符换回 MathJax 定界符（用 chr(92) 生成反斜杠，避免多层转义出错）。"""
+    BS = chr(92)
+
+    def rep(m):
+        try:
+            frag = store[int(m.group(1))]
+            return "$" + mathfmt.to_latex(frag) + "$"
+        except Exception:
+            return ""
+    return re.sub(r"\u27e6M(\d+)\u27e7", rep, html)
 
 
 def main():
@@ -71,7 +86,9 @@ def main():
         for ci, c in enumerate(u["cards"]):
             md = c["body"]
             md = re.sub(r"^\s*\*[^*\n]+\*\s*$", "", md, count=1, flags=re.M)
-            html = markdown.markdown(fmt_html(md), extensions=["tables", "fenced_code", "sane_lists"])
+            md_wrapped, store = fmt_html(md)
+            html = markdown.markdown(md_wrapped, extensions=["tables", "fenced_code", "sane_lists"])
+            html = restore_math(html, store)
             html = inline_svg(html)
             key = re.sub(r"\s+", "", html)
             cards.append({"id": c["id"], "name": c["name"], "unit": u["title"],
@@ -84,8 +101,9 @@ def main():
             md_parts = []
             for e in extras:
                 md_parts.append("## " + e["title"] + "\n\n" + e["body"])
-            ah = markdown.markdown(fmt_html("\n\n".join(md_parts)),
-                                   extensions=["tables", "fenced_code", "sane_lists"])
+            aw, astore = fmt_html("\n\n".join(md_parts))
+            ah = markdown.markdown(aw, extensions=["tables", "fenced_code", "sane_lists"])
+            ah = restore_math(ah, astore)
             ah = inline_svg(ah)
             cards.append({"id": short, "name": "附录：自评 · 公式 · 易错 · 关系",
                           "unit": u["title"], "u": ui, "i": 900, "html": ah,
@@ -195,7 +213,7 @@ footer{border-top:1px solid var(--line);background:#fff;padding:6px 20px;font-si
 <footer><span>点击节点查看卡片</span><span>关系：前置 / 派生 / 综合 / 易错 / 实验</span><span id="fname"></span></footer>
 <script>
 window.MathJax = {
-  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] },
   svg: { fontCache: 'global', scale: 0.95 },
   startup: { typeset: false }
 };
