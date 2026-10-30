@@ -45,6 +45,8 @@ SYMBOLS = {
     "°": r"^{\circ}", "℃": r"^{\circ}\mathrm{C}", "%": r"\%",
     "′": "'", "″": "''",
     "∑": r"\sum", "∫": r"\int", "∂": r"\partial",
+    "≪": r"\ll", "≫": r"\gg", "⇄": r"\rightleftharpoons",
+    "⇌": r"\rightleftharpoons", "≡": r"\equiv", "∛": r"\sqrt[3]", "∜": r"\sqrt[4]",
 }
 
 SUP = {
@@ -91,9 +93,10 @@ def to_latex(s: str) -> str:
     s = s.replace("½", r"\frac{1}{2}").replace("¼", r"\frac{1}{4}").replace("¾", r"\frac{3}{4}")
 
     # 3. 根号
+    RAD = {"√": "", "∛": "[3]", "∜": "[4]"}
     out, i = [], 0
     while i < len(s):
-        if s[i] == "√":
+        if s[i] in RAD:
             j = i + 1
             if j < len(s) and s[j] == "(":
                 depth, k = 0, j
@@ -105,12 +108,12 @@ def to_latex(s: str) -> str:
                         if depth == 0:
                             break
                     k += 1
-                out.append(r"\sqrt{" + to_latex(s[j + 1:k]) + "}")
+                out.append(r"\sqrt" + RAD[s[i]] + "{" + to_latex(s[j + 1:k]) + "}")
                 i = k + 1
                 continue
             m2 = re.match(r"[A-Za-z0-9.]+|[" + "".join(GREEK) + r"]", s[j:])
             arg = m2.group(0) if m2 else ""
-            out.append(r"\sqrt{" + arg + "}")
+            out.append(r"\sqrt" + RAD[s[i]] + "{" + arg + "}")
             i = j + len(arg) if arg else j
             continue
         out.append(s[i])
@@ -176,7 +179,7 @@ def needs_render(s: str) -> bool:
 
 SPAN_RE = re.compile(
     r"[A-Za-z0-9₀-₉⁰-⁹²³α-ωΑ-Ω√∝=+\-−×÷/()\[\].,·_{} \t"
-    r"≤≥≈≠<>→⇒%°′\u0300-\u036f]{2,}")
+    r"≤≥≈≠<>→⇒%°′≪≫⇄∛∜\u0300-\u036f]{2,}")
 
 
 def spans(text: str, whole: bool = False):
@@ -184,7 +187,7 @@ def spans(text: str, whole: bool = False):
     out = []
     for m in SPAN_RE.finditer(text):
         raw = m.group(0)
-        if "=" not in raw and "√" not in raw and "∝" not in raw:
+        if not any(k in raw for k in "=√∝≪≫≈"):
             continue
         if not re.search(r"[A-Za-z" + "".join(GREEK) + r"]", raw):
             continue
