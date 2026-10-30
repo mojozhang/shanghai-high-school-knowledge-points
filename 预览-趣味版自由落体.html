@@ -1,0 +1,457 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>趣味版 · 自由落体</title><style>:root{--ink:#1c1c1e;--line:#e3e3e8;--accent:#0b6b5b;}
+*{box-sizing:border-box}
+body{margin:0;background:#f6f7f4;color:var(--ink);font:16px/1.85 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:900px;margin:0 auto;padding:56px 36px 120px;background:#fff;box-shadow:0 0 0 1px var(--line);}
+h1{font-size:27px;border-bottom:3px solid var(--accent);padding-bottom:12px;margin-top:64px}
+h1:first-of-type{margin-top:0}
+h2{font-size:21px;margin-top:52px;background:#eef4f2;border-left:6px solid var(--accent);padding:10px 14px;border-radius:0 6px 6px 0}
+h3{font-size:16.5px;margin-top:28px;color:#0a4f43}
+blockquote{margin:14px 0 24px;padding:14px 18px;background:#fbf6ee;border-left:4px solid #d0a05a;border-radius:0 6px 6px 0;font-size:15px}
+table{border-collapse:collapse;width:100%;margin:16px 0 26px;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
+th{background:#f0f4f2;font-weight:600}
+tr:nth-child(even) td{background:#fbfbf9}
+code{background:#f0f0ea;padding:2px 5px;border-radius:4px}
+strong{color:#0a4f43}
+hr{border:none;border-top:1px dashed var(--line);margin:34px 0}</style><div class="wrap"><h1>🎮 单元一 · 关卡地图 + 第 10 关「自由落体」趣味版</h1>
+<blockquote>
+<p>这一份是<strong>趣味版（v4）样板</strong>。趣味元素全部是"叠加层"：删掉 ⚡💥🔑💎 四个标签下的内容，知识仍然完整——高三冲刺时可以直接跳过它们。</p>
+</blockquote>
+<hr />
+<h2>🗺️ 单元一：直线运动（12 关 + 1 个 Boss）</h2>
+<table>
+<thead>
+<tr>
+<th>关</th>
+<th>考点</th>
+<th>难度</th>
+<th>星级</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>质点、参考系与坐标系</td>
+<td>★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>时刻与时间、位移与路程</td>
+<td>★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>速度、平均速度与瞬时速度</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>加速度</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>运动图像</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>匀变速速度公式</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>匀变速位移公式</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>速度—位移关系</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>9</td>
+<td>四个推论</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>自由落体</strong></td>
+<td><strong>★★</strong></td>
+<td><strong>☆☆☆</strong></td>
+<td><strong>📍当前</strong></td>
+</tr>
+<tr>
+<td>11</td>
+<td>竖直上抛</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>12</td>
+<td>追及与相遇</td>
+<td>★★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>🐲</td>
+<td><strong>Boss：单元综合测（10 题）</strong></td>
+<td>★★★★</td>
+<td>—</td>
+<td>🔒 需 8 关三星</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>星级规则：★ 例 1 对｜★★ 例 2 对｜★★★ 例 3 + 变式全对
+当前 XP：<strong>0</strong> ｜ 称号：<strong>见习</strong>（300 XP 升"熟练"）</p>
+</blockquote>
+<hr />
+<h1>第 10 关 · 自由落体</h1>
+<p><em>力学 › 第2章 匀变速直线运动 ｜ Ⅱ · 考频中 ｜ 前置 A-2.2 ｜ 关联 A-2.4、A-2.6</em></p>
+<h2>⚡ 先猜一下（10 秒，不许动笔）</h2>
+<p>石子从 <strong>45 m</strong> 高的塔顶自由落下。它<strong>最后 1 秒</strong>下落了多少米？</p>
+<p>A. 5 m　　B. 15 m　　C. 25 m　　D. 45 m</p>
+<blockquote>
+<p>先记住你的答案，看完这一关再回来对。<strong>猜错是好事</strong>——说明这里有东西可学。</p>
+</blockquote>
+<hr />
+<h2>🎯 30 秒看懂</h2>
+<p>自由落体没有新公式，它就是三个基本式里代进 <strong>v₀ = 0、a = g</strong>。所以它考的不是公式，而是"<strong>你知不知道自己代入的是什么</strong>"。</p>
+<p>生活锚点：它就像一部从静止启动、每过 1 秒速度加 10 m/s 的电梯——第 1 秒末 10 m/s，第 2 秒末 20 m/s，第 3 秒末 30 m/s。</p>
+<h2>🧠 30 秒自评（3 题 · 30 XP）</h2>
+<ol>
+<li>重的物体一定比轻的物体下落得快。</li>
+<li>自由落体的位移公式是 h = ½gt²。</li>
+<li>物体自由下落 3 s 落地（g 取 10），下落高度是 45 m。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（忽略空气阻力时加速度相同）　2. ✓　3. ✓
+全对 → 直接跳到例题 3；对 2 题 → 看"翻车现场"+ 例题 2；≤1 题 → 从原理顺序学。</p>
+</blockquote>
+<hr />
+<h2>🔑 原理与公式</h2>
+<ul>
+<li><strong>v = gt</strong>、<strong>h = ½gt²</strong>、<strong>v² = 2gh</strong>、平均速度 <strong>v̄ = v/2</strong></li>
+<li>本质：v₀ = 0、a = g 的匀变速直线运动</li>
+<li>g 随纬度升高略增大；上海实测 ≈ 9.79 m/s²，计算取 10</li>
+</ul>
+<p><strong>适用条件</strong>：初速度为零、只受重力。有初速度的竖直下落不是自由落体；空气阻力不可忽略时（羽毛、纸片）不能直接用。</p>
+<p><strong>易错边界</strong>
+1. "重的落得快"——忽略阻力时所有物体加速度相同
+2. 求"最后 1 s 位移"直接代 t = 1 s（那是第 1 s）
+3. 把"下落高度"与"离地高度"混用</p>
+<h3>🧠 口诀</h3>
+<blockquote>
+<p><strong>先算总，再减前，最后一秒不是第一秒。</strong></p>
+</blockquote>
+<hr />
+<h2>💥 翻车现场</h2>
+<blockquote>
+<p>小李看到"最后 1 秒"，提笔就写 h = ½gt² = ½ × 10 × 1² = <strong>5 m</strong>，选 A，还挺自信。</p>
+<p>老师问了一句："这一秒<strong>开始</strong>的时候，石子是静止的吗？"</p>
+<p>小李愣住——那时它已经掉了 2 秒，速度 <strong>20 m/s</strong>。这一秒是从 20 m/s 掉到 30 m/s，走了 <strong>25 m</strong>，不是 5 m。</p>
+<p>他的错，不在公式，在<strong>把"最后一秒"当成了"第一秒"</strong>。</p>
+</blockquote>
+<hr />
+<h2>🏋️ 例题</h2>
+<h3>例题 1 · ★ 基础（20 XP）</h3>
+<p>物体从 20 m 高处自由下落（g 取 10）。求落地时间和落地速度。</p>
+<p><strong>解析</strong>：
+t = √(2h/g) = √(40/10) = <strong>2 s</strong>
+v = gt = <strong>20 m/s</strong>（或 v = √(2gh) = 20 m/s）</p>
+<p><strong>💥 陷阱</strong>：用 h = vt 算，取 v = 20 得 40 m——20 m/s 是末速度，全程平均只有 10 m/s。</p>
+<p><strong>变式</strong>：从 80 m 下落，时间与落地速度？（4 s，40 m/s）</p>
+<hr />
+<h3>例题 2 · ★★ 常考（20 XP）</h3>
+<p>石子在 45 m 高的塔顶自由下落（g = 10）。求：
+(1) 落地时间；(2) 落地速度；(3) 最后 1 s 内的位移；(4) 全程平均速度。</p>
+<p><strong>解析</strong>：
+1. t = √(2×45/10) = <strong>3 s</strong>
+2. v = <strong>30 m/s</strong>
+3. 前 2 s 下落 20 m ⇒ 最后 1 s = 45 − 20 = <strong>25 m</strong>（回到你开头猜的那道题，答案是 C）
+4. v̄ = 45/3 = <strong>15 m/s</strong>（= 末速的一半）</p>
+<p><strong>💥 陷阱</strong>：(3) 用 ½ × 10 × 1² = 5 m。最后 1 s 初速已是 20 m/s，位移 25 m。</p>
+<p><strong>变式</strong>：换一种算法验证——最后 1 s 平均速度 (20+30)/2 = 25 m/s，乘 1 s 得 25 m ✓</p>
+<hr />
+<h3>例题 3 · ★★★ 综合（20 XP + 50 XP 三星奖励）</h3>
+<p>屋檐每隔相等时间滴下一滴水。当第 5 滴刚离开屋檐时，第 1 滴恰好落地，檐高 3.2 m（g = 10）。
+(1) 相邻两滴的时间间隔；
+(2) 此时第 2 滴与第 3 滴的高度差；
+(3) 第 1 滴落地瞬间，第 4 滴下落了多高。</p>
+<p><strong>解析</strong>：
+1. 第 1 滴：t = √(2×3.2/10) = 0.8 s
+   5 滴之间共 <strong>4 个间隔</strong> ⇒ 0.8/4 = <strong>0.2 s</strong>
+2. 第 2 滴下落 0.6 s：1.8 m；第 3 滴下落 0.4 s：0.8 m
+   高度差 = <strong>1.0 m</strong>
+3. 第 4 滴下落 0.2 s：<strong>0.2 m</strong></p>
+<p><strong>💥 陷阱</strong>：① 用 5 个间隔除，得 0.16 s——5 滴水之间只有 4 段；② 用"平均速度"瞎凑，得不出 1.0 m（正确做法是分别算两滴的高度）。</p>
+<p><strong>变式（过关题）</strong>：若檐高改为 5 m，间隔变为多少？第 2 滴与第 3 滴的高度差是多少？
+（t = 1 s，间隔 0.25 s；高度差 = ½×10×(0.75² − 0.5²) = 1.56 m）</p>
+<hr />
+<h2>⏱️ 限时挑战（90 秒 · 30 XP）</h2>
+<p><strong>规则</strong>：开计时器，90 秒内做完 3 题。超时仍要做完，但只记"练习"不记分。
+目标：高三 <strong>60 秒内</strong>全对（等级考平均每题约 3 分钟，但这类秒判题必须条件反射）。</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>题</th>
+<th>建议秒数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>判断：自由落体第 2 s 末速度是 20 m/s</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>从 80 m 高处自由下落，落地速度多大？</td>
+<td>15</td>
+</tr>
+<tr>
+<td>3</td>
+<td>判断：质量不同的两球从同一高度同时自由下落，重的先落地</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. 40 m/s　3. ✗（同时落地）
+全对且 ≤ 60 s ⇒ <strong>速度达标</strong>，本关封存；超时但全对 ⇒ 达标，隔天再测一次。</p>
+</blockquote>
+<hr />
+<h2>🏆 通关</h2>
+<table>
+<thead>
+<tr>
+<th>星级</th>
+<th>条件</th>
+<th>奖励</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★</td>
+<td>例题 1 对</td>
+<td>20 XP</td>
+</tr>
+<tr>
+<td>★★</td>
+<td>例题 2 对</td>
+<td>40 XP</td>
+</tr>
+<tr>
+<td>★★★</td>
+<td>例题 3 + 变式全对</td>
+<td>90 XP（含三星奖励 50）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>够用标准</strong>：高一 → 例 1 对｜高二 → 例 2 对｜高三 → 例 3 + 变式全对</p>
+<hr />
+<h2>🧪 家里能做（周末 5 分钟）</h2>
+<p>用手机<strong>慢动作</strong>同时拍下"钥匙"和"一张平摊的纸"从同一高度落下——纸明显更慢。
+再把纸<strong>揉成团</strong>，重拍一次——这次两者几乎同时落地。</p>
+<blockquote>
+<p>为什么同一张纸，摊开和揉团的下落差这么多？
+（答案：空气阻力与迎风面积有关，揉团后阻力大幅减小，才接近"自由落体"）</p>
+</blockquote>
+<hr />
+<h2>💎 彩蛋</h2>
+<p>雨滴从 2 km 高空落下。若不考虑空气阻力，落地速度会是 <strong>200 m/s（720 km/h）</strong>，跟子弹差不多。
+实际上雨滴落地只有约 <strong>9 m/s</strong>——全靠空气阻力把它"刹"住了。</p>
+<p>所以教材每次写"忽略空气阻力"，都不是随口一说：<strong>它决定了你用哪个模型</strong>。</p>
+<hr />
+<h2>🐲 Boss 关预览（3 题 · 限时 8 分钟 · 200 XP）</h2>
+<ol>
+<li>自由下落物体，第 3 s 内比第 2 s 内多下落多少？（用 Δx = gT² 秒答）</li>
+<li>屋檐滴水：第 1 滴落地时第 5 滴刚离开，檐高 3.2 m，求间隔与第 2、3 滴间距。</li>
+<li><strong>挑战</strong>：某物体自由下落，最后 1 s 的位移是全程的 9/25，求下落总高度。</li>
+</ol>
+<blockquote>
+<p>答案在单元 Boss 关文件里，先别翻。</p>
+</blockquote>
+<hr />
+<h2>🔥 错题复仇（本关的"回炉"机制）</h2>
+<p>做错的题不是记下来就完事——<strong>错题不分类，重做一百遍也没用</strong>。每题错完，先打一个"错因码"，再排复仇日程。</p>
+<h3>错因码（8 类，每题只选一个主因）</h3>
+<table>
+<thead>
+<tr>
+<th>码</th>
+<th>名称</th>
+<th>典型表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C1</strong></td>
+<td>概念混淆</td>
+<td>位移当路程、速度当速率</td>
+</tr>
+<tr>
+<td><strong>C2</strong></td>
+<td>漏条件</td>
+<td>刹车没判停、上抛忘了 a = g</td>
+</tr>
+<tr>
+<td><strong>C3</strong></td>
+<td>方向符号</td>
+<td>Δv 反向没变号、位移正负搞反</td>
+</tr>
+<tr>
+<td><strong>C4</strong></td>
+<td>单位换算</td>
+<td>km/h 没换成 m/s</td>
+</tr>
+<tr>
+<td><strong>C5</strong></td>
+<td>运算失误</td>
+<td>9 − 4 算成 6</td>
+</tr>
+<tr>
+<td><strong>C6</strong></td>
+<td>读题漏信息</td>
+<td>"最后 1 秒"看成"第 1 秒"</td>
+</tr>
+<tr>
+<td><strong>C7</strong></td>
+<td>模型选错</td>
+<td>该用 v²−v₀²=2ax 却先去求 t</td>
+</tr>
+<tr>
+<td><strong>C8</strong></td>
+<td>表述不全</td>
+<td>只写大小不写方向、漏单位</td>
+</tr>
+</tbody>
+</table>
+<h3>复仇日程</h3>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>做什么</th>
+<th>判据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>D0</strong>（当天）</td>
+<td>记错题卡：题号 + 错因码 + 一句话"我错在哪"</td>
+<td>写不出"错在哪" ⇒ 没真懂，回易错边界</td>
+</tr>
+<tr>
+<td><strong>D+1</strong></td>
+<td>遮住解析<strong>重做原题</strong></td>
+<td>对了才进下一步</td>
+</tr>
+<tr>
+<td><strong>D+3</strong></td>
+<td>做<strong>换数字的变式</strong>（同结构、不同数）</td>
+<td>两次都对 ⇒ <strong>销账 +30 XP</strong></td>
+</tr>
+<tr>
+<td><strong>D+7</strong></td>
+<td>若 D+3 又错，回"易错边界"重读再测</td>
+<td>仍错 ⇒ 整关重刷</td>
+</tr>
+</tbody>
+</table>
+<h3>本关错题卡（样例）</h3>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>错因码</th>
+<th>我错在哪（一句话）</th>
+<th>D+1</th>
+<th>D+3</th>
+<th>销账</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>例 2(3)</td>
+<td>C6</td>
+<td>把"最后 1 s"当成"第 1 s"，直接套 ½gt²</td>
+<td>☐</td>
+<td>☐</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>例 3(1)</td>
+<td>C5</td>
+<td>用 5 个间隔除，应该是 4 个</td>
+<td>☐</td>
+<td>☐</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<h3>复仇触发器</h3>
+<ul>
+<li>同一考点累计 <strong>3 道错题未销</strong> ⇒ 该关自动降星（★★★ → ★★），重新通关才恢复</li>
+<li>连续 <strong>5 道</strong>未销 ⇒ 触发"补漏关"：只做该考点的易错边界 + 变式，不做新题</li>
+<li>销账满 3 道 ⇒ <strong>+30 XP</strong>（与通关奖励分开计）</li>
+</ul>
+<hr />
+<h2>📊 我的进度</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>关卡</th>
+<th>星级</th>
+<th>XP</th>
+<th>错题</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>10 自由落体</td>
+<td>☆☆☆</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>XP 规则：自评 10/题，例题 20/题，三星 +50，Boss +200。
+0–300 见习 ｜ 301–800 熟练 ｜ 801–1500 精通 ｜ 1500+ 大师</p>
+</blockquote></div></html>

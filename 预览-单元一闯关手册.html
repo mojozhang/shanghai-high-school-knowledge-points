@@ -1,0 +1,607 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>单元一 闯关手册</title><style>:root{--ink:#1c1c1e;--line:#e3e3e8;--accent:#0b6b5b;--warm:#b45309;}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f6f3;color:var(--ink);font:16px/1.85 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:920px;margin:0 auto;padding:56px 36px 120px;background:#fff;box-shadow:0 0 0 1px var(--line);}
+h1{font-size:27px;border-bottom:3px solid var(--accent);padding-bottom:12px;margin-top:64px}
+h1:first-of-type{margin-top:0}
+h2{font-size:20px;margin-top:48px;background:#eef4f2;border-left:6px solid var(--accent);padding:10px 14px;border-radius:0 6px 6px 0}
+h3{font-size:17px;margin-top:30px;color:#0a4f43}
+blockquote{margin:14px 0 24px;padding:14px 18px;background:#fbf6ee;border-left:4px solid #d0a05a;border-radius:0 6px 6px 0;font-size:15px}
+table{border-collapse:collapse;width:100%;margin:16px 0 26px;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
+th{background:#f0f4f2;font-weight:600}
+tr:nth-child(even) td{background:#fbfbf9}
+code{background:#f0f0ea;padding:2px 5px;border-radius:4px}
+strong{color:#0a4f43}
+hr{border:none;border-top:1px dashed var(--line);margin:34px 0}</style><div class="wrap"><h1>🎮 单元一 · 直线运动｜闯关手册</h1>
+<blockquote>
+<p><strong>定位</strong>：趣味层 + 检测层，与 <code>03</code>、<code>04</code> 两份知识卡配套使用。
+<strong>用法</strong>：先看知识卡（🔑 以下部分），再来这里闯关；卡住了回知识卡查，不要在这里硬想。
+<strong>规则</strong>：每关 4 个动作——⚡ 猜、⏱️ 限时、🏆 评星、🔥 错题回炉。答案统一在文末，先别翻。</p>
+</blockquote>
+<hr />
+<h2>🗺️ 关卡地图</h2>
+<table>
+<thead>
+<tr>
+<th>关</th>
+<th>名称</th>
+<th>难度</th>
+<th>星级</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>质点、参考系</td>
+<td>★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>位移与路程</td>
+<td>★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>速度与速率</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>加速度</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>运动图像</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>速度公式</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>位移公式</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>速度—位移</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>9</td>
+<td>四个推论</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>10</td>
+<td>自由落体</td>
+<td>★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>11</td>
+<td>竖直上抛</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>12</td>
+<td>追及相遇</td>
+<td>★★★★</td>
+<td>☆☆☆</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>🐲</td>
+<td><strong>Boss：10 题 25 分钟</strong></td>
+<td>★★★★</td>
+<td>—</td>
+<td>🔒 需 8 关三星</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>XP：自评 10/题，例题 20/题，三星 +50，限时全对 +30，销账 +30，Boss +200
+称号：0–300 见习 ｜ 301–800 熟练 ｜ 801–1500 精通 ｜ 1500+ 大师</p>
+</blockquote>
+<hr />
+<h2>第 1 关 · 质点、参考系</h2>
+<p><strong>⚡ 先猜</strong>：研究"地球绕太阳公转"和"地球自转"，两种情况地球都能看作质点吗？</p>
+<p><strong>🔑 口诀</strong>：看问题，不看物体——大如地球能当点，小如原子也可能不能。</p>
+<p><strong>💥 翻车</strong>：小林说"地球那么大，怎么能当点？"——判据从来不是物体大小，而是你要研究什么。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 研究火车通过某座桥所用的时间，火车能否视为质点？
+② 判断：参考系必须选静止的物体。</p>
+<p><strong>💎 彩蛋</strong>：地球绕太阳的速度约 30 km/s，你坐在教室里却"静止"——换一个参考系，结论全变。</p>
+<hr />
+<h2>第 2 关 · 位移与路程</h2>
+<p><strong>⚡ 先猜</strong>：沿 400 m 圆形跑道跑一整圈，位移和路程各是多少？</p>
+<p><strong>🔑 口诀</strong>：位移看两头，路程看全程；绕一圈回来，位移等于零。</p>
+<p><strong>💥 翻车</strong>：小明答"位移 400 m"，把"跑了多远"当成了"离起点多远"。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 沿 400 m 跑道跑半圈，位移大小是多少？
+② 判断：曲线运动中，位移大小一定小于路程。</p>
+<p><strong>💎 彩蛋</strong>：导航说"3.2 km"是路程，你家到学校的直线距离才是位移——所以导航永远比"直线距离"长。</p>
+<hr />
+<h2>第 3 关 · 速度与速率</h2>
+<p><strong>⚡ 先猜</strong>：前一半<strong>时间</strong>速度 10 m/s、后一半时间 20 m/s，平均速度是 15 m/s 吗？那换成前一半<strong>位移</strong> 10、后一半位移 20 呢？</p>
+<p><strong>🔑 口诀</strong>：时间平分用算术，路程平分用调和。</p>
+<p><strong>💥 翻车</strong>：小李两种都答 15 m/s，第二种被扣了满分——慢速段占的时间更长，平均一定被拉低。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 用 12.5 s 跑完 100 m 直线，平均速度多大？
+② 判断：平均速度就是平均速率。</p>
+<p><strong>💎 彩蛋</strong>：出租车按里程收费，所以"绕路能多收钱，平均速度却可能是 0"。</p>
+<hr />
+<h2>第 4 关 · 加速度</h2>
+<p><strong>⚡ 先猜</strong>：速度为零时，加速度一定为零吗？</p>
+<p><strong>🔑 口诀</strong>：a 与 v 同向就加速，反向就减速；大小看变化快慢，跟 v 多大没关系。</p>
+<p><strong>💥 翻车</strong>：小张说"加速度在减小，所以车在减速"——只要同向，a 再小也在加速，只是加得慢。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 球以 8 m/s 飞来，被踢后以 12 m/s 反向飞出，作用 0.2 s，加速度大小？
+② 判断：加速度越大，速度一定越大。</p>
+<p><strong>💎 彩蛋</strong>：高铁启动加速度约 0.4 m/s²，比走路还"温柔"，但 3～4 分钟就能到 300 km/h。</p>
+<hr />
+<h2>第 5 关 · 运动图像</h2>
+<p><strong>⚡ 先猜</strong>：v-t 图上两条线相交，是不是两个物体相遇了？</p>
+<p><strong>🔑 口诀</strong>：x-t 看斜率，v-t 看面积；交点一个相遇、一个等速。</p>
+<p><strong>💥 翻车</strong>：小王看到交点就写"相遇"，其实那一刻两车相距最远——交点是"速度相等"，正是距离极值。</p>
+<p><strong>⏱️ 90 秒</strong>
+① v-t 图线与时间轴围成的面积表示什么？
+② 判断：x-t 图线是倾斜直线，物体做匀速直线运动。</p>
+<p><strong>💎 彩蛋</strong>：心电图、股票 K 线都是"图像语言"——读图能力比公式更通用。</p>
+<hr />
+<h2>第 6 关 · 速度公式</h2>
+<p><strong>⚡ 先猜</strong>：汽车以 20 m/s 刹车、加速度大小 4 m/s²，6 s 末速度是 −4 m/s 吗？</p>
+<p><strong>🔑 口诀</strong>：刹车先算停，停了别再代公式。</p>
+<p><strong>💥 翻车</strong>：有人算出 −4 m/s，还煞有介事地解释"车开始倒车了"。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 汽车 10 m/s、a = 2 m/s²，达到 30 m/s 需要多久？
+② 汽车 20 m/s、刹车 a = 5 m/s²，5 s 末速度多大？</p>
+<p><strong>💎 彩蛋</strong>：汽车以 100 km/h 刹车，制动距离约 40–50 m，比一个篮球场还长。</p>
+<hr />
+<h2>第 7 关 · 位移公式</h2>
+<p><strong>⚡ 先猜</strong>：x = v₀t + ½at² 算出来的，是位移还是路程？</p>
+<p><strong>🔑 口诀</strong>：有初速有加速度，先算 v₀t，再加那一半。</p>
+<p><strong>💥 翻车</strong>：有人把末速度直接乘时间，减速段的位移算大了一倍。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 从静止开始 a = 2 m/s²，3 s 内位移多大？
+② 判断：x = (v₀+v)t/2 对任何变速运动都成立。</p>
+<p><strong>💎 彩蛋</strong>：电梯"加速—匀速—减速"三段，全程平均速度往往只有最高速度的一半多一点。</p>
+<hr />
+<h2>第 8 关 · 速度—位移关系</h2>
+<p><strong>⚡ 先猜</strong>：车速从 40 km/h 提到 80 km/h，刹车距离变成几倍？</p>
+<p><strong>🔑 口诀</strong>：不带时间用平方，速度翻倍距离四倍。</p>
+<p><strong>💥 翻车</strong>：有人按正比答"2 倍"。实际是 4 倍——这是超速最可怕的地方。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 20 m/s、刹车 a = 5 m/s²，刹车距离多大？
+② 判断：驾驶员反应时间内，车已经在减速。</p>
+<p><strong>💎 彩蛋</strong>：120 km/h 的刹车距离约 100 m，相当于 33 层楼的高度竖起来。</p>
+<hr />
+<h2>第 9 关 · 四个推论</h2>
+<p><strong>⚡ 先猜</strong>：自由落体第 1 s、第 2 s、第 3 s 内的位移之比是多少？</p>
+<p><strong>🔑 口诀</strong>：等时位移差恒定 aT²，初速为零 1、3、5。</p>
+<p><strong>💥 翻车</strong>：有人背成 1:4:9——那是"前 n 秒"的位移比，不是"第 n 秒内"。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 初速为零、a = 2 m/s²，第 3 s 内位移多大？
+② 纸带相邻两段相差 2 cm，T = 0.1 s，加速度多大？</p>
+<p><strong>💎 彩蛋</strong>：打点计时器 50 Hz，每 0.02 s 打一个点——一条纸带能"读出"整段运动。</p>
+<hr />
+<h2>第 10 关 · 自由落体</h2>
+<p><strong>⚡ 先猜</strong>：从 45 m 塔顶落下的石子，<strong>最后 1 秒</strong>下落多少米？</p>
+<p><strong>🔑 口诀</strong>：先算总，再减前，最后一秒不是第一秒。</p>
+<p><strong>💥 翻车</strong>：小李直接套 ½×10×1² = 5 m。那一秒开始时石子已经 20 m/s 了。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 自由落体第 2 s 末速度多大？
+② 从 80 m 高处落下，落地速度多大？</p>
+<p><strong>💎 彩蛋</strong>：雨滴若无空气阻力，从 2 km 落下会以 200 m/s（720 km/h）砸下来，跟子弹差不多。</p>
+<hr />
+<h2>第 11 关 · 竖直上抛</h2>
+<p><strong>⚡ 先猜</strong>：上抛到最高点时，速度和加速度分别是多少？</p>
+<p><strong>🔑 口诀</strong>：上抛全程 a 都是 g，最高点只是 v 为零。</p>
+<p><strong>💥 翻车</strong>：有人说"最高点速度为零，所以受力平衡"——它只受重力，a = g 一点没少。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 以 20 m/s 竖直上抛，最大高度多少？
+② 判断：上抛 3 s 内的位移等于路程。</p>
+<p><strong>💎 彩蛋</strong>：跳起摸高 0.5 m，上升只要 0.32 s，落地速度约 3.1 m/s——比你想的快。</p>
+<hr />
+<h2>第 12 关 · 追及与相遇</h2>
+<p><strong>⚡ 先猜</strong>：后车追前车，什么时候两车距离最大？</p>
+<p><strong>🔑 口诀</strong>：追上找位置相同，最远最近看等速。</p>
+<p><strong>💥 翻车</strong>：有人直接令位移相等，忘了加初始间距 24 m，答案差了 2 s。</p>
+<p><strong>⏱️ 90 秒</strong>
+① 摩托在后 24 m 处以 2 m/s² 追 10 m/s 的汽车，多久追上？
+② 判断：两车速度相等时，就是相遇时刻。</p>
+<p><strong>💎 彩蛋</strong>：自适应巡航（ACC）的核心算法，就是盯着"相对速度为零"那一刻——和追及题的临界条件一模一样。</p>
+<hr />
+<h2>🐲 Boss 关（10 题 · 25 分钟 · 80 分及格）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>题</th>
+<th>分值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>汽车 5 s 内由 10 m/s 增到 20 m/s，加速度多大？</td>
+<td>8</td>
+</tr>
+<tr>
+<td>2</td>
+<td>汽车 20 m/s、刹车 a = 5 m/s²，6 s 内位移多少？</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>从 45 m 高处自由下落，最后 1 s 位移多少？</td>
+<td>10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>以 20 m/s 竖直上抛，3 s 末速度多大？方向？</td>
+<td>10</td>
+</tr>
+<tr>
+<td>5</td>
+<td>沿 400 m 跑道跑 3/4 圈，位移大小多少？</td>
+<td>10</td>
+</tr>
+<tr>
+<td>6</td>
+<td>v-t 图三段面积共 16 m、历时 6 s，平均速度多大？</td>
+<td>10</td>
+</tr>
+<tr>
+<td>7</td>
+<td>初速为零、a = 2 m/s²，第 3 s 内位移多少？</td>
+<td>10</td>
+</tr>
+<tr>
+<td>8</td>
+<td>20 m/s、刹车 a = 5 m/s²，刹车距离多少？</td>
+<td>10</td>
+</tr>
+<tr>
+<td>9</td>
+<td>摩托在后 24 m、a = 2 m/s² 追 10 m/s 汽车，追上用多久？</td>
+<td>12</td>
+</tr>
+<tr>
+<td>10</td>
+<td>位移等分、两段速度 10 与 20 m/s，全程平均速度？</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<h3>挑战题（加分 · 各 20 XP）</h3>
+<p><strong>A.</strong> 某物体自由下落，最后 1 s 的位移是全程的 9/25，求下落总高度。
+<strong>B.</strong> 摩托在后 24 m 处以 2 m/s² 追赶 10 m/s 的汽车，但最高速度只有 8 m/s。能否追上？最近距离多少？</p>
+<hr />
+<h2>✅ 答案与解析</h2>
+<h3>各关 ⚡ 答案</h3>
+<table>
+<thead>
+<tr>
+<th>关</th>
+<th>答案</th>
+<th>关键点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>公转能，自转不能</td>
+<td>判据是"研究的问题"，不是物体大小</td>
+</tr>
+<tr>
+<td>2</td>
+<td>位移 0，路程 400 m</td>
+<td>回到起点位移必为 0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>时间等分 <strong>15 m/s</strong>；位移等分 <strong>13.3 m/s</strong></td>
+<td>位移等分用 2v₁v₂/(v₁+v₂)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>不一定</td>
+<td>上抛最高点 v = 0，a = g</td>
+</tr>
+<tr>
+<td>5</td>
+<td>不是相遇</td>
+<td>交点 = 速度相等 = 距离极值</td>
+</tr>
+<tr>
+<td>6</td>
+<td>不是；应先判停</td>
+<td>t₀ = 5 s &lt; 6 s，速度为 0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>位移</td>
+<td>往返运动中位移 ≠ 路程</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>4 倍</strong></td>
+<td>x ∝ v²</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>1 : 3 : 5</strong></td>
+<td>不是 1:4:9（那是前 n 秒）</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>25 m</strong></td>
+<td>45 − 20（前 2 s 下落 20 m）</td>
+</tr>
+<tr>
+<td>11</td>
+<td>v = 0，a = g（向下）</td>
+<td>最高点只受重力</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>速度相等时</strong></td>
+<td>之后后车更快，距离开始缩小</td>
+</tr>
+</tbody>
+</table>
+<h3>各关 ⏱️ 答案</h3>
+<table>
+<thead>
+<tr>
+<th>关</th>
+<th>①</th>
+<th>②</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>不能（车长与桥长可比）</td>
+<td>✗（可选运动物体）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>127 m（直径）</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>3</td>
+<td>8 m/s</td>
+<td>✗（绕场一周时前者为 0）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>100 m/s²</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>5</td>
+<td>位移</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>6</td>
+<td>10 s</td>
+<td>0（t₀ = 4 s）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9 m</td>
+<td>✗（仅匀变速）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>40 m</td>
+<td>✗（匀速）</td>
+</tr>
+<tr>
+<td>9</td>
+<td>5 m</td>
+<td>2 m/s²</td>
+</tr>
+<tr>
+<td>10</td>
+<td>20 m/s</td>
+<td>40 m/s</td>
+</tr>
+<tr>
+<td>11</td>
+<td>20 m</td>
+<td>✗（位移 15 m、路程 25 m）</td>
+</tr>
+<tr>
+<td>12</td>
+<td>12 s</td>
+<td>✗（是距离极值）</td>
+</tr>
+</tbody>
+</table>
+<h3>Boss 关答案</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>答案</th>
+<th>采分点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2 m/s²</td>
+<td>10/5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>40 m</td>
+<td>先判 t₀ = 4 s &lt; 6 s</td>
+</tr>
+<tr>
+<td>3</td>
+<td>25 m</td>
+<td>45 − 20</td>
+</tr>
+<tr>
+<td>4</td>
+<td>−10 m/s，竖直向下</td>
+<td>方向必须写</td>
+</tr>
+<tr>
+<td>5</td>
+<td>90 m（√2·R）</td>
+<td>弦长 ≠ 弧长</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2.7 m/s</td>
+<td>16/6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>5 m</td>
+<td>9 − 4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>40 m</td>
+<td>v²/2a</td>
+</tr>
+<tr>
+<td>9</td>
+<td>12 s</td>
+<td>t² = 10t + 24</td>
+</tr>
+<tr>
+<td>10</td>
+<td>13.3 m/s</td>
+<td>2v₁v₂/(v₁+v₂)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>挑战 A</strong>：设下落总时间 t，全程 h = 5t²，最后 1 s 位移 = 5t² − 5(t−1)² = 10t − 5
+令 10t − 5 = (9/25)·5t² = 1.8t² ⇒ 1.8t² − 10t + 5 = 0
+⇒ t = 5 s 或 t ≈ 0.56 s（不合题意）⇒ h = 5×25 = <strong>125 m</strong></p>
+<p><strong>挑战 B</strong>：加速到 8 m/s 用 4 s，走 16 m；此时汽车走 40 m，间距 = 24 + 40 − 16 = <strong>48 m</strong>
+此后摩托 8 m/s &lt; 汽车 10 m/s，间距持续增大 ⇒ <strong>追不上</strong>，最近 <strong>48 m</strong></p>
+<hr />
+<h2>🔥 错题复仇总表</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>关卡</th>
+<th>题号</th>
+<th>错因码</th>
+<th>我错在哪</th>
+<th>D+1</th>
+<th>D+3</th>
+<th>销账</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>C_</td>
+<td></td>
+<td>☐</td>
+<td>☐</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>C_</td>
+<td></td>
+<td>☐</td>
+<td>☐</td>
+<td>☐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>C_</td>
+<td></td>
+<td>☐</td>
+<td>☐</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>错因码速查</strong>：C1 概念混淆｜C2 漏条件｜C3 方向符号｜C4 单位换算｜C5 运算｜C6 读题｜C7 模型选错｜C8 表述不全</p>
+<p><strong>触发器</strong>：同关 3 道未销 ⇒ 降星重刷；连续 5 道未销 ⇒ 补漏关；销账满 3 道 ⇒ +30 XP</p>
+<hr />
+<h2>📊 单元一结算</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>三星关卡数</td>
+<td>/ 12</td>
+</tr>
+<tr>
+<td>Boss 得分</td>
+<td>/ 100</td>
+</tr>
+<tr>
+<td>限时达标关数</td>
+<td>/ 12</td>
+</tr>
+<tr>
+<td>累计 XP</td>
+<td></td>
+</tr>
+<tr>
+<td>称号</td>
+<td></td>
+</tr>
+<tr>
+<td>未销错题</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>三星 ≥ 8 关 且 Boss ≥ 80 分 ⇒ 单元一通关，解锁单元二「相互作用与物体平衡」。</p>
+</blockquote></div></html>

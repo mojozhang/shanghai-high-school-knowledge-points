@@ -1,0 +1,754 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>单元二 相互作用与物体平衡</title><style>:root{--ink:#1c1c1e;--line:#e3e3e8;--accent:#0b6b5b;}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f6f3;color:var(--ink);font:16px/1.85 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:900px;margin:0 auto;padding:56px 36px 120px;background:#fff;box-shadow:0 0 0 1px var(--line);}
+h1{font-size:26px;border-bottom:3px solid var(--accent);padding-bottom:12px;margin-top:64px}
+h1:first-of-type{margin-top:0}
+h2{font-size:21px;margin-top:52px;background:#eef4f2;border-left:6px solid var(--accent);padding:10px 14px;border-radius:0 6px 6px 0}
+h3{font-size:16.5px;margin-top:28px;color:#0a4f43}
+blockquote{margin:14px 0 24px;padding:12px 16px;background:#f1f1ec;border-left:4px solid #9a9a90;border-radius:0 6px 6px 0;font-size:15px}
+table{border-collapse:collapse;width:100%;margin:16px 0 26px;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
+th{background:#f0f4f2;font-weight:600}
+tr:nth-child(even) td{background:#fbfbf9}
+img{max-width:100%;height:auto;display:block;margin:14px auto;border:1px solid #ececea;border-radius:6px}
+code{background:#f0f0ea;padding:2px 5px;border-radius:4px}
+strong{color:#0a4f43}</style><div class="wrap"><h1>力学 · 单元二：相互作用与物体平衡</h1>
+<blockquote>
+<p><strong>状态</strong>：【样章待验收　v5 版】
+<strong>覆盖</strong>：A-3.1 ～ A-3.8，共 8 考点 / 24 道例题 / 8 组限时挑战，配 8 张受力图
+<strong>单元定位</strong>：力学从"描述运动"转向"解释运动"的转折点。<strong>受力分析做不对，后面牛顿定律、功能关系全部作废</strong>——所以这一单元宁可慢，也要把图会画。</p>
+</blockquote>
+<h2>🗺️ 关卡地图</h2>
+<table>
+<thead>
+<tr>
+<th>关</th>
+<th>考点</th>
+<th>难度</th>
+<th>星级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>重力与重心</td>
+<td>★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>2</td>
+<td>弹力与胡克定律</td>
+<td>★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>3</td>
+<td>摩擦力</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>4</td>
+<td>力的合成与分解</td>
+<td>★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>共点力平衡</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>动态平衡</td>
+<td>★★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>整体法与隔离法</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>8</td>
+<td>临界与极值</td>
+<td>★★★★</td>
+<td>☆☆☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>A-3.1 重力与重心</h2>
+<p><em>力学 › 第3章 相互作用 ｜ Ⅰ · 考频低 ｜ 前置：无 ｜ 关联：A-3.4</em></p>
+<p><strong>⚡ 先猜</strong>：物体放在斜面上，重力的方向是"垂直斜面向下"吗？</p>
+<h3>30 秒概述</h3>
+<p>重力方向永远是<strong>竖直向下</strong>——垂直于水平面，不管你放在斜面上还是斜面上滚。重心是重力的等效作用点，它可以在物体外面（比如圆环的中心）。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>重力的方向总是垂直于接触面向下。</li>
+<li>物体的重心一定在物体上。</li>
+<li>质量分布均匀的球体，重心在球心。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（竖直向下，不垂直于斜面）　2. ✗（圆环重心在圆心）　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>G = mg</strong>，方向<strong>竖直向下</strong>（垂直于水平面，不一定指向地心）</li>
+<li>重心：重力等效作用点，与质量分布、形状有关；可用<strong>悬挂法</strong>测定薄板重心</li>
+<li>g 随纬度升高略增大、随高度升高略减小；上海实测 ≈ 9.79 m/s²</li>
+</ul>
+<p><strong>适用条件</strong>：g 在一般计算中取 10；物体随地球自转的向心力是万有引力的一个极小分力，中学阶段忽略。</p>
+<p><strong>易错边界</strong>
+1. "竖直向下"被当成"垂直斜面向下"
+2. 认为重心一定在物体上
+3. 认为"超重失重时重力变了"（重力不变，是视重变了）</p>
+<h3>例题 1 · L1 基础</h3>
+<p>质量 60 kg 的人在教室里。求他受到的重力（g 取 9.8）；若把他"搬到"月球（g 月 = 1.6 m/s²），质量和重力各是多少？</p>
+<p><strong>解析</strong>：
+地球：G = 60 × 9.8 = <strong>588 N</strong>，方向竖直向下
+月球：质量仍为 <strong>60 kg</strong>（质量是物体的属性，与位置无关）；重力 = 60 × 1.6 = <strong>96 N</strong></p>
+<p><strong>💥 陷阱</strong>：说"到月球上质量变小了"。质量不变，变的是重力。</p>
+<p><strong>变式</strong>：同一个弹簧秤在地球称得 588 N，在月球称得多少？（96 N，弹簧秤测的是重力）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>判断下列说法：
+(1) 舞蹈演员的重心一定在她身体上；
+(2) 一块形状不规则的薄板，可用悬挂法确定重心；
+(3) 重心就是物体上最重的那一点。</p>
+<p><strong>解析</strong>：
+(1) ✗——下腰时重心可能落在身体之外
+(2) ✓——悬挂两次，两条竖直线交点即重心
+(3) ✗——重心是等效作用点，不是"最重的点"</p>
+<p><strong>💥 陷阱</strong>：把"重心"理解成"质量最大的位置"。它只是一个力的作用点，与质量分布有关，与"哪块最重"无关。</p>
+<p><strong>变式</strong>：一个均匀圆环的重心在哪里？（圆心，不在环上）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>物体静止在倾角 30° 的斜面上。
+(1) 画出它的重力，并说明方向；
+(2) 把重力沿"垂直斜面"和"平行斜面"两个方向分解，求两个分量（G = 20 N）；
+(3) 若斜面变陡到 60°，哪一部分变大、哪一部分变小？</p>
+<p><strong>解析</strong>：
+(1) 重力<strong>竖直向下</strong>，与斜面无关（见图）
+(2) 平行斜面：G sin30° = <strong>10 N</strong>；垂直斜面：G cos30° ≈ <strong>17.3 N</strong>
+(3) 倾角增大：<strong>平行分量变大</strong>（sin 增大），<strong>垂直分量变小</strong>（cos 减小）——这正是"陡坡更容易下滑"的原因</p>
+<p><img alt="重力方向与重心" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IE0tMy4x44CA6YeN5Yqb5pa55ZCR5LiO6YeN5b+DPC90ZXh0Pgo8bGluZSB4MT0iNTAiIHkxPSIyMzIiIHgyPSI0NDAiIHkyPSIyMzIiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48bGluZSB4MT0iNTAiIHkxPSIyMzIiIHgyPSI0MSIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iNjgiIHkxPSIyMzIiIHgyPSI1OSIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iODYiIHkxPSIyMzIiIHgyPSI3NyIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTA0IiB5MT0iMjMyIiB4Mj0iOTUiIHkyPSIyNDQiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjEyMiIgeTE9IjIzMiIgeDI9IjExMyIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTQwIiB5MT0iMjMyIiB4Mj0iMTMxIiB5Mj0iMjQ0IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxNTgiIHkxPSIyMzIiIHgyPSIxNDkiIHkyPSIyNDQiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjE3NiIgeTE9IjIzMiIgeDI9IjE2NyIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTk0IiB5MT0iMjMyIiB4Mj0iMTg1IiB5Mj0iMjQ0IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyMTIiIHkxPSIyMzIiIHgyPSIyMDMiIHkyPSIyNDQiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjIzMCIgeTE9IjIzMiIgeDI9IjIyMSIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjQ4IiB5MT0iMjMyIiB4Mj0iMjM5IiB5Mj0iMjQ0IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyNjYiIHkxPSIyMzIiIHgyPSIyNTciIHkyPSIyNDQiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjI4NCIgeTE9IjIzMiIgeDI9IjI3NSIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzAyIiB5MT0iMjMyIiB4Mj0iMjkzIiB5Mj0iMjQ0IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzMjAiIHkxPSIyMzIiIHgyPSIzMTEiIHkyPSIyNDQiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjMzOCIgeTE9IjIzMiIgeDI9IjMyOSIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzU2IiB5MT0iMjMyIiB4Mj0iMzQ3IiB5Mj0iMjQ0IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzNzQiIHkxPSIyMzIiIHgyPSIzNjUiIHkyPSIyNDQiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjM5MiIgeTE9IjIzMiIgeDI9IjM4MyIgeTI9IjI0NCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iNDEwIiB5MT0iMjMyIiB4Mj0iNDAxIiB5Mj0iMjQ0IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSI0MjgiIHkxPSIyMzIiIHgyPSI0MTkiIHkyPSIyNDQiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBvbHlnb24gcG9pbnRzPSI5MCwyMzIgOTAsNzAgNDAwLDIzMiIgZmlsbD0iI2Y2ZjZmMiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIyNTkiIGN5PSIxMzIiIHI9IjIwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyNTkiIHkxPSIxMzIiIHgyPSIyNTkiIHkyPSIyMjQiIHN0cm9rZT0iI2MwMzkyYiIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tcmVkKSIvPjx0ZXh0IHg9IjI2NiIgeT0iMjEwIiBmaWxsPSIjYzAzOTJiIiBmb250LXNpemU9IjEzIj5HIOerluebtOWQkeS4iyDinJM8L3RleHQ+PGxpbmUgeDE9IjI1OSIgeTE9IjEzMiIgeDI9IjIzNCIgeTI9IjE4MSIgc3Ryb2tlPSIjNmI3MjgwIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNCIgbWFya2VyLWVuZD0idXJsKCNtLWdyYXkpIi8+PHRleHQgeD0iMTE4IiB5PSIyMDAiIGZpbGw9IiM2YjcyODAiIGZvbnQtc2l6ZT0iMTMiPuWeguebtOaWnOmdoiDinJc8L3RleHQ+PHRleHQgeD0iNjAiIHk9IjYwIiBmaWxsPSIjNmI3MjgwIiBmb250LXNpemU9IjEyIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuWQjOS4gOeJqeS9k++8mumHjeWKm+aWueWQkeaBkuWumu+8jOS4juaWnOmdouWAvuinkuaXoOWFszwvdGV4dD4KPC9zdmc+Cg==" /></p>
+<p><strong>💥 陷阱</strong>：把重力画成"垂直斜面向下"。看图：虚线那个方向是错的，重力始终竖直。</p>
+<p><strong>变式</strong>：倾角为 θ 时，两个分量分别是多少？（G sinθ、G cosθ）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 判断：重力方向总是指向地心。② 判断：重心可以在物体之外。</p>
+<blockquote>
+<p>答案：① ✗（只有赤道和两极才指向地心）　② ✓</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例题 3 + 变式；2 对 → 易错 + 例题 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-3.2 弹力与胡克定律</h2>
+<p><em>力学 › 第3章 相互作用 ｜ Ⅱ · 考频中 ｜ 前置 A-3.1 ｜ 关联 A-3.5</em></p>
+<p><strong>⚡ 先猜</strong>：把一根弹簧剪成等长的两段，每段的劲度系数是变大还是变小？</p>
+<h3>30 秒概述</h3>
+<p>弹力是"形变后想恢复原状"产生的力。胡克定律 <strong>F = kx</strong> 里的 x 是<strong>形变量</strong>（伸长或压缩了多少），不是弹簧的长度。k 由弹簧本身决定：<strong>越短越硬</strong>，剪一半，k 变两倍。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>胡克定律 F = kx 中，x 是弹簧的长度。</li>
+<li>绳只能提供拉力，不能提供推力。</li>
+<li>弹簧剪成等长两段后，每段的劲度系数变为原来的 2 倍。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（是形变量）　2. ✓（绳只能拉）　3. ✓（k 与长度成反比）</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>F = kx</strong>：x 为形变量 [m]，k 为劲度系数 [N/m]</li>
+<li>弹力方向：面接触<strong>垂直于接触面</strong>；绳<strong>沿绳</strong>指向收缩方向；杆可沿任意方向（可拉可推）</li>
+<li>弹簧串联：1/k = 1/k₁ + 1/k₂（变软）；并联：k = k₁ + k₂（变硬）</li>
+<li>剪断弹簧：k 与长度成反比，剪半则 k 翻倍</li>
+</ul>
+<p><strong>适用条件</strong>：胡克定律只在<strong>弹性限度内</strong>成立；超过限度弹簧永久变形。</p>
+<p><strong>易错边界</strong>
+1. x 用弹簧长度代入
+2. 认为杆的弹力一定沿杆（杆可以给任意方向的力）
+3. 认为弹簧秤两端各用 5 N 拉，读数就是 10 N</p>
+<h3>例题 1 · L1 基础</h3>
+<p>弹簧原长 10 cm，挂 2 N 重物时长度变为 12 cm。求劲度系数；若挂 5 N 重物，弹簧多长？</p>
+<p><strong>解析</strong>：
+1. 形变量 x = 12 − 10 = 2 cm = 0.02 m
+2. k = F/x = 2/0.02 = <strong>100 N/m</strong>
+3. 挂 5 N：x' = 5/100 = 0.05 m = 5 cm ⇒ 长度 = 10 + 5 = <strong>15 cm</strong></p>
+<p><img alt="胡克定律 F = kx" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IE0tMy4y44CA6IOh5YWL5a6a5b6LIEYgPSBreO+8iHgg5Li65b2i5Y+Y6YeP77yJPC90ZXh0Pgo8bGluZSB4MT0iNjAiIHkxPSI0NiIgeDI9IjIxNSIgeTI9IjQ2IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iNCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNSw0NiAxMjEsNTYgMTQ5LDY2IDEyMSw3NiAxNDksODYgMTIxLDk2IDE0OSwxMDYgMTM1LDExNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMTAiIHk9IjExNiIgd2lkdGg9IjUwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZjZmNmYyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjEyNiIgeT0iMTQyIiBmaWxsPSIjMzMzMzMzIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPm08L3RleHQ+PGxpbmUgeDE9IjEzNSIgeTE9IjE1NiIgeDI9IjEzNSIgeTI9IjIxMCIgc3Ryb2tlPSIjYzAzOTJiIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1yZWQpIi8+PHRleHQgeD0iMTQzIiB5PSIxOTYiIGZpbGw9IiNjMDM5MmIiIGZvbnQtc2l6ZT0iMTMiPkc8L3RleHQ+PHRleHQgeD0iMTYwIiB5PSI5MiIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj54ID0g5b2i5Y+Y6YePPC90ZXh0PjxsaW5lIHgxPSIyNjAiIHkxPSIyMDUiIHgyPSI0NTIiIHkyPSIyMDUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjI2MCIgeTE9IjIwNSIgeDI9IjI2MCIgeTI9IjU4IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyNjAiIHkxPSIyMDUiIHgyPSI0NTIiIHkyPSIyMDUiIHN0cm9rZT0iIzMzMzMzMyIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20taW5rKSIvPjxsaW5lIHgxPSIyNjAiIHkxPSIyMDUiIHgyPSIyNjAiIHkyPSI1OCIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1pbmspIi8+PHRleHQgeD0iNDU2IiB5PSIyMDkiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+eDwvdGV4dD48dGV4dCB4PSIyNDYiIHk9IjUyIiBmaWxsPSIjMzMzMzMzIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPkY8L3RleHQ+PHRleHQgeD0iMjM4IiB5PSIyMjIiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+MDwvdGV4dD48bGluZSB4MT0iMjYwIiB5MT0iMjA1IiB4Mj0iNDIwIiB5Mj0iODgiIHN0cm9rZT0iIzFmNmZlYiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMzk4IiB5PSIxMjgiIGZpbGw9IiMxZjZmZWIiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+RiA9IGt4PC90ZXh0Pgo8L3N2Zz4K" /></p>
+<p><strong>💥 陷阱</strong>：用 12 cm 直接当 x，得 k = 16.7 N/m。x 是"伸长量"，不是"现在的长度"。</p>
+<p><strong>变式</strong>：若挂 3 N，长度多少？（13 cm）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>(1) 弹簧秤两端各用 5 N 的力向外拉，读数是多少？
+(2) 把例 1 的弹簧剪成等长的两段，取其中一段挂 2 N 重物，伸长多少？</p>
+<p><strong>解析</strong>：
+(1) 弹簧秤显示的是<strong>一端受到的拉力</strong>，读数 <strong>5 N</strong>（墙那一端只是提供反作用力）
+(2) 剪半后 k' = 2k = <strong>200 N/m</strong>，x = 2/200 = 0.01 m = <strong>1 cm</strong></p>
+<p><strong>💥 陷阱</strong>：(1) 答 10 N——把两端拉力相加；(2) 认为剪短后更软。</p>
+<p><strong>变式</strong>：两段都挂同一个 2 N 重物，总伸长多少？（各 1 cm，共 2 cm，与原来相同）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>质量 2 kg 的物体放在倾角 37° 的光滑斜面上，用一根平行于斜面的弹簧拉住，物体静止。弹簧劲度系数 k = 100 N/m，g 取 10。求弹簧的伸长量。</p>
+<p><strong>解析</strong>：
+1. 沿斜面方向：物体受重力分量 mg sin37° 向下、弹簧拉力 kx 向上
+2. 平衡：kx = mg sin37° = 20 × 0.6 = 12 N
+3. x = 12/100 = <strong>0.12 m = 12 cm</strong></p>
+<p><strong>💥 陷阱</strong>：用 mg = 20 N 代入，得 20 cm。斜面上重力的"有效部分"只有 mg sinθ。</p>
+<p><strong>变式</strong>：若斜面粗糙、μ = 0.5，且弹簧被压缩（物体有上滑趋势），伸长量是多少？
+（kx = mg sin37° + μmg cos37° = 12 + 8 = 20 N ⇒ x = 0.2 m）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① k = 200 N/m，伸长 3 cm，弹力多大？② 判断：弹簧越长，劲度系数越大。</p>
+<blockquote>
+<p>答案：① 6 N　② ✗（越长越软）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-3.3 摩擦力</h2>
+<p><em>力学 › 第3章 相互作用 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-3.2 ｜ 关联 A-3.5、A-3.8　★</em></p>
+<p><strong>⚡ 先猜</strong>：静止的物体一定受静摩擦力吗？运动的物体一定受滑动摩擦力吗？</p>
+<h3>30 秒概述</h3>
+<p>摩擦力的方向看"<strong>相对</strong>运动（趋势）"，不看绝对运动——所以传送带上的物块可以和带一起向前加速，靠的就是向前的静摩擦。大小上，<strong>滑动摩擦用 f = μN，静摩擦只能用平衡条件求</strong>，这是最容易混的一处。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>滑动摩擦力 f = μN 中，N 一定等于物体的重力。</li>
+<li>静摩擦力的大小由物体的平衡条件或牛顿第二定律决定。</li>
+<li>摩擦力总是阻碍物体的运动。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（斜面、墙面、加速系统中 N ≠ mg）　2. ✓　3. ✗（可以是动力）</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>滑动摩擦</strong>：f = μN，方向与<strong>相对运动</strong>方向相反</li>
+<li><strong>静摩擦</strong>：0 ≤ f ≤ f_max，大小由平衡条件/牛顿第二定律求，方向与<strong>相对运动趋势</strong>相反</li>
+<li>最大静摩擦略大于滑动摩擦，计算中常取 f_max ≈ μN</li>
+</ul>
+<p><strong>适用条件</strong>：f = μN 只适用于滑动摩擦；静摩擦<strong>绝不能</strong>直接代 μN（那是最大值，不是实际值）。</p>
+<p><strong>易错边界</strong>
+1. N ≠ mg（斜面、竖直墙面、有竖直加速度时）
+2. 静摩擦直接代 μN
+3. 认为摩擦力一定做负功（传送带上就是动力）</p>
+<h3>例题 1 · L1 基础</h3>
+<p>质量 2 kg 的物体静止在水平面上，动摩擦因数 μ = 0.3，最大静摩擦 7 N。用 5 N 的水平力拉它，物体受到的摩擦力多大？</p>
+<p><strong>解析</strong>：
+1. 先看能不能拉动：5 N &lt; 7 N（最大静摩擦）⇒ 物体<strong>保持静止</strong>
+2. 静止 ⇒ 水平方向平衡 ⇒ 静摩擦 f = 拉力 = <strong>5 N</strong>，方向与拉力相反</p>
+<p><img alt="静摩擦与滑动摩擦" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IE0tMy4z44CA5rC05bmz6Z2i5LiK55qE6Z2Z5pGp5pOm5LiO5ruR5Yqo5pGp5pOmPC90ZXh0Pgo8bGluZSB4MT0iNjAiIHkxPSIyMTUiIHgyPSI0MzAiIHkyPSIyMTUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48bGluZSB4MT0iNjAiIHkxPSIyMTUiIHgyPSI1MSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iNzgiIHkxPSIyMTUiIHgyPSI2OSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iOTYiIHkxPSIyMTUiIHgyPSI4NyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTE0IiB5MT0iMjE1IiB4Mj0iMTA1IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxMzIiIHkxPSIyMTUiIHgyPSIxMjMiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjE1MCIgeTE9IjIxNSIgeDI9IjE0MSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTY4IiB5MT0iMjE1IiB4Mj0iMTU5IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxODYiIHkxPSIyMTUiIHgyPSIxNzciIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjIwNCIgeTE9IjIxNSIgeDI9IjE5NSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjIyIiB5MT0iMjE1IiB4Mj0iMjEzIiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyNDAiIHkxPSIyMTUiIHgyPSIyMzEiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjI1OCIgeTE9IjIxNSIgeDI9IjI0OSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjc2IiB5MT0iMjE1IiB4Mj0iMjY3IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyOTQiIHkxPSIyMTUiIHgyPSIyODUiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjMxMiIgeTE9IjIxNSIgeDI9IjMwMyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzMwIiB5MT0iMjE1IiB4Mj0iMzIxIiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzNDgiIHkxPSIyMTUiIHgyPSIzMzkiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjM2NiIgeTE9IjIxNSIgeDI9IjM1NyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzg0IiB5MT0iMjE1IiB4Mj0iMzc1IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSI0MDIiIHkxPSIyMTUiIHgyPSIzOTMiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjQyMCIgeTE9IjIxNSIgeDI9IjQxMSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48cmVjdCB4PSIxODUiIHk9IjE0MCIgd2lkdGg9IjkwIiBoZWlnaHQ9Ijc1IiBmaWxsPSIjZjZmNmYyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjE5NiIgeT0iMjAwIiBmaWxsPSIjMzMzMzMzIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPm0gPSAyIGtnPC90ZXh0PjxsaW5lIHgxPSIyNzYiIHkxPSIxNzgiIHgyPSIzNzYiIHkyPSIxNzgiIHN0cm9rZT0iIzFmNmZlYiIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tYmx1ZSkiLz48dGV4dCB4PSIzMDAiIHk9IjE2OCIgZmlsbD0iIzFmNmZlYiIgZm9udC1zaXplPSIxMyI+RiA9IDUgTjwvdGV4dD48bGluZSB4MT0iMTg0IiB5MT0iMTc4IiB4Mj0iOTYiIHkyPSIxNzgiIHN0cm9rZT0iIzFhN2YzNyIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tZ3JlZW4pIi8+PHRleHQgeD0iMTA0IiB5PSIxNjgiIGZpbGw9IiMxYTdmMzciIGZvbnQtc2l6ZT0iMTMiPmYgPSA1IE48L3RleHQ+PGxpbmUgeDE9IjIwNiIgeTE9IjEzOSIgeDI9IjIwNiIgeTI9Ijg2IiBzdHJva2U9IiM2YjcyODAiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLWdyYXkpIi8+PHRleHQgeD0iMjE0IiB5PSIxMDQiIGZpbGw9IiM2YjcyODAiIGZvbnQtc2l6ZT0iMTMiPk48L3RleHQ+PGxpbmUgeDE9IjI1NSIgeTE9IjIxNSIgeDI9IjI1NSIgeTI9IjI1OCIgc3Ryb2tlPSIjYzAzOTJiIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1yZWQpIi8+PHRleHQgeD0iMjYyIiB5PSIyNDgiIGZpbGw9IiNjMDM5MmIiIGZvbnQtc2l6ZT0iMTMiPkcgPSAyMCBOPC90ZXh0Pjx0ZXh0IHg9IjYwIiB5PSI0NiIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj7mnIDlpKfpnZnmkanmk6YgNyBOIO+8niDmu5Hliqjmkanmk6YgNiBOPC90ZXh0Pgo8L3N2Zz4K" /></p>
+<p><strong>💥 陷阱</strong>：直接算 f = μmg = 6 N。物体根本没动，摩擦力只有 5 N——静摩擦是"按需供给"的。</p>
+<p><strong>变式</strong>：若拉力增大到 7 N，摩擦力多大？（7 N，恰好达到最大静摩擦，临界）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>承上题。若改用 10 N 的水平力拉，物体受到的摩擦力多大？加速度多大？</p>
+<p><strong>解析</strong>：
+1. 10 N &gt; 7 N ⇒ 物体<strong>滑动</strong>
+2. 滑动摩擦 f = μmg = 0.3 × 20 = <strong>6 N</strong>
+3. 合力 = 10 − 6 = 4 N ⇒ a = 4/2 = <strong>2 m/s²</strong></p>
+<p><strong>💥 陷阱</strong>：用 7 N 当滑动摩擦。滑动后，摩擦力由 μN 决定（6 N），不再等于最大静摩擦（7 N）。</p>
+<p><strong>变式</strong>：若 μ = 0.5，10 N 拉力下加速度多大？（f = 10 N，a = 0，恰好匀速）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>质量 2 kg 的物体从倾角 37° 的斜面顶端下滑，动摩擦因数 μ = 0.5，g 取 10。求下滑加速度；并判断：若把斜面倾角减小到 30°，物体会不会自己滑下来？</p>
+<p><strong>解析</strong>：
+1. 沿斜面：mg sin37° = 12 N 向下；摩擦力 f = μmg cos37° = 0.5 × 16 = 8 N 向上
+2. 合力 = 12 − 8 = 4 N ⇒ a = <strong>2 m/s²</strong>
+3. 倾角 30°：重力分量 = 10 N，最大静摩擦 ≈ μmg cos30° = 8.7 N
+   10 N &gt; 8.7 N ⇒ <strong>仍会下滑</strong>，但加速度更小</p>
+<p><strong>💥 陷阱</strong>：把摩擦力算成 μmg = 10 N（用 mg 而不是 mg cosθ 当正压力）。</p>
+<p><strong>变式</strong>：μ 多大时物体恰好能静止在 37° 斜面上？（tan37° = 0.75）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 判断：摩擦力一定是阻力。② 斜面上 μ = 0.5、θ = 37°，物体下滑加速度多大？</p>
+<blockquote>
+<p>答案：① ✗（可以是动力）　② 2 m/s²</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-3.4 力的合成与分解</h2>
+<p><em>力学 › 第3章 相互作用 ｜ Ⅱ · 考频中 ｜ 前置 A-3.1 ｜ 关联 A-3.5</em></p>
+<p><strong>⚡ 先猜</strong>：两个力的合力，一定比每个分力都大吗？</p>
+<h3>30 秒概述</h3>
+<p>力的合成用<strong>平行四边形定则</strong>，合力范围是 |F₁−F₂| ≤ F ≤ F₁+F₂——所以合力<strong>可以比分力小</strong>。分解是合成的逆运算，正交分解的价值在于"让尽量多的力落在坐标轴上"，少算三角函数。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>两个力的合力范围是 |F₁ − F₂| ≤ F ≤ F₁ + F₂。</li>
+<li>合力一定大于每一个分力。</li>
+<li>正交分解时，应尽量让更多的力落在坐标轴上。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✗（夹角大时可以更小）　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>平行四边形定则</strong>：以两分力为邻边作平行四边形，对角线即合力</li>
+<li><strong>三角形定则</strong>：两分力首尾相接，合力由起点指向终点</li>
+<li>合力范围：<strong>|F₁ − F₂| ≤ F ≤ F₁ + F₂</strong></li>
+<li>正交分解：F_x = F cosθ，F_y = F sinθ</li>
+</ul>
+<p><strong>适用条件</strong>：只适用于共点力；分解方式不唯一，按"解题方便"选。</p>
+<p><strong>易错边界</strong>
+1. 认为合力一定大于分力
+2. 分解时不说明"沿哪个方向分解"
+3. 三力平衡时把"任意两力的合力"与"第三个力"方向搞反</p>
+<h3>例题 1 · L1 基础</h3>
+<p>F₁ = 30 N、F₂ = 40 N，夹角 90°。求合力大小。</p>
+<p><strong>解析</strong>：勾股定理：F = √(30² + 40²) = <strong>50 N</strong>
+方向：与 F₁ 成 53°（tanθ = 40/30）</p>
+<p><img alt="平行四边形定则" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IE0tMy4044CA5bmz6KGM5Zub6L655b2i5a6a5YiZ77yI5aS56KeSIDkwwrDvvIk8L3RleHQ+CjxsaW5lIHgxPSI2MCIgeTE9IjIxNSIgeDI9IjQzMCIgeTI9IjIxNSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIuNSIvPjxsaW5lIHgxPSI2MCIgeTE9IjIxNSIgeDI9IjUxIiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSI3OCIgeTE9IjIxNSIgeDI9IjY5IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSI5NiIgeTE9IjIxNSIgeDI9Ijg3IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxMTQiIHkxPSIyMTUiIHgyPSIxMDUiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjEzMiIgeTE9IjIxNSIgeDI9IjEyMyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTUwIiB5MT0iMjE1IiB4Mj0iMTQxIiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxNjgiIHkxPSIyMTUiIHgyPSIxNTkiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjE4NiIgeTE9IjIxNSIgeDI9IjE3NyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjA0IiB5MT0iMjE1IiB4Mj0iMTk1IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyMjIiIHkxPSIyMTUiIHgyPSIyMTMiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjI0MCIgeTE9IjIxNSIgeDI9IjIzMSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjU4IiB5MT0iMjE1IiB4Mj0iMjQ5IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyNzYiIHkxPSIyMTUiIHgyPSIyNjciIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjI5NCIgeTE9IjIxNSIgeDI9IjI4NSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzEyIiB5MT0iMjE1IiB4Mj0iMzAzIiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzMzAiIHkxPSIyMTUiIHgyPSIzMjEiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjM0OCIgeTE9IjIxNSIgeDI9IjMzOSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzY2IiB5MT0iMjE1IiB4Mj0iMzU3IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzODQiIHkxPSIyMTUiIHgyPSIzNzUiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjQwMiIgeTE9IjIxNSIgeDI9IjM5MyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iNDIwIiB5MT0iMjE1IiB4Mj0iNDExIiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjE4NSIgeT0iMTQwIiB3aWR0aD0iOTAiIGhlaWdodD0iNzUiIGZpbGw9IiNmNmY2ZjIiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTk2IiB5PSIyMDAiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+bSA9IDIga2c8L3RleHQ+PGxpbmUgeDE9IjI3NiIgeTE9IjE3OCIgeDI9IjM3NiIgeTI9IjE3OCIgc3Ryb2tlPSIjMWY2ZmViIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1ibHVlKSIvPjx0ZXh0IHg9IjMwMCIgeT0iMTY4IiBmaWxsPSIjMWY2ZmViIiBmb250LXNpemU9IjEzIj5GID0gNSBOPC90ZXh0PjxsaW5lIHgxPSIxODQiIHkxPSIxNzgiIHgyPSI5NiIgeTI9IjE3OCIgc3Ryb2tlPSIjMWE3ZjM3IiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1ncmVlbikiLz48dGV4dCB4PSIxMDQiIHk9IjE2OCIgZmlsbD0iIzFhN2YzNyIgZm9udC1zaXplPSIxMyI+ZiA9IDUgTjwvdGV4dD48bGluZSB4MT0iMjA2IiB5MT0iMTM5IiB4Mj0iMjA2IiB5Mj0iODYiIHN0cm9rZT0iIzZiNzI4MCIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tZ3JheSkiLz48dGV4dCB4PSIyMTQiIHk9IjEwNCIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMyI+TjwvdGV4dD48bGluZSB4MT0iMjU1IiB5MT0iMjE1IiB4Mj0iMjU1IiB5Mj0iMjU4IiBzdHJva2U9IiNjMDM5MmIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLXJlZCkiLz48dGV4dCB4PSIyNjIiIHk9IjI0OCIgZmlsbD0iI2MwMzkyYiIgZm9udC1zaXplPSIxMyI+RyA9IDIwIE48L3RleHQ+PHRleHQgeD0iNjAiIHk9IjQ2IiBmaWxsPSIjNmI3MjgwIiBmb250LXNpemU9IjEyIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuacgOWkp+mdmeaRqeaTpiA3IE4g77yeIOa7keWKqOaRqeaTpiA2IE48L3RleHQ+PGxpbmUgeDE9IjExMCIgeTE9IjIyMCIgeDI9IjMxMCIgeTI9IjIyMCIgc3Ryb2tlPSIjMWY2ZmViIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1ibHVlKSIvPjx0ZXh0IHg9IjE5MCIgeT0iMjQzIiBmaWxsPSIjMWY2ZmViIiBmb250LXNpemU9IjEzIj5G4oKBID0gMzAgTjwvdGV4dD48bGluZSB4MT0iMTEwIiB5MT0iMjIwIiB4Mj0iMTEwIiB5Mj0iODAiIHN0cm9rZT0iI2I0NTMwOSIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tb3JhbmdlKSIvPjx0ZXh0IHg9IjY2IiB5PSIxNTAiIGZpbGw9IiNiNDUzMDkiIGZvbnQtc2l6ZT0iMTMiPkbigoIgPSA0MCBOPC90ZXh0PjxsaW5lIHgxPSIzMTAiIHkxPSIyMjAiIHgyPSIzMTAiIHkyPSI4MCIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWRhc2hhcnJheT0iNiA0Ii8+PGxpbmUgeDE9IjExMCIgeTE9IjgwIiB4Mj0iMzEwIiB5Mj0iODAiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNCIvPjxsaW5lIHgxPSIxMTAiIHkxPSIyMjAiIHgyPSIzMTAiIHkyPSI4MCIgc3Ryb2tlPSIjYzAzOTJiIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1yZWQpIi8+PHRleHQgeD0iMzE4IiB5PSIxNTIiIGZpbGw9IiNjMDM5MmIiIGZvbnQtc2l6ZT0iMTMiPkYgPSA1MCBOPC90ZXh0PjxwYXRoIGQ9Ik0xMTAsMjA2IEwxMjQsMjA2IEwxMjQsMjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=" /></p>
+<p><strong>💥 陷阱</strong>：直接相加得 70 N。只有<strong>同向</strong>才相加。</p>
+<p><strong>变式</strong>：两力同向、反向时合力各是多少？（70 N，10 N）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>同上两力，夹角分别为 60° 和 120°，求合力大小。</p>
+<p><strong>解析</strong>：
+1. 余弦定理：F = √(F₁² + F₂² + 2F₁F₂cosθ)
+2. 60°：F = √(900 + 1600 + 2×30×40×0.5) = √3700 ≈ <strong>60.8 N</strong>
+3. 120°：F = √(900 + 1600 + 2400×(−0.5)) = √1300 ≈ <strong>36.1 N</strong></p>
+<p><strong>💥 陷阱</strong>：120° 时合力 36.1 N <strong>小于</strong> F₂ = 40 N——这直接推翻了"合力最大"的直觉。</p>
+<p><strong>变式</strong>：夹角多大时合力等于 50 N？（90°；夹角 180° 时合力 10 N）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>质量 2 kg 的物体放在倾角 37° 的斜面上（g = 10）。
+(1) 把重力沿"垂直斜面"和"平行斜面"分解，求两个分量；
+(2) 说明为什么"垂直分量"决定了压力；
+(3) 若改用水平-竖直坐标系分解，重力的两个分量是多少？</p>
+<p><strong>解析</strong>：
+(1) 平行斜面：20 sin37° = <strong>12 N</strong>；垂直斜面：20 cos37° = <strong>16 N</strong>
+(2) 物体对斜面的压力与"垂直斜面方向的支持力"是一对相互作用力，而支持力由垂直斜面的重力分量平衡 ⇒ N = 16 N（无其他垂直方向外力时）
+(3) 竖直分量 20 N、水平分量 <strong>0</strong>（重力本来就竖直）</p>
+<p><strong>💥 陷阱</strong>：(2) 认为压力等于重力 20 N。斜面"分摊"了一部分，压力只有 16 N——所以斜面上摩擦力 μN 比水平面小。</p>
+<p><strong>变式</strong>：为什么斜面上 μ 要更大才能"停住"？（N 变小 ⇒ 最大静摩擦变小，而下滑分量变大）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① F₁ = F₂ = 10 N，夹角 120°，合力多大？② 判断：分解一个力只有一种方式。</p>
+<blockquote>
+<p>答案：① 10 N　② ✗（不唯一）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-3.5 共点力平衡</h2>
+<p><em>力学 › 第3章 相互作用 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-3.4 ｜ 关联 A-3.6、A-3.7　★</em></p>
+<p><strong>⚡ 先猜</strong>：三个力作用下物体平衡，任意两个力的合力与第三个力是什么关系？</p>
+<h3>30 秒概述</h3>
+<p>平衡就是 <strong>ΣF = 0</strong>，不是"速度为零"（匀速运动也平衡）。三个力平衡时，任意两个力的合力与第三个力<strong>等大反向</strong>，三力首尾相接构成闭合三角形——这句话能秒掉一大半平衡题。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>三力平衡时，任意两个力的合力与第三个力等大反向。</li>
+<li>物体速度为零时一定处于平衡状态。</li>
+<li>正交分解列平衡方程：ΣFx = 0，ΣFy = 0。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✗（瞬时速度为零但加速度不为零，如上抛最高点）　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li>平衡条件：<strong>ΣF = 0</strong>（正交分解：ΣFx = 0，ΣFy = 0）</li>
+<li>三力平衡：任意两力的合力与第三力<strong>等大反向</strong>；三力构成<strong>闭合三角形</strong></li>
+<li>解题步骤：选对象 → 受力分析（画图）→ 建系 → 列方程</li>
+</ul>
+<p><strong>适用条件</strong>：共点力；"缓慢移动"过程中每一时刻都可视为平衡（动态平衡）。</p>
+<p><strong>易错边界</strong>
+1. 把"速度为零"等同"平衡"（上抛最高点）
+2. 漏画力（最常漏：摩擦力、支持力）
+3. 三力平衡时把方向搞反（合力与第三力反向）</p>
+<h3>例题 1 · L1 基础</h3>
+<p>质量 2 kg 的物体放在倾角 37° 的光滑斜面上，用水平方向的力 F 推住使其静止（g = 10）。求 F 和斜面对物体的支持力 N。</p>
+<p><strong>解析</strong>：
+1. 取水平-竖直坐标：N 的竖直分量平衡重力，水平分量平衡 F
+2. 竖直：N cos37° = mg = 20 ⇒ N = <strong>25 N</strong>
+3. 水平：F = N sin37° = 25 × 0.6 = <strong>15 N</strong></p>
+<p><img alt="斜面上受水平力的三力平衡" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IE0tMy4144CA5pac6Z2i5LiK5Y+X5rC05bmz5Yqb55qE5LiJ5Yqb5bmz6KGhPC90ZXh0Pgo8cG9seWdvbiBwb2ludHM9IjkwLDIzMCAzMzAsMjMwIDkwLDQ5IiBmaWxsPSIjZjZmNmYyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjxnIHRyYW5zZm9ybT0icm90YXRlKDM3IDI0OSAxNDcpIj48cmVjdCB4PSIyMTciIHk9IjEzMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjM0IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48bGluZSB4MT0iMTUwIiB5MT0iMTQ3IiB4Mj0iMjEyIiB5Mj0iMTQ3IiBzdHJva2U9IiMxZjZmZWIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLWJsdWUpIi8+PHRleHQgeD0iMTU2IiB5PSIxMzgiIGZpbGw9IiMxZjZmZWIiIGZvbnQtc2l6ZT0iMTMiPkY8L3RleHQ+PGxpbmUgeDE9IjI0OSIgeTE9IjE0NyIgeDI9IjI4NSIgeTI9Ijk5IiBzdHJva2U9IiM2YjcyODAiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLWdyYXkpIi8+PHRleHQgeD0iMjkyIiB5PSI5NCIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMyI+TjwvdGV4dD48bGluZSB4MT0iMjQ5IiB5MT0iMTQ3IiB4Mj0iMjQ5IiB5Mj0iMjMyIiBzdHJva2U9IiNjMDM5MmIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLXJlZCkiLz48dGV4dCB4PSIyNTciIHk9IjIwNSIgZmlsbD0iI2MwMzkyYiIgZm9udC1zaXplPSIxMyI+RzwvdGV4dD48dGV4dCB4PSIyOTgiIHk9IjIyMiIgZmlsbD0iIzMzMzMzMyIgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj4zN8KwPC90ZXh0Pjx0ZXh0IHg9IjYwIiB5PSIzOCIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj7ml6Dmkanmk6bvvIzmsLTlubPlipsgRiDmiorniankvZPljovkvY88L3RleHQ+Cjwvc3ZnPgo=" /></p>
+<p><strong>💥 陷阱</strong>：用 F = mg sin37° = 12 N。水平力不是沿斜面方向的，必须走正交分解。</p>
+<p><strong>变式</strong>：若 F 改为"沿斜面向上"，F 多大？（mg sin37° = 12 N，此时 N = 16 N）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>轻杆水平固定在墙上，杆端系一根绳并悬挂 20 N 的重物，绳与<strong>竖直方向</strong>的夹角为 37°。求绳的拉力 T 和杆对结点的作用力 N。</p>
+<p><strong>解析</strong>：
+1. 结点受三个力：绳拉力 T（沿绳斜向上）、杆的力 N（沿杆水平）、重力 20 N（竖直向下）
+2. 竖直方向：T cos37° = 20 ⇒ T = 20/0.8 = <strong>25 N</strong>
+3. 水平方向：N = T sin37° = 25 × 0.6 = <strong>15 N</strong>（杆对结点是推力）</p>
+<p><strong>💥 陷阱</strong>：把"与竖直方向成 37°"当成"与水平方向成 37°"，写成 T sin37° = 20 ⇒ T ≈ 33 N。<strong>角度的参照物必须先看清</strong>，这是平衡题第一号失分点。</p>
+<p><strong>变式</strong>：若绳与竖直方向成 53°，T 和 N 各是多少？（T = 20/cos53° ≈ 33.3 N，N = 20 tan53° ≈ 26.7 N）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>小球重 20 N，用两根绳悬挂：绳 OA 与竖直方向成 30°，绳 OB 水平。求两绳的拉力。</p>
+<p><strong>解析</strong>：
+1. 以结点为对象，三力：T_A（沿 OA 斜向上）、T_B（水平）、G = 20 N
+2. 竖直：T_A cos30° = 20 ⇒ T_A = 20/0.866 ≈ <strong>23.1 N</strong>
+3. 水平：T_B = T_A sin30° ≈ 23.1 × 0.5 ≈ <strong>11.5 N</strong></p>
+<p><strong>💥 陷阱</strong>：把 30° 当成"与水平方向的夹角"，算出 T_A = 20/sin30° = 40 N。<strong>角度基准必须看清</strong>，这是平衡题最高频的失分点。</p>
+<p><strong>变式</strong>：若把 OB 绳剪断，小球摆到最低点时绳 OA 的拉力是多少？（超过 20 N，属圆周运动，见单元四）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 三力平衡，其中两力为 3 N 和 4 N，第三力可能是 6 N 吗？② 判断：物体做匀速直线运动时处于平衡状态。</p>
+<blockquote>
+<p>答案：① 可以（3+4 &gt; 6）　② ✓</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-3.6 动态平衡</h2>
+<p><em>力学 › 第3章 相互作用 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-3.5 ｜ 关联 A-2.7　★</em></p>
+<p><strong>⚡ 先猜</strong>：挡板缓慢倒下时，球对挡板的压力是一直变大吗？</p>
+<h3>30 秒概述</h3>
+<p>动态平衡的题眼是"<strong>缓慢</strong>"——每一时刻都平衡。解法只有一条主线：找到<strong>不变的力</strong>（通常是重力）和<strong>方向不变的力</strong>，第三个力转动时，三个力构成<strong>矢量三角形</strong>，边长的变化就是力的大小变化。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>动态平衡中，若一个力大小方向不变、一个力方向不变，可用矢量三角形分析。</li>
+<li>求某个力的最小值时，该力与另一个力垂直时最小。</li>
+<li>"缓慢移动"过程中，物体每一时刻都可视为平衡。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✓　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li>矢量三角形法：G 恒定（大小方向）、N 方向不变、F 方向变化 ⇒ 画三角形看边长</li>
+<li><strong>最小力</strong>：当某力与另一力垂直时取最小值</li>
+<li>相似三角形法：力的三角形与几何三角形相似时，用边长比求力</li>
+</ul>
+<p><strong>适用条件</strong>：缓慢移动（每时刻平衡）；三力且其中至少一力方向不变。</p>
+<p><strong>易错边界</strong>
+1. 把"转动过程中力一直变大"想当然（多数是先减后增）
+2. 最小力条件记成"与重力垂直"（应是<strong>与另一力垂直</strong>）
+3. 忘记"缓慢"意味着可以逐时刻列平衡方程</p>
+<h3>例题 1 · L1 基础</h3>
+<p>小球重 20 N，用绳悬挂，用水平力 F 把球拉偏，使绳与竖直方向成 37°。求绳的拉力 T 和 F。</p>
+<p><strong>解析</strong>：
+1. 三力：T（沿绳）、F（水平）、G = 20 N（竖直）
+2. 竖直：T cos37° = 20 ⇒ T = <strong>25 N</strong>
+3. 水平：F = T sin37° = 25 × 0.6 = <strong>15 N</strong></p>
+<p><img alt="绳偏角固定时拉力的最小值" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IE0tMy4244CA57uz5YGP6KeS5Zu65a6a5pe25ouJ5Yqb55qE5pyA5bCP5YC8PC90ZXh0Pgo8bGluZSB4MT0iMTQwIiB5MT0iNTAiIHgyPSIzNjAiIHkyPSI1MCIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjQiLz48bGluZSB4MT0iMjUwIiB5MT0iNTAiIHgyPSIzMzQiIHkyPSIxNjIiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjI1MCIgeTE9IjUwIiB4Mj0iMjUwIiB5Mj0iMTgwIiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI2IDQiLz48Y2lyY2xlIGN4PSIzMzQiIGN5PSIxNjIiIHI9IjE4IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIzMzQiIHkxPSIxNjIiIHgyPSIyOTIiIHkyPSIxMDYiIHN0cm9rZT0iIzFmNmZlYiIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tYmx1ZSkiLz48dGV4dCB4PSIyOTQiIHk9IjEyMiIgZmlsbD0iIzFmNmZlYiIgZm9udC1zaXplPSIxMyI+VDwvdGV4dD48bGluZSB4MT0iMzUyIiB5MT0iMTYyIiB4Mj0iNDE2IiB5Mj0iMTYyIiBzdHJva2U9IiNiNDUzMDkiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLW9yYW5nZSkiLz48dGV4dCB4PSIzOTYiIHk9IjE1MiIgZmlsbD0iI2I0NTMwOSIgZm9udC1zaXplPSIxMyI+RjwvdGV4dD48bGluZSB4MT0iMzM0IiB5MT0iMTYyIiB4Mj0iMzM0IiB5Mj0iMjQwIiBzdHJva2U9IiNjMDM5MmIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLXJlZCkiLz48dGV4dCB4PSIzNDIiIHk9IjIxNiIgZmlsbD0iI2MwMzkyYiIgZm9udC1zaXplPSIxMyI+RzwvdGV4dD48bGluZSB4MT0iMzM0IiB5MT0iMTYyIiB4Mj0iMzkwIiB5Mj0iMTIwIiBzdHJva2U9IiM2YjcyODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiA0IiBtYXJrZXItZW5kPSJ1cmwoI20tZ3JheSkiLz48dGV4dCB4PSIzOTIiIHk9IjExNCIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMSI+RiDmnIDlsI88L3RleHQ+PHRleHQgeD0iMzA0IiB5PSI5MiIgZmlsbD0iIzMzMzMzMyIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj4zN8KwPC90ZXh0Pgo8L3N2Zz4K" /></p>
+<p><strong>💥 陷阱</strong>：用 T = 20/cos37° 后忘记 F 要用 T 去求，直接写 F = 20 tan37° 也对——但角度基准一错就全错。</p>
+<p><strong>变式</strong>：绳偏角增大到 45°，T 和 F 各是多少？（T ≈ 28.3 N，F = 20 N）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>承上题：保持绳与竖直方向成 37° 不变，但<strong>改变 F 的方向</strong>。求 F 的最小值及此时绳的拉力。</p>
+<p><strong>解析</strong>：
+1. 三个力构成闭合三角形：G 竖直向下、T 沿绳、F 任意方向
+2. F 最小时，F 与 T <strong>垂直</strong>（点到直线的距离最短）
+3. F_min = G sin37° = 20 × 0.6 = <strong>12 N</strong>
+4. 此时 T = G cos37° = <strong>16 N</strong></p>
+<p><strong>💥 陷阱</strong>：认为"F 水平时最小"（15 N）。水平方向不是最短距离，垂直绳方向才是。</p>
+<p><strong>变式</strong>：若绳偏角为 θ，F 的最小值是多少？（G sinθ）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>光滑斜面上放一个球，用一块挡板挡住。挡板绕底端缓慢地从竖直位置转到水平位置。
+(1) 球对挡板的压力如何变化？
+(2) 球对斜面的压力如何变化？
+(3) 什么时候挡板压力最小？</p>
+<p><strong>解析</strong>：
+1. 球受三力：重力 G（恒定）、斜面支持力 N（方向不变，垂直斜面）、挡板支持力 F（方向随挡板转动）
+2. 三力构成矢量三角形：G 固定，N 的方向固定，F 的方向转动
+3. F 最小时，F 与 N <strong>垂直</strong>，即挡板与斜面垂直
+4. 挡板从竖直转到水平，F 先减小（到与斜面垂直时最小）后增大；N 一直减小</p>
+<p><strong>💥 陷阱</strong>：认为"挡板越平压力越大"或"一直变小"。实际是先减后增，最小值在"挡板⊥斜面"处——这个位置恰好也是"挡板最短"的位置。</p>
+<p><strong>变式</strong>：若挡板从水平缓慢转到竖直，结论如何？（F 先减后增，最小值仍在挡板⊥斜面时）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 动态平衡中，F 与哪个力垂直时 F 最小？② 判断：缓慢移动过程中，物体所受合力始终为零。</p>
+<blockquote>
+<p>答案：① 与另一个"方向不变的力"垂直　② ✓</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-3.7 整体法与隔离法</h2>
+<p><em>力学 › 第3章 相互作用 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-3.5 ｜ 关联 A-4（牛顿定律）</em></p>
+<p><strong>⚡ 先猜</strong>：要求 A、B 之间的摩擦力，能对"A+B 整体"列方程吗？</p>
+<h3>30 秒概述</h3>
+<p><strong>求外力用整体，求内力用隔离</strong>。整体法的好处是不用管内部的一堆相互作用；但 A、B 之间的摩擦力、弹力属于内力，整体法看不见——必须隔离出来。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>整体法可以求出系统内部物体之间的作用力。</li>
+<li>当系统内各物体加速度相同时，可以把它们当成一个整体分析。</li>
+<li>求内力时必须用隔离法。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（整体法只看得见外力）　2. ✓　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>整体法</strong>：把系统当一个物体，只分析外力，求加速度</li>
+<li><strong>隔离法</strong>：把某个物体单独取出，分析它受的所有力，求内力</li>
+<li>常用组合：<strong>整体求 a → 隔离求内力</strong></li>
+</ul>
+<p><strong>适用条件</strong>：整体法要求各物体<strong>加速度相同</strong>（相对静止或一起运动）；加速度不同时不能用。</p>
+<p><strong>易错边界</strong>
+1. 用整体法去求内力（求不出来，或求出 0）
+2. 隔离时漏掉"另一个物体给它的力"
+3. 整体法忘记把内力"抵消"（内力在整体中不出现）</p>
+<h3>例题 1 · L1 基础</h3>
+<p>质量 2 kg 的 A 叠放在质量 1 kg 的 B 上，B 放在光滑水平面上。用 9 N 的水平力拉 B，A、B 保持相对静止，A、B 间动摩擦因数 μ = 0.5（g = 10）。求 A、B 的加速度和 A 受到的摩擦力。</p>
+<p><strong>解析</strong>：
+1. <strong>整体法</strong>求加速度：a = F/(m_A + m_B) = 9/3 = <strong>3 m/s²</strong>
+2. <strong>隔离 A</strong>：A 只受 B 给它的静摩擦力（水平方向）⇒ f = m_A·a = 2 × 3 = <strong>6 N</strong>，方向与 F 相同
+3. 校验：f_max = μ m_A g = 0.5 × 20 = 10 N &gt; 6 N ⇒ 确实相对静止 ✓</p>
+<p><img alt="叠放体的整体法与隔离法" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IE0tMy4344CA5Y+g5pS+5L2T55qE5pW05L2T5rOV5LiO6ZqU56a75rOVPC90ZXh0Pgo8bGluZSB4MT0iNzAiIHkxPSIyMzAiIHgyPSI0MTAiIHkyPSIyMzAiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48bGluZSB4MT0iNzAiIHkxPSIyMzAiIHgyPSI2MSIgeTI9IjI0MiIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iODgiIHkxPSIyMzAiIHgyPSI3OSIgeTI9IjI0MiIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTA2IiB5MT0iMjMwIiB4Mj0iOTciIHkyPSIyNDIiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjEyNCIgeTE9IjIzMCIgeDI9IjExNSIgeTI9IjI0MiIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTQyIiB5MT0iMjMwIiB4Mj0iMTMzIiB5Mj0iMjQyIiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxNjAiIHkxPSIyMzAiIHgyPSIxNTEiIHkyPSIyNDIiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjE3OCIgeTE9IjIzMCIgeDI9IjE2OSIgeTI9IjI0MiIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTk2IiB5MT0iMjMwIiB4Mj0iMTg3IiB5Mj0iMjQyIiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyMTQiIHkxPSIyMzAiIHgyPSIyMDUiIHkyPSIyNDIiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjIzMiIgeTE9IjIzMCIgeDI9IjIyMyIgeTI9IjI0MiIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjUwIiB5MT0iMjMwIiB4Mj0iMjQxIiB5Mj0iMjQyIiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyNjgiIHkxPSIyMzAiIHgyPSIyNTkiIHkyPSIyNDIiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjI4NiIgeTE9IjIzMCIgeDI9IjI3NyIgeTI9IjI0MiIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzA0IiB5MT0iMjMwIiB4Mj0iMjk1IiB5Mj0iMjQyIiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzMjIiIHkxPSIyMzAiIHgyPSIzMTMiIHkyPSIyNDIiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjM0MCIgeTE9IjIzMCIgeDI9IjMzMSIgeTI9IjI0MiIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzU4IiB5MT0iMjMwIiB4Mj0iMzQ5IiB5Mj0iMjQyIiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzNzYiIHkxPSIyMzAiIHgyPSIzNjciIHkyPSIyNDIiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjM5NCIgeTE9IjIzMCIgeDI9IjM4NSIgeTI9IjI0MiIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48cmVjdCB4PSIxNjUiIHk9IjE3MCIgd2lkdGg9IjEzMCIgaGVpZ2h0PSI2MCIgZmlsbD0iI2VlZjJmNyIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxOTYiIHk9IjIwNiIgZmlsbD0iIzMzMzMzMyIgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj5CICAxIGtnPC90ZXh0PjxyZWN0IHg9IjE5MCIgeT0iMTIwIiB3aWR0aD0iODAiIGhlaWdodD0iNTAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjAwIiB5PSIxNTIiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+QSAgMiBrZzwvdGV4dD48bGluZSB4MT0iMjk2IiB5MT0iMjAwIiB4Mj0iMzcyIiB5Mj0iMjAwIiBzdHJva2U9IiMxZjZmZWIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLWJsdWUpIi8+PHRleHQgeD0iMzAwIiB5PSIxOTAiIGZpbGw9IiMxZjZmZWIiIGZvbnQtc2l6ZT0iMTMiPkYgPSA5IE48L3RleHQ+PGxpbmUgeDE9IjI3MCIgeTE9IjE0NSIgeDI9IjMyMiIgeTI9IjE0NSIgc3Ryb2tlPSIjMWE3ZjM3IiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1ncmVlbikiLz48dGV4dCB4PSIzMjgiIHk9IjE1MCIgZmlsbD0iIzFhN2YzNyIgZm9udC1zaXplPSIxMyI+ZjwvdGV4dD48dGV4dCB4PSI3OCIgeT0iMjU4IiBmaWxsPSIjNmI3MjgwIiBmb250LXNpemU9IjEyIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuWcsOmdouWFiea7ke+8m0HjgIFCIOmXtCDOvCA9IDAuNTwvdGV4dD4KPC9zdmc+Cg==" /></p>
+<p><strong>💥 陷阱</strong>：对 A 用 f = μN = 10 N。那是<strong>最大值</strong>，实际只有 6 N。</p>
+<p><strong>变式</strong>：若地面也粗糙（μ地 = 0.2），加速度多大？（a = (9 − 6)/3 = 1 m/s²）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>承上题。逐渐增大拉力 F，A、B 恰好要发生相对滑动时，F 多大？</p>
+<p><strong>解析</strong>：
+1. 临界条件：A 受到的摩擦力达到最大静摩擦 f_max = 10 N
+2. 此时 A 的加速度 a = f_max/m_A = 10/2 = <strong>5 m/s²</strong>
+3. 整体：F = (m_A + m_B)a = 3 × 5 = <strong>15 N</strong></p>
+<p><strong>💥 陷阱</strong>：直接用 f_max 当 F（10 N）。F 还要同时给 B 提供加速度。</p>
+<p><strong>变式</strong>：若 F = 20 N，A、B 之间摩擦力多大？（已相对滑动，f = μ m_A g = 10 N）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>质量 2 kg 的 A 叠在质量 3 kg 的 B 上，B 放在光滑水平面上。水平力 F 作用在 <strong>A</strong> 上，A、B 间动摩擦因数 μ = 0.4（g = 10）。求保持 A、B 相对静止的最大拉力 F。</p>
+<p><strong>解析</strong>：
+1. 临界时 B 受到的摩擦力达到最大：f_max = μ m_A g = 0.4 × 20 = <strong>8 N</strong>
+2. B 的加速度上限：a = f_max/m_B = 8/3 ≈ <strong>2.67 m/s²</strong>
+3. 整体：F = (m_A + m_B)a = 5 × 2.67 ≈ <strong>13.3 N</strong></p>
+<p><strong>💥 陷阱</strong>：把 F 作用在 A 上却用"B 的摩擦力"去算 A 的加速度。力作用在谁身上，谁的运动方程里就有它。</p>
+<p><strong>变式</strong>：若 F 作用在 B 上（从下方拉），最大 F 是多少？（f_max 仍 8 N，A 的 a = 8/2 = 4 m/s²，F = 5×4 = 20 N）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 整体法能求内力吗？② 判断：加速度不同的两个物体也能用整体法。</p>
+<blockquote>
+<p>答案：① 不能　② ✗（加速度相同才行）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-3.8 临界与极值</h2>
+<p><em>力学 › 第3章 相互作用 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-3.3、A-3.5 ｜ 关联 A-3.7　★</em></p>
+<p><strong>⚡ 先猜</strong>：物体在斜面上"恰好不下滑"时，动摩擦因数 μ 和倾角 θ 是什么关系？</p>
+<h3>30 秒概述</h3>
+<p>题里出现"恰好""刚要""最大""最小"，就是在喊临界。临界只有三种：<strong>摩擦力达到最大静摩擦</strong>、<strong>支持力为零（刚要离开）</strong>、<strong>绳刚要松弛（拉力为零）</strong>。找到是哪一个，方程就列得出来。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>物体在斜面上恰好静止的条件是 tanθ = μ。</li>
+<li>"恰好滑动"意味着摩擦力为零。</li>
+<li>支持力 N = 0 是物体"刚要离开接触面"的临界条件。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✗（是达到最大静摩擦）　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>斜面临界</strong>：恰好不下滑 ⇔ mg sinθ = μ mg cosθ ⇔ <strong>tanθ = μ</strong></li>
+<li><strong>压墙临界</strong>：水平力 F 把物体压在竖直墙上不下滑 ⇔ μF ≥ mg ⇔ <strong>F_min = mg/μ</strong></li>
+<li>通用方法：找临界条件 → 列方程 → 解出临界值</li>
+</ul>
+<p><strong>适用条件</strong>：最大静摩擦 ≈ μN；"恰好"类问题只考虑临界瞬间，不考虑过程。</p>
+<p><strong>易错边界</strong>
+1. 把"恰好"当成"摩擦力为零"
+2. 压墙问题里把 N 当成 mg（N 是水平力 F 产生的）
+3. 斜面上有外力时仍套 tanθ = μ</p>
+<h3>例题 1 · L1 基础</h3>
+<p>物体放在可调倾角的斜面上，动摩擦因数 μ = 0.5。求它能保持静止的最大倾角。</p>
+<p><strong>解析</strong>：
+1. 恰好静止：mg sinθ = μ mg cosθ
+2. 两边约去 mg cosθ：tanθ = μ = 0.5
+3. θ = arctan0.5 ≈ <strong>26.6°</strong>（约 27°）</p>
+<p><img alt="斜面临界：恰好不下滑" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IE0tMy4444CA5pac6Z2i5Li055WM77ya5oGw5aW95LiN5LiL5ruRPC90ZXh0Pgo8cG9seWdvbiBwb2ludHM9IjkwLDIzMCAzNTAsMjMwIDkwLDgwIiBmaWxsPSIjZjZmNmYyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjxnIHRyYW5zZm9ybT0icm90YXRlKDMwIDI0MiAxNDgpIj48cmVjdCB4PSIyMDgiIHk9IjEzMiIgd2lkdGg9IjY4IiBoZWlnaHQ9IjMyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48bGluZSB4MT0iMjQyIiB5MT0iMTQ4IiB4Mj0iMjcyIiB5Mj0iOTYiIHN0cm9rZT0iIzZiNzI4MCIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tZ3JheSkiLz48dGV4dCB4PSIyODAiIHk9IjkyIiBmaWxsPSIjNmI3MjgwIiBmb250LXNpemU9IjEzIj5OPC90ZXh0PjxsaW5lIHgxPSIyNDIiIHkxPSIxNDgiIHgyPSIxOTQiIHkyPSIxMjAiIHN0cm9rZT0iIzFhN2YzNyIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tZ3JlZW4pIi8+PHRleHQgeD0iMTc2IiB5PSIxMTIiIGZpbGw9IiMxYTdmMzciIGZvbnQtc2l6ZT0iMTMiPmY8L3RleHQ+PGxpbmUgeDE9IjI0MiIgeTE9IjE0OCIgeDI9IjI0MiIgeTI9IjIzNiIgc3Ryb2tlPSIjYzAzOTJiIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1yZWQpIi8+PHRleHQgeD0iMjUwIiB5PSIyMDgiIGZpbGw9IiNjMDM5MmIiIGZvbnQtc2l6ZT0iMTMiPkc8L3RleHQ+PHRleHQgeD0iMzM2IiB5PSIyMjQiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+zrg8L3RleHQ+PHRleHQgeD0iNjAiIHk9IjQyIiBmaWxsPSIjNmI3MjgwIiBmb250LXNpemU9IjEyIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPuaBsOWlvemdmeatoiDih5QgdGFuzrggPSDOvDwvdGV4dD4KPC9zdmc+Cg==" /></p>
+<p><strong>💥 陷阱</strong>：答 30°（以为 sin30° = 0.5 就对应 μ = 0.5）。关系是 tanθ = μ，不是 sinθ = μ。</p>
+<p><strong>变式</strong>：μ = 1 时，最大倾角多少？（45°）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>质量 2 kg 的物体被水平力 F 压在竖直墙面上，物体与墙的动摩擦因数 μ = 0.4（g = 10）。要使物体不滑下来，F 至少多大？</p>
+<p><strong>解析</strong>：
+1. 竖直方向：静摩擦平衡重力 ⇒ f = mg = 20 N
+2. 静摩擦上限：f ≤ μN = μF
+3. 临界：μF = mg ⇒ F = mg/μ = 20/0.4 = <strong>50 N</strong></p>
+<p><strong>💥 陷阱</strong>：用 f = μmg = 8 N 去和重力比。这里 N 是<strong>水平推力 F</strong>，不是重力。</p>
+<p><strong>变式</strong>：若 F = 100 N，摩擦力多大？（20 N，静摩擦"按需"）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>质量 2 kg 的物体放在倾角 37° 的斜面上，动摩擦因数 μ = 0.5，用水平方向的力 F 推它（g = 10）。求使物体保持静止的 F 的范围。</p>
+<p><strong>解析</strong>：
+1. 正交分解（沿斜面/垂直斜面）：
+   沿斜面：F cos37° 向上，mg sin37° = 12 N 向下
+   垂直斜面：N = mg cos37° + F sin37° = 16 + 0.6F
+2. <strong>F 最大</strong>（物体有上滑趋势，摩擦向下）：
+   F cos37° = mg sin37° + μN
+   0.8F = 12 + 0.5(16 + 0.6F) = 20 + 0.3F ⇒ 0.5F = 20 ⇒ <strong>F_max = 40 N</strong>
+3. <strong>F 最小</strong>（物体有下滑趋势，摩擦向上）：
+   F cos37° + μN = mg sin37°
+   0.8F + 8 + 0.3F = 12 ⇒ 1.1F = 4 ⇒ <strong>F_min ≈ 3.6 N</strong>
+4. 结论：<strong>3.6 N ≤ F ≤ 40 N</strong></p>
+<p><strong>💥 陷阱</strong>：只算一个方向（多数人只算"推得上去"的最大值），漏掉"推得太小会滑下来"。双向临界是这类题的标志。</p>
+<p><strong>变式</strong>：若 μ 增大到 0.8，F 的范围如何变？（范围变宽：F_min 更小，F_max 更大）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 斜面上"恰好静止"的条件式？② 压墙问题中，正压力 N 由什么提供？</p>
+<blockquote>
+<p>答案：① tanθ = μ　② 水平推力 F（不是重力）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>本章公式总表</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>公式</th>
+<th>含义</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>G = mg</td>
+<td>重力</td>
+<td>竖直向下</td>
+</tr>
+<tr>
+<td>2</td>
+<td>F = kx</td>
+<td>胡克定律</td>
+<td>弹性限度内，x 为形变量</td>
+</tr>
+<tr>
+<td>3</td>
+<td>f = μN</td>
+<td>滑动摩擦</td>
+<td>N 为正压力，不一定等于 mg</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0 ≤ f ≤ f_max</td>
+<td>静摩擦</td>
+<td>大小由平衡条件定</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F = √(F₁²+F₂²+2F₁F₂cosθ)</td>
+<td>合力</td>
+<td>共点力</td>
+</tr>
+<tr>
+<td>6</td>
+<td>|F₁−F₂| ≤ F ≤ F₁+F₂</td>
+<td>合力范围</td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ΣFx = 0，ΣFy = 0</td>
+<td>平衡条件</td>
+<td>共点力</td>
+</tr>
+<tr>
+<td>8</td>
+<td>tanθ = μ</td>
+<td>斜面临界</td>
+<td>恰好静止</td>
+</tr>
+<tr>
+<td>9</td>
+<td>F_min = mg/μ</td>
+<td>压墙不下滑</td>
+<td>水平力压竖直墙</td>
+</tr>
+</tbody>
+</table>
+<h2>本章易错清单</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>错误</th>
+<th>正确</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>重力垂直斜面向下</td>
+<td>竖直向下</td>
+</tr>
+<tr>
+<td>2</td>
+<td>重心一定在物体上</td>
+<td>圆环重心在圆心</td>
+</tr>
+<tr>
+<td>3</td>
+<td>F = kx 中 x 是长度</td>
+<td>是形变量</td>
+</tr>
+<tr>
+<td>4</td>
+<td>弹簧秤两端各 5 N，读数 10 N</td>
+<td>读数 5 N</td>
+</tr>
+<tr>
+<td>5</td>
+<td>静摩擦代 μN</td>
+<td>用平衡条件求，μN 只是上限</td>
+</tr>
+<tr>
+<td>6</td>
+<td>摩擦力一定是阻力</td>
+<td>可以是动力</td>
+</tr>
+<tr>
+<td>7</td>
+<td>合力一定大于分力</td>
+<td>120° 时可更小</td>
+</tr>
+<tr>
+<td>8</td>
+<td>速度为零即平衡</td>
+<td>上抛最高点不平衡</td>
+</tr>
+<tr>
+<td>9</td>
+<td>整体法求内力</td>
+<td>内力必须隔离</td>
+</tr>
+<tr>
+<td>10</td>
+<td>"恰好"= 摩擦力为零</td>
+<td>= 摩擦力最大</td>
+</tr>
+<tr>
+<td>11</td>
+<td>压墙 N = mg</td>
+<td>N = F</td>
+</tr>
+<tr>
+<td>12</td>
+<td>斜面临界 sinθ = μ</td>
+<td>tanθ = μ</td>
+</tr>
+</tbody>
+</table>
+<h2>本章关系边</h2>
+<table>
+<thead>
+<tr>
+<th>起点</th>
+<th>终点</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-3.1</td>
+<td>A-3.4</td>
+<td>前置（重力分解）</td>
+</tr>
+<tr>
+<td>A-3.2</td>
+<td>A-3.5</td>
+<td>前置（弹力参与平衡）</td>
+</tr>
+<tr>
+<td>A-3.3</td>
+<td>A-3.8</td>
+<td>前置（临界=最大静摩擦）</td>
+</tr>
+<tr>
+<td>A-3.4</td>
+<td>A-3.5</td>
+<td>派生（分解用于平衡）</td>
+</tr>
+<tr>
+<td>A-3.5</td>
+<td>A-3.6</td>
+<td>延伸（动态平衡）</td>
+</tr>
+<tr>
+<td>A-3.5</td>
+<td>A-3.7</td>
+<td>延伸（系统平衡）</td>
+</tr>
+<tr>
+<td>A-3.7</td>
+<td>A-4</td>
+<td>综合（牛顿第二定律）</td>
+</tr>
+</tbody>
+</table></div></html>

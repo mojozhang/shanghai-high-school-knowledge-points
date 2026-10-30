@@ -1,0 +1,620 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>单元一 第1章 运动的描述</title><style>:root{--ink:#1c1c1e;--sub:#6b6b70;--line:#e3e3e8;--accent:#0b6b5b;}
+*{box-sizing:border-box}
+body{margin:0;background:#f7f7f4;color:var(--ink);font:16px/1.85 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:900px;margin:0 auto;padding:56px 36px 120px;background:#fff;box-shadow:0 0 0 1px var(--line);}
+h1{font-size:27px;border-bottom:3px solid var(--accent);padding-bottom:12px;margin-top:64px}
+h1:first-of-type{margin-top:0}
+h2{font-size:21px;margin-top:56px;background:#eef4f2;border-left:6px solid var(--accent);padding:10px 14px;border-radius:0 6px 6px 0}
+h3{font-size:16.5px;margin-top:30px;color:#0a4f43}
+h2+ p em,h3+ p em{color:var(--sub);font-size:13.5px;font-style:normal}
+blockquote{margin:14px 0 24px;padding:12px 16px;background:#f1f1ec;border-left:4px solid #9a9a90;border-radius:0 6px 6px 0;font-size:15px}
+table{border-collapse:collapse;width:100%;margin:16px 0 24px;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
+th{background:#f0f4f2;font-weight:600}
+tr:nth-child(even) td{background:#fbfbf9}
+code{background:#f0f0ea;padding:2px 5px;border-radius:4px}
+strong{color:#0a4f43}
+hr{border:none;border-top:1px dashed var(--line);margin:36px 0}</style><div class="wrap"><h1>力学 · 单元一（第 1 章）：运动的描述</h1>
+<blockquote>
+<p><strong>状态</strong>：【样章待验收　v3 分层版】
+<strong>覆盖</strong>：A-1.1 ～ A-1.5，共 5 考点 / 15 道例题 / 15 道自评题
+<strong>单元</strong>：单元一「直线运动」＝ 沪科版必修第一册 第 1 章 + 第 2 章；本文件只含第 1 章，第 2 章见 <code>04-力学-单元一-2章-匀变速直线运动.md</code>
+<strong>学段</strong>：L1 高一同步 ｜ L2 高二复习 ｜ L3 高三冲刺</p>
+</blockquote>
+<hr />
+<h2>单元入口自评（10 题 · 12 分钟 · 覆盖第 1、2 章）</h2>
+<p>先做这 10 题，不翻书、不查公式。做完对照得分表决定学多少。</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>题目</th>
+<th>答案</th>
+<th>✓/✗</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T-1-1</td>
+<td>汽车以 10 m/s 匀速行驶 5 s，位移是多少？</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-2</td>
+<td>下列说法正确的是：A. 位移大小一定等于路程　B. 只有单向直线运动时位移大小才等于路程　C. 路程是矢量</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-3</td>
+<td>速度从 10 m/s 增到 20 m/s 用时 5 s，加速度多大？</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-4</td>
+<td>汽车以 20 m/s 行驶，刹车加速度大小 5 m/s²，6 s 内位移多少？</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-5</td>
+<td>物体自由下落 3 s 落地（g 取 10），下落高度多少？</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-6</td>
+<td>以 20 m/s 竖直上抛，3 s 末速度多大？方向如何？</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-7</td>
+<td>v-t 图线与时间轴围成的面积表示什么？</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-8</td>
+<td>Δx = aT² 的适用条件是什么？</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-9</td>
+<td>两车同向行驶，速度相等时它们之间的距离处于什么状态？</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>T-1-10</td>
+<td>初速度为零的匀加速运动，连续相等时间内的位移比是多少？</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>判定表</h3>
+<table>
+<thead>
+<tr>
+<th>得分</th>
+<th>判定</th>
+<th>行动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>10</strong></td>
+<td>整个单元已掌握</td>
+<td><strong>跳过单元一</strong>，只做章末综合测</td>
+</tr>
+<tr>
+<td><strong>7–9</strong></td>
+<td>大体掌握</td>
+<td>只学 ★ 考点（A-1.3、A-1.4、A-2.1、A-2.3、A-2.7），每个只做例题 3 + 变式</td>
+</tr>
+<tr>
+<td><strong>4–6</strong></td>
+<td>部分掌握</td>
+<td>★ 考点全卡 + 其余考点只做例题 1、2</td>
+</tr>
+<tr>
+<td><strong>≤3</strong></td>
+<td>尚未掌握</td>
+<td>从 A-1.1 顺序全学</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>做错的题号就是你的漏洞清单，答案与考点对照见文末。</p>
+</blockquote>
+<hr />
+<h2>A-1.1 质点、参考系与坐标系</h2>
+<p><em>力学 › 第1章 运动的描述 ｜ Ⅰ · 考频低 ｜ 前置：无 ｜ 关联：A-1.2</em></p>
+<h3>30 秒概述</h3>
+<p>物理研究运动，第一步是定"把物体看成什么"。<strong>质点</strong>就是"忽略形状大小、只保留质量的点"；<strong>参考系</strong>就是"你站在哪儿看"。这两个选择决定了后面所有描述成不成立——选错，方程写得再对也是错的。</p>
+<h3>30 秒自评（2 分钟）</h3>
+<ol>
+<li>研究地球绕太阳公转时，可以把地球看作质点。</li>
+<li>一个物体能否看作质点，由物体本身的大小决定。</li>
+<li>选择不同的参考系，对同一物体运动的描述可能不同。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓（公转半径比地球直径大 4 个数量级）　2. ✗（由<strong>研究的问题</strong>决定）　3. ✓</p>
+</blockquote>
+<h3>原理与公式</h3>
+<ul>
+<li><strong>质点</strong>：用来代替物体的、有质量的点，是一种理想化模型</li>
+<li>判据：物体的大小、形状<strong>对所研究问题</strong>的影响可以忽略</li>
+<li><strong>参考系</strong>：描述运动时选作参照的物体；不特别说明时以地面为参考系</li>
+<li><strong>坐标系</strong>：把位置定量化；一维取坐标轴，位移 Δx = x₂ − x₁</li>
+</ul>
+<h3>适用条件</h3>
+<ul>
+<li>质点：物体各部分运动状态相同，或线度远小于研究尺度</li>
+<li>参考系：一旦选定，描述同一过程时不得中途更换，否则位移、速度失去可比性</li>
+</ul>
+<h3>易错边界</h3>
+<ol>
+<li>"质点就是很小的物体"——原子研究内部结构时不能视为质点</li>
+<li>"参考系必须静止"——可以选运动的物体，如以车厢为参考系研究乘客</li>
+<li>不声明参考系就判"动/静"，同一现象会有两个都对的答案</li>
+</ol>
+<h3>例题 1 · L1 基础</h3>
+<p>下列情况中，能把加点物体看成质点的是（　）
+A. 研究地球的自转　B. 研究地球绕太阳的公转
+C. 研究火车通过某一路标所用的时间　D. 研究乒乓球在空中的旋转</p>
+<p><strong>解析</strong>：
+A：自转研究的正是各部分转动差异 ⇒ 不能
+B：轨道半径 1.5×10⁸ km，地球直径 1.28×10⁴ km，相差约 1 万倍 ⇒ <strong>可以</strong>
+C：火车长度与路标尺度相当，"通过时间"由车长决定 ⇒ 不能
+D：旋转本身就是各部分绕轴运动 ⇒ 不能
+答案 <strong>B</strong></p>
+<p><strong>陷阱</strong>：选 A 或 C 用的是"地球很大、火车很长"的大小判据；选 D 靠"乒乓球很小"的直觉。判据是<strong>问题</strong>，不是<strong>物体</strong>。</p>
+<p><strong>变式</strong>：把 B 改成"研究地球上的潮汐现象"，还能视为质点吗？（不能，潮汐取决于地球上不同位置受引力的差异）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>"两岸青山相对出，孤帆一片日边来。"请分别指出两句诗所选的参考系；并说明：电梯匀速上升时，电梯里的人看地面是"上升"还是"下降"？</p>
+<p><strong>解析</strong>：
+1. "青山相对出"——青山在动，是相对<strong>船（孤帆）</strong>而言 ⇒ 参考系是船
+2. "孤帆日边来"——帆在动，是相对<strong>两岸青山</strong>而言 ⇒ 参考系是岸（青山）
+3. 电梯里的人以<strong>电梯</strong>为参考系，地面相对电梯向下 ⇒ 看到地面<strong>下降</strong></p>
+<p><strong>陷阱</strong>：默认"参考系就是地面"。诗句里两句话的主语不同，参考系也就不同——这正是"运动是相对的"最好的例子。</p>
+<p><strong>变式</strong>：坐在行驶的车里看路边的树"向后跑"，是以什么为参考系？看同车乘客"不动"，又是以什么为参考系？</p>
+<h3>例题 3 · L3 综合</h3>
+<p>神舟飞船与空间站交会对接。
+(1) 研究"对接过程中的相对位置与姿态调整"时，飞船能否视为质点？
+(2) 研究"飞船绕地球飞行的周期"时，能否视为质点？
+(3) 对接完成后，以空间站为参考系，飞船处于什么状态？</p>
+<p><strong>解析</strong>：
+1. (1) 对接要控制两个航天器的相对位置与姿态，飞船各部分的尺寸不可忽略 ⇒ <strong>不能</strong>
+2. (2) 绕地周期只取决于轨道，飞船尺寸远小于轨道半径 ⇒ <strong>能</strong>
+3. (3) 对接后两者相对位置不变 ⇒ 以空间站为参考系，飞船<strong>静止</strong></p>
+<p><strong>陷阱</strong>：第 (1)(2) 问给出同一个物体、两种相反答案，很多同学只答一个然后说"矛盾"。不矛盾——<strong>同一个物体在不同问题里可以有不同身份</strong>，这就是质点概念的全部意义。</p>
+<p><strong>变式</strong>：若以飞船为参考系，空间站是静止还是运动？与第 (3) 问的结论是否一致？（一致，相对静止是相互的）</p>
+<h3>本节分流</h3>
+<ul>
+<li>3 题全对 → 直接做例题 3 + 变式，全对才过</li>
+<li>对 2 题 → 读"易错边界" + 例题 2 + 例题 3 变式</li>
+<li>≤1 题 → 从"原理与公式"顺序学到例题 3</li>
+</ul>
+<p><strong>够用标准</strong>：高一 → 例 1 对；高二 → 例 2 对；高三 → 例 3 + 变式全对</p>
+<hr />
+<h2>A-1.2 时刻与时间、位移与路程</h2>
+<p><em>力学 › 第1章 运动的描述 ｜ Ⅰ · 考频低 ｜ 前置：A-1.1 ｜ 关联：A-1.3</em></p>
+<h3>30 秒概述</h3>
+<p>"什么时候"和"走了多远"是两件事。<strong>时刻</strong>是时间轴上的一个点，<strong>时间</strong>是一段；<strong>位移</strong>只看起点和终点，<strong>路程</strong>看实际走了多长。只要不是单向直线运动，这两个数就不相等——曲线、往返全都如此。</p>
+<h3>30 秒自评（2 分钟）</h3>
+<ol>
+<li>"第 3 s 内"指的是 1 s 的时间间隔。</li>
+<li>物体做曲线运动时，位移大小一定小于路程。</li>
+<li>沿周长 400 m 的圆形跑道跑半圈，位移大小约 127 m。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓（从 2 s 末到 3 s 末）　2. ✓（曲线路径长于直线）　3. ✓（直径 400/π ≈ 127 m）</p>
+</blockquote>
+<h3>原理与公式</h3>
+<ul>
+<li><strong>时刻</strong>：时间轴上的点，对应位置或状态（"第 3 s 末"）</li>
+<li><strong>时间（间隔）</strong>：时间轴上的一段（"前 3 s 内""第 3 s 内"）</li>
+<li><strong>位移</strong>：初位置指向末位置的有向线段，矢量，与路径无关</li>
+<li><strong>路程</strong>：轨迹的实际长度，标量</li>
+<li>恒有 |位移| ≤ 路程；<strong>单向直线运动</strong>时取等号</li>
+</ul>
+<h3>适用条件</h3>
+<ul>
+<li>位移只由始末位置决定，可处理"绕行后回到原点"（位移为 0）</li>
+<li>路程必须沿轨迹累加，不能只看两端</li>
+</ul>
+<h3>易错边界</h3>
+<ol>
+<li>"第 3 s 内"是 1 s 的时间，不是"第 3 s 末"这一刻</li>
+<li>曲线运动、往返运动（如上抛回落）位移大小都小于路程</li>
+<li>平均速度用位移、平均速率用路程，混用是整题失分的开始（见 A-1.3）</li>
+</ol>
+<h3>例题 1 · L1 基础</h3>
+<p>运动员沿 100 m 直线跑道跑完全程；另一运动员沿周长 400 m 的圆形跑道跑一整圈。分别求两人的位移大小和路程。</p>
+<p><strong>解析</strong>：
+1. 100 m 直线：初末位置相距 100 m ⇒ 位移 <strong>100 m</strong>，路程 <strong>100 m</strong>（单向直线，两者相等）
+2. 圆形跑道一圈：回到起点 ⇒ 位移 <strong>0</strong>，路程 <strong>400 m</strong></p>
+<p><strong>陷阱</strong>：认为"跑了 400 m 位移就是 400 m"。位移只问起点终点，跑得再远也可能为零。</p>
+<p><strong>变式</strong>：若第一人跑到 100 m 处又折返 30 m，位移和路程各是多少？（70 m，130 m）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>手机导航显示："全程 3.2 km，预计 8 分钟。"出租车计价器则按行驶里程收费。
+(1) 3.2 km 是位移还是路程？
+(2) 若实际行驶路线是弯曲的，位移大小与 3.2 km 谁大？
+(3) 若司机绕路后回到出发点，位移是多少？计价器会怎么变？</p>
+<p><strong>解析</strong>：
+1. (1) 导航给的是<strong>沿道路的实际路径长度</strong> ⇒ 是<strong>路程</strong>
+2. (2) 位移 ≤ 路程 ⇒ 位移大小<strong>小于</strong> 3.2 km（除非路线是直线）
+3. (3) 回到出发点 ⇒ 位移 <strong>0</strong>；计价器按路程累计，<strong>照样收费</strong></p>
+<p><strong>陷阱</strong>：把导航里程直接当位移去算平均速度。用位移算平均速度，用路程算平均速率——这正是出租车"绕路能多收钱、但平均速度可能为 0"的原因。</p>
+<p><strong>变式</strong>：某人从家到学校直线距离 1 km，实际走了 1.4 km，用 20 min。平均速度与平均速率各是多少？（3.0 km/h，4.2 km/h）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>周长 400 m 的圆形跑道，半径 R ≈ 63.7 m。
+(1) 从 A 点沿跑道跑 3/4 圈，位移大小和路程各是多少？
+(2) 接着再跑 1/4 圈回到 A 点，整个过程的位移和路程各是多少？
+(3) 全程平均速度是多少？</p>
+<p><strong>解析</strong>：
+1. (1) 跑 3/4 圈时，初末位置是圆周上相隔 90° 的两点 ⇒ 位移 = 弦长 = √2·R ≈ <strong>90 m</strong>；路程 = 3/4 × 400 = <strong>300 m</strong>
+2. (2) 回到 A 点 ⇒ 位移 <strong>0</strong>；路程 = <strong>400 m</strong>
+3. (3) 平均速度 = 位移/时间 = <strong>0</strong>（平均速率 = 400/t ≠ 0）</p>
+<p><strong>陷阱</strong>：(1) 用 300 m 当位移；(3) 认为"跑了 400 m 平均速度就有 400/t"。位移为 0，平均速度必然为 0——这是本考点最锋利的判断。</p>
+<p><strong>变式</strong>：若只跑 1/4 圈，位移大小是多少？（弦长 √2·R ≈ 90 m，与 3/4 圈相同，因为弦长只取决于两点间圆心角）</p>
+<h3>本节分流</h3>
+<ul>
+<li>3 题全对 → 直接做例题 3 + 变式</li>
+<li>对 2 题 → 读"易错边界" + 例题 2</li>
+<li>≤1 题 → 顺序学</li>
+</ul>
+<p><strong>够用标准</strong>：高一 → 例 1 对；高二 → 例 2 对；高三 → 例 3 + 变式全对</p>
+<hr />
+<h2>A-1.3 速度、平均速度与瞬时速度</h2>
+<p><em>力学 › 第1章 运动的描述 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-1.2 ｜ 关联 A-1.5、A-2.2　★</em></p>
+<h3>30 秒概述</h3>
+<p>速度回答"跑得多快"，但有两种问法：问整段，用<strong>平均速度</strong>（位移 ÷ 时间）；问某一瞬间，用<strong>瞬时速度</strong>。上海卷最爱在这里挖坑——平均速度<strong>不是</strong>"速度的平均值"，绕场一圈平均速度直接是零。</p>
+<h3>30 秒自评（2 分钟）</h3>
+<ol>
+<li>物体沿圆形轨道跑一圈，平均速度为零，平均速率也为零。</li>
+<li>匀变速直线运动中，某段时间内的平均速度等于 (v₀ + v)/2。</li>
+<li>物体前一半时间速度 10 m/s，后一半时间速度 20 m/s，全程平均速度是多少？</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（平均速度 0，平均速率 ≠ 0）　2. ✓（仅匀变速成立）　3. <strong>15 m/s</strong></p>
+</blockquote>
+<h3>原理与公式</h3>
+<ul>
+<li>平均速度：<strong>v̄ = Δx/Δt</strong>，矢量，方向与位移同向</li>
+<li>瞬时速度：Δt → 0 时平均速度的极限，方向沿轨迹切线</li>
+<li>平均速率：<strong>路程/时间</strong>，标量；瞬时速率 = 瞬时速度的大小</li>
+<li>匀变速专用：<strong>v̄ = (v₀ + v)/2</strong></li>
+</ul>
+<h3>适用条件</h3>
+<ul>
+<li>平均速度用<strong>位移</strong>、平均速率用<strong>路程</strong>，不可互换</li>
+<li>v̄ = (v₀+v)/2 <strong>仅对匀变速</strong>成立，变速运动回到定义</li>
+</ul>
+<h3>易错边界</h3>
+<ol>
+<li>绕场一周：平均速度 0，平均速率不为 0</li>
+<li>只有<strong>时间等分</strong>能用算术平均；<strong>位移等分</strong>要用 2v₁v₂/(v₁+v₂)</li>
+<li>汽车速度表读数是瞬时速率，不是平均速度</li>
+</ol>
+<h3>例题 1 · L1 基础</h3>
+<p>运动员用 12 s 跑完 100 m 直线跑道，求全程平均速度。</p>
+<p><strong>解析</strong>：单向直线 ⇒ 位移大小 = 100 m，v̄ = 100/12 ≈ <strong>8.3 m/s</strong>，方向沿跑道。</p>
+<p><strong>陷阱</strong>：不敢用 100 m 当位移，绕去算路程——单向直线时两者相等。</p>
+<p><strong>变式</strong>：若他先跑 60 m 再折返 20 m、用时 12 s，平均速度多大？（位移 40 m ⇒ 3.3 m/s）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>甲、乙全程位移相同。甲：前一半<strong>时间</strong> 10 m/s，后一半时间 20 m/s；乙：前一半<strong>位移</strong> 10 m/s，后一半位移 20 m/s。求两者全程平均速度。</p>
+<p><strong>解析</strong>：
+1. 设总时间 2t、总位移 2x
+2. 甲：位移 10t + 20t = 30t，时间 2t ⇒ v̄甲 = <strong>15 m/s</strong>
+3. 乙：用时 x/10 + x/20 = 3x/20，位移 2x ⇒ v̄乙 = <strong>13.3 m/s</strong>
+4. 通用式 v̄乙 = 2v₁v₂/(v₁+v₂) ≈ 13.3 m/s</p>
+<p><strong>陷阱</strong>：两人都答 15 m/s。位移等分时<strong>慢速段占用的时间更长</strong>，平均值必被拉低，13.3 &lt; 15 是必然。</p>
+<p><strong>变式</strong>：若 v₂ = 2v₁，证明 v̄乙 = 4v₁/3，并说明它总小于 1.5v₁。</p>
+<h3>例题 3 · L3 综合</h3>
+<p>汽车从 A 到 B 全程 120 km。前半程 40 km/h，后半程 60 km/h。
+(1) 求全程平均速度；
+(2) 若改为"前一半时间 40 km/h、后一半时间 60 km/h"，平均速度多少？
+(3) 两种走法哪种先到？</p>
+<p><strong>解析</strong>：
+1. (1) 每半程 60 km：t₁ = 1.5 h，t₂ = 1 h，共 2.5 h ⇒ v̄ = 120/2.5 = <strong>48 km/h</strong>
+2. (2) 设总时间 2T：位移 100T ⇒ v̄ = <strong>50 km/h</strong>
+3. (3) 48 km/h 需 2.5 h，50 km/h 需 2.4 h ⇒ <strong>时间等分那种先到</strong></p>
+<p><strong>陷阱</strong>：① (1) 答 50 km/h（直接平均两个速度）；② (3) 认为"路程一样时间就一样"。</p>
+<p><strong>变式</strong>：前半程 30 km/h、后半程 60 km/h，平均速度多少？（40 km/h，比算术平均 45 低 5，速度差越大偏离越大）</p>
+<h3>本节分流</h3>
+<ul>
+<li>3 题全对 → 直接做例题 3 + 变式</li>
+<li>对 2 题 → 读"易错边界" + 例题 2</li>
+<li>≤1 题 → 顺序学</li>
+</ul>
+<p><strong>够用标准</strong>：高一 → 例 1 对；高二 → 例 2 对；高三 → 例 3 + 变式全对</p>
+<hr />
+<h2>A-1.4 加速度</h2>
+<p><em>力学 › 第1章 运动的描述 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-1.3 ｜ 关联 A-1.5、A-2.1　★</em></p>
+<h3>30 秒概述</h3>
+<p>加速度描述"速度<strong>变化得多快</strong>"，不是"速度多大"。它是矢量：大小告诉你每秒速度改多少，方向告诉你速度往哪边变。判断加速还是减速，只看 a 与 v <strong>同向还是反向</strong>。</p>
+<h3>30 秒自评（2 分钟）</h3>
+<ol>
+<li>加速度越大，物体的速度一定越大。</li>
+<li>加速度方向与速度方向相反时，物体做减速运动。</li>
+<li>足球以 8 m/s 飞来，被踢后以 12 m/s 反向飞出，作用 0.2 s，加速度大小是多少？</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（上抛最高点 v = 0 而 a = g）　2. ✓　3. <strong>100 m/s²</strong></p>
+</blockquote>
+<h3>原理与公式</h3>
+<ul>
+<li>定义：<strong>a = Δv/Δt = (v − v₀)/t</strong>，矢量，方向与 Δv 相同</li>
+<li>单位 m/s²，物理意义：每秒速度改变多少 m/s</li>
+<li>加速/减速判据：a 与 v <strong>同向 → 加速</strong>，<strong>反向 → 减速</strong></li>
+<li>一维运算：先定正方向，同向取正、反向取负</li>
+</ul>
+<h3>适用条件</h3>
+<ul>
+<li>定义式对任何运动成立</li>
+<li>只有 a <strong>恒定</strong>时才能用 v = v₀ + at、x = v₀t + ½at²</li>
+</ul>
+<h3>易错边界</h3>
+<ol>
+<li>"a 大则 v 大"——两者无必然联系</li>
+<li>"a 减小即减速"——只要 a 与 v 同向，a 减小仍是加速</li>
+<li>Δv 反向要变号：8 → −12 是 <strong>−20</strong>，不是 4</li>
+</ol>
+<h3>例题 1 · L1 基础</h3>
+<p>汽车以 10 m/s 行驶，以 2 m/s² 匀加速 5 s。求 5 s 末速度和这 5 s 内的速度变化量。</p>
+<p><strong>解析</strong>：v = 10 + 2×5 = <strong>20 m/s</strong>；Δv = at = <strong>+10 m/s</strong>（与运动方向相同）</p>
+<p><strong>陷阱</strong>：把"加速度 2 m/s²"当成"速度每秒翻 2 倍"，它是每秒<strong>增加 2 m/s</strong>。</p>
+<p><strong>变式</strong>：若 a = −2 m/s²，5 s 末速度？（0，恰好停下）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>足球以 8 m/s 水平飞来，被一脚踢出后以 12 m/s 沿相反方向飞出，脚与球作用 0.2 s。求平均加速度。</p>
+<p><strong>解析</strong>：
+1. 规定原方向为正：v₀ = +8，v = −12
+2. Δv = −12 − 8 = <strong>−20 m/s</strong>
+3. a = −20/0.2 = <strong>−100 m/s²</strong>，大小 100 m/s²，方向沿踢出方向</p>
+<p><strong>陷阱</strong>：a = (12−8)/0.2 = 20 m/s²——漏了方向反转，结果差 5 倍且方向判反。</p>
+<p><strong>变式</strong>：规定踢出方向为正，a 为多少？（+100 m/s²，结论不变）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>电梯从静止开始上升：0～2 s 匀加速到 4 m/s；2～8 s 匀速；8～10 s 匀减速到停止。
+(1) 求三段加速度；
+(2) 求 6 s 末速度；
+(3) 求 0～10 s 总位移与平均速度；
+(4) 哪段加速度最大？哪段速度最大？</p>
+<p><strong>解析</strong>：
+1. (1) a₁ = 4/2 = <strong>2 m/s²</strong>；a₂ = <strong>0</strong>；a₃ = −4/2 = <strong>−2 m/s²</strong>
+2. (2) 6 s 在匀速段 ⇒ <strong>4 m/s</strong>
+3. (3) 面积法：4 + 24 + 4 = <strong>32 m</strong>；v̄ = <strong>3.2 m/s</strong>
+4. (4) a₁ 与 a₃ 大小都是 2 m/s²（方向相反，并列最大）；速度最大在匀速段（4 m/s）</p>
+<p><strong>陷阱</strong>：① (3) 用 4×10 = 40 m；② (1) a₃ 漏负号；③ (4) 把"加速度最大"和"速度最大"混为一谈。</p>
+<p><strong>变式</strong>：若减速段改为 1 s 停住，加速度多大？（−4 m/s²，大小反而是三段中最大的）</p>
+<h3>本节分流</h3>
+<ul>
+<li>3 题全对 → 直接做例题 3 + 变式</li>
+<li>对 2 题 → 读"易错边界" + 例题 2</li>
+<li>≤1 题 → 顺序学</li>
+</ul>
+<p><strong>够用标准</strong>：高一 → 例 1 对；高二 → 例 2 对；高三 → 例 3 + 变式全对</p>
+<hr />
+<h2>A-1.5 运动图像（x-t 图与 v-t 图）</h2>
+<p><em>力学 › 第1章 运动的描述 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-1.3、A-1.4 ｜ 关联 A-2.2、A-2.7　★</em></p>
+<h3>30 秒概述</h3>
+<p>图像是运动的"照片"。x-t 图看<strong>斜率</strong>得速度，v-t 图看<strong>斜率</strong>得加速度、看<strong>面积</strong>得位移。两图的交点含义完全不同——这是上海卷最爱的陷阱：v-t 图交点不是"相遇"，只是"速度相等"。</p>
+<h3>30 秒自评（2 分钟）</h3>
+<ol>
+<li>v-t 图中两条图线的交点表示两物体相遇。</li>
+<li>v-t 图线与时间轴围成的面积表示位移。</li>
+<li>x-t 图线的斜率表示速度。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（只表示速度相等）　2. ✓（t 轴下方取负）　3. ✓</p>
+</blockquote>
+<h3>原理与公式</h3>
+<table>
+<thead>
+<tr>
+<th>图像</th>
+<th>斜率</th>
+<th>面积</th>
+<th>交点</th>
+<th>纵截距</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-t 图</td>
+<td>速度 v（正负表方向）</td>
+<td>无意义</td>
+<td>两物体<strong>相遇</strong></td>
+<td>初位置 x₀</td>
+</tr>
+<tr>
+<td>v-t 图</td>
+<td>加速度 a</td>
+<td><strong>位移</strong>（上有正、下有负）</td>
+<td>两物体<strong>速度相等</strong></td>
+<td>初速度 v₀</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>匀变速的 v-t 图是<strong>直线</strong>，x-t 图是<strong>抛物线</strong></li>
+<li>图线拐点：加速度突变（如加速转匀速）</li>
+</ul>
+<h3>适用条件</h3>
+<ul>
+<li>只描述<strong>一维</strong>运动；v-t 图不能当轨迹看，也不能直接读出位置（还缺初始位置）</li>
+</ul>
+<h3>易错边界</h3>
+<ol>
+<li>把 v-t 图当运动轨迹</li>
+<li>认为 v-t 图交点表示相遇（实为距离极值时刻）</li>
+<li>求面积时把 t 轴下方的也当正数加，位移偏大</li>
+</ol>
+<h3>例题 1 · L1 基础</h3>
+<p>某物体的 x-t 图线为：0～2 s 从 x = 0 匀速到 x = 4 m；2～4 s 停在 x = 4 m；4～6 s 从 x = 4 m 匀速回到 x = 0。求各段速度、6 s 内路程和位移。</p>
+<p><strong>解析</strong>：
+1. 0～2 s：v = (4−0)/2 = <strong>2 m/s</strong>
+2. 2～4 s：位置不变 ⇒ v = <strong>0</strong>
+3. 4～6 s：v = (0−4)/2 = <strong>−2 m/s</strong>（负号表沿 x 负方向）
+4. 路程 = 4 + 0 + 4 = <strong>8 m</strong>；位移 = 0 − 0 = <strong>0</strong></p>
+<p><strong>陷阱</strong>：把"路程 8 m"当位移。物体出去又原路返回，位移为 0，但路程是 8 m——图像题里这两个数必须分开算。</p>
+<p><strong>变式</strong>：若 4～6 s 只回到 x = 2 m，路程和位移各是多少？（6 m，2 m）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>某质点 v-t 图线为：0～2 s 由 0 均匀增大到 4 m/s；2～4 s 保持 4 m/s；4～6 s 均匀减小到 0。求：
+(1) 各段加速度；
+(2) 0～6 s 总位移与平均速度；
+(3) 若 t = 0 时质点在 x = 0，t = 5 s 时它在哪儿？</p>
+<p><strong>解析</strong>：
+1. (1) a₁ = 2 m/s²；a₂ = 0；a₃ = <strong>−2 m/s²</strong>
+2. (2) 面积：4 + 8 + 4 = <strong>16 m</strong>；v̄ = 16/6 ≈ <strong>2.7 m/s</strong>
+3. (3) 5 s 内位移 = 4 + 8 + 3 = <strong>15 m</strong> ⇒ x = <strong>15 m</strong></p>
+<p><strong>陷阱</strong>：(3) 用 4×5 = 20 m——5 s 内不是匀速；或忘记 4～5 s 是减速段（速度为 4→2，面积 3）。</p>
+<p><strong>变式</strong>：把图改成 x-t 图（形状相同），各段速度是多少？物体是否折返？（2、4、0 m/s，不折返）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>A、B 两物体沿同一直线同向运动。A 从 x = 0 处以 4 m/s 匀速；B 从 x = 6 m 处以 2 m/s 匀速（t = 0 时 B 恰在 x = 6 m）。
+(1) 在同一 x-t 图上画出两条线，交点坐标是多少？它表示什么？
+(2) 3 s 内 A、B 各自的路程是多少？
+(3) 若 B 比 A 早出发 1 s，A 还需多久追上 B？追到处坐标？</p>
+<p><strong>解析</strong>：
+1. (1) 位置方程：x_A = 4t，x_B = 6 + 2t。令相等：4t = 6 + 2t ⇒ t = <strong>3 s</strong>，x = <strong>12 m</strong>
+   交点表示<strong>两物体相遇</strong>（同一时刻同一位置）
+2. (2) A 走 12 m，B 走 6 m（都沿同向，路程 = 位移大小）
+3. (3) B 早 1 s ⇒ 位置 x_B = 6 + 2(t + 1) = 8 + 2t
+   令 4t = 8 + 2t ⇒ t = <strong>4 s</strong>，x = <strong>16 m</strong></p>
+<p><strong>陷阱</strong>：(3) 忘记把 B 的"提前 1 s"折进位置方程（写成 6 + 2t 就还是 3 s）；(2) 把 B 的"路程"算成 12 m（那是 A 的）。</p>
+<p><strong>变式</strong>：把例 3 换成 v-t 图，如何用"面积差"说明何时追上？（两面积之差恰等于初始间距 6 m 时相遇）</p>
+<h3>本节分流</h3>
+<ul>
+<li>3 题全对 → 直接做例题 3 + 变式</li>
+<li>对 2 题 → 读"易错边界" + 例题 2</li>
+<li>≤1 题 → 顺序学</li>
+</ul>
+<p><strong>够用标准</strong>：高一 → 例 1 对；高二 → 例 2 对；高三 → 例 3 + 变式全对</p>
+<hr />
+<h2>单元入口自评答案</h2>
+<table>
+<thead>
+<tr>
+<th>题号</th>
+<th>答案</th>
+<th>考点</th>
+<th>点评</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T-1-1</td>
+<td>50 m</td>
+<td>A-2.1</td>
+<td>匀速 x = vt</td>
+</tr>
+<tr>
+<td>T-1-2</td>
+<td>B</td>
+<td>A-1.2</td>
+<td>位移 ≤ 路程，单向直线取等</td>
+</tr>
+<tr>
+<td>T-1-3</td>
+<td>2 m/s²</td>
+<td>A-1.4</td>
+<td>a = Δv/Δt = 10/5</td>
+</tr>
+<tr>
+<td>T-1-4</td>
+<td>40 m</td>
+<td>A-2.3</td>
+<td>刹车 4 s 就停</td>
+</tr>
+<tr>
+<td>T-1-5</td>
+<td>45 m</td>
+<td>A-2.5</td>
+<td>h = ½gt² = 5×9</td>
+</tr>
+<tr>
+<td>T-1-6</td>
+<td>−10 m/s，竖直向下</td>
+<td>A-2.6</td>
+<td>整体法 v = 20 − 30</td>
+</tr>
+<tr>
+<td>T-1-7</td>
+<td>位移</td>
+<td>A-1.5</td>
+<td>t 轴下方面积取负</td>
+</tr>
+<tr>
+<td>T-1-8</td>
+<td>匀变速、T 连续相等</td>
+<td>A-2.4</td>
+<td>中间断开不成立</td>
+</tr>
+<tr>
+<td>T-1-9</td>
+<td>距离取极值</td>
+<td>A-2.7</td>
+<td>是临界，不是相遇</td>
+</tr>
+<tr>
+<td>T-1-10</td>
+<td>1 : 3 : 5 : …</td>
+<td>A-2.4</td>
+<td>别与 1:4:9 混</td>
+</tr>
+</tbody>
+</table>
+<h2>本章关系边（供生成图谱 CSV）</h2>
+<table>
+<thead>
+<tr>
+<th>起点</th>
+<th>终点</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-1.1</td>
+<td>A-1.2</td>
+<td>前置</td>
+<td>先定参考系与坐标系，才能谈位置变化</td>
+</tr>
+<tr>
+<td>A-1.2</td>
+<td>A-1.3</td>
+<td>前置</td>
+<td>没有位移概念无法定义平均速度</td>
+</tr>
+<tr>
+<td>A-1.3</td>
+<td>A-1.4</td>
+<td>前置</td>
+<td>加速度是速度的变化率</td>
+</tr>
+<tr>
+<td>A-1.4</td>
+<td>A-1.5</td>
+<td>前置</td>
+<td>v-t 图斜率即加速度</td>
+</tr>
+<tr>
+<td>A-1.5</td>
+<td>A-2.2</td>
+<td>图像法</td>
+<td>面积法即位移公式的几何证明</td>
+</tr>
+<tr>
+<td>A-1.3</td>
+<td>A-1.5</td>
+<td>易混</td>
+<td>平均速度 vs 图像求平均</td>
+</tr>
+</tbody>
+</table></div></html>

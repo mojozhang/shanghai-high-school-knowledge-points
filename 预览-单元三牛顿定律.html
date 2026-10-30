@@ -1,0 +1,825 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>单元三 牛顿运动定律</title><style>:root{--ink:#1c1c1e;--line:#e3e3e8;--accent:#0b6b5b;}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f6f3;color:var(--ink);font:16px/1.85 -apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}
+.wrap{max-width:900px;margin:0 auto;padding:56px 36px 120px;background:#fff;box-shadow:0 0 0 1px var(--line);}
+h1{font-size:26px;border-bottom:3px solid var(--accent);padding-bottom:12px;margin-top:64px}
+h1:first-of-type{margin-top:0}
+h2{font-size:21px;margin-top:52px;background:#eef4f2;border-left:6px solid var(--accent);padding:10px 14px;border-radius:0 6px 6px 0}
+h3{font-size:16.5px;margin-top:28px;color:#0a4f43}
+blockquote{margin:14px 0 24px;padding:12px 16px;background:#f1f1ec;border-left:4px solid #9a9a90;border-radius:0 6px 6px 0;font-size:15px}
+table{border-collapse:collapse;width:100%;margin:16px 0 26px;font-size:14.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
+th{background:#f0f4f2;font-weight:600}
+tr:nth-child(even) td{background:#fbfbf9}
+img{max-width:100%;height:auto;display:block;margin:14px auto;border:1px solid #ececea;border-radius:6px}
+code{background:#f0f0ea;padding:2px 5px;border-radius:4px}
+strong{color:#0a4f43}</style><div class="wrap"><h1>力学 · 单元三：牛顿运动定律</h1>
+<blockquote>
+<p><strong>状态</strong>：【样章待验收　v5 版】
+<strong>覆盖</strong>：A-4.1 ～ A-4.9，共 9 考点 / 27 道例题 / 4 张受力图
+<strong>单元定位</strong>：力学的心脏。前三单元回答"怎么动"，这一单元回答"<strong>为什么这样动</strong>"。牛顿第二定律一旦不稳，后面的曲线运动、万有引力、功能关系全部会塌。</p>
+</blockquote>
+<h2>🗺️ 关卡地图</h2>
+<table>
+<thead>
+<tr>
+<th>关</th>
+<th>考点</th>
+<th>难度</th>
+<th>星级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>牛顿第一定律与惯性</td>
+<td>★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>2</td>
+<td>牛顿第二定律</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>3</td>
+<td>牛顿第三定律</td>
+<td>★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>4</td>
+<td>两类动力学问题</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>5</td>
+<td>超重与失重</td>
+<td>★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>6</td>
+<td>连接体问题</td>
+<td>★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>7</td>
+<td>瞬时性问题</td>
+<td>★★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>8</td>
+<td>传送带模型</td>
+<td>★★★★</td>
+<td>☆☆☆</td>
+</tr>
+<tr>
+<td>9</td>
+<td>板块模型</td>
+<td>★★★★</td>
+<td>☆☆☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>A-4.1 牛顿第一定律与惯性</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅰ · 考频低 ｜ 前置：无 ｜ 关联：A-4.2</em></p>
+<p><strong>⚡ 先猜</strong>：物体要一直运动下去，必须一直有力推着它吗？</p>
+<h3>30 秒概述</h3>
+<p>两千年前亚里士多德说"力是维持运动的原因"，伽利略用一个<strong>理想斜面</strong>推翻了它：阻力越小，物体滑得越远；阻力为零，它就永远滑下去。所以力不是维持运动的原因，而是<strong>改变</strong>运动状态的原因。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>力是维持物体运动的原因。</li>
+<li>惯性的大小只与物体的质量有关。</li>
+<li>牛顿第一定律可以用实验直接验证。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗　2. ✓　3. ✗（理想化推理，不能直接验证）</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>牛顿第一定律</strong>：一切物体总保持静止或匀速直线运动状态，直到有外力迫使它改变</li>
+<li><strong>惯性</strong>：物体保持原有运动状态的性质，是物体固有属性，<strong>只与质量有关</strong></li>
+<li>力是<strong>改变</strong>运动状态的原因（产生加速度），不是维持运动的原因</li>
+</ul>
+<p><strong>适用条件</strong>：惯性定律描述的是<strong>不受外力</strong>（或合力为零）的理想情形；现实中只能通过"减小阻力、外推趋势"来验证。</p>
+<p><strong>易错边界</strong>
+1. "匀速运动需要力维持"——匀速时合力为零，不需要力
+2. "速度越大惯性越大"——惯性只看质量
+3. "惯性是一种力"——惯性是性质，不是力</p>
+<h3>例题 1 · L1 基础</h3>
+<p>伽利略的理想斜面实验：小球从斜面滚下，再滚上另一斜面。减小第二个斜面的倾角，小球滚得更远；若第二个斜面变成水平面，小球将怎样运动？</p>
+<p><strong>解析</strong>：
+阻力越小、爬升越"费力"，小球滚得越远。当第二个面变成水平，小球永远达不到原来的高度 ⇒ <strong>以恒定速度一直运动下去</strong>。</p>
+<p><strong>💥 陷阱</strong>：答"慢慢停下来"。停止是因为有摩擦，不是因为"运动需要力"。</p>
+<p><strong>变式</strong>：这个实验能直接验证牛顿第一定律吗？（不能，它是"外推"出来的理想情形）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>汽车突然刹车时，乘客身体为什么向前倾？安全气囊和安全带分别在防什么？</p>
+<p><strong>解析</strong>：
+1. 刹车时车减速，乘客由于<strong>惯性</strong>保持原来的速度 ⇒ 身体相对车向前
+2. 安全带防止人撞向仪表台（限制前冲）
+3. 安全气囊在碰撞瞬间缓冲，减小人受到的冲击力（延长作用时间）</p>
+<p><strong>💥 陷阱</strong>：说"人被一个向前的力推了出去"。没有这个力——是车减速了，人没减。</p>
+<p><strong>变式</strong>：汽车突然启动时人向后仰，原因相同吗？（相同，都是惯性）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>甲、乙两球质量相同，甲以 10 m/s 运动，乙以 2 m/s 运动；丙球质量是甲的 3 倍，以 10 m/s 运动。比较三者惯性大小；若要用实验说明"惯性只与质量有关"，应如何控制变量？</p>
+<p><strong>解析</strong>：
+1. 惯性只与质量有关 ⇒ 甲、乙惯性相同，丙最大（3 倍）
+2. 控制变量：让甲、丙以<strong>相同速度</strong>运动，用相同的力刹车，比较停止所需时间（或距离）——丙更难停下
+3. 若要验证"与速度无关"，应让<strong>同一个球</strong>以不同速度运动，比较刹车难易</p>
+<p><strong>💥 陷阱</strong>：认为"速度大的惯性大"。甲比乙快，但惯性一样。</p>
+<p><strong>变式</strong>：为什么满载的卡车刹车距离比空车长？（质量大 ⇒ 惯性大 ⇒ 同样制动力下加速度小）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 惯性大小由什么决定？② 判断：静止的物体没有惯性。</p>
+<blockquote>
+<p>答案：① 质量　② ✗（任何物体任何状态都有惯性）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-4.2 牛顿第二定律</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-4.1、A-3.5 ｜ 关联 A-4.4、A-4.6　★</em></p>
+<p><strong>⚡ 先猜</strong>：同样的力，拉空车和拉满载车，加速度一样吗？</p>
+<h3>30 秒概述</h3>
+<p><strong>F合 = ma</strong>。三个字要记牢：<strong>合</strong>（不是某一个力）、<strong>同体</strong>（F 和 a 属于同一个物体）、<strong>同向</strong>（a 的方向就是合力的方向）。质量是惯性的量度——同样的力，质量越大，加速度越小。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>F = ma 中的 F 是物体所受的合力。</li>
+<li>加速度的方向总与合力的方向相同。</li>
+<li>质量越大，同样的力产生的加速度越大。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✓　3. ✗（越小）</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>F合 = ma</strong>（单位：N = kg·m/s²）</li>
+<li>四性：<strong>矢量性</strong>（a 与 F合同向）、<strong>瞬时性</strong>（F 变则 a 立刻变）、<strong>同体性</strong>（同一物体）、<strong>独立性</strong>（各方向互不干扰）</li>
+<li>正交分解：ΣFx = ma_x，ΣFy = ma_y</li>
+</ul>
+<p><strong>适用条件</strong>：惯性参考系；宏观、低速（远小于光速）。</p>
+<p><strong>易错边界</strong>
+1. 用某个力代替合力（最常见：漏掉重力或摩擦力）
+2. a 的方向与速度方向混为一谈（减速时两者相反）
+3. 单位不统一（cm、g 未化成 SI）</p>
+<h3>例题 1 · L1 基础</h3>
+<p>质量 2 kg 的物体在水平面上，受 10 N 水平拉力，摩擦力 2 N。求加速度。</p>
+<p><strong>解析</strong>：
+合力 F合 = 10 − 2 = 8 N
+a = F合/m = 8/2 = <strong>4 m/s²</strong>，方向与拉力相同</p>
+<p><strong>💥 陷阱</strong>：直接用 a = 10/2 = 5 m/s²。10 N 是拉力，不是合力。</p>
+<p><strong>变式</strong>：若摩擦力增大到 10 N，加速度多大？（0，匀速）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>质量 2 kg 的物体从倾角 37° 的斜面下滑，动摩擦因数 0.5（g = 10）。求加速度。</p>
+<p><strong>解析</strong>：
+1. 沿斜面：重力分量 mg sin37° = 12 N 向下
+2. 摩擦力 f = μmg cos37° = 0.5 × 16 = 8 N 向上
+3. 合力 = 4 N ⇒ a = <strong>2 m/s²</strong></p>
+<p><strong>💥 陷阱</strong>：摩擦力算成 μmg = 10 N。斜面上正压力是 mg cosθ，不是 mg。</p>
+<p><strong>变式</strong>：若 μ = 0.75，加速度多大？（0，匀速下滑）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>用 100 N 的力竖直向上提升质量 8 kg 的物体（g = 10）。求加速度；若从静止开始提升 2 s，求 2 s 末速度和上升高度。</p>
+<p><strong>解析</strong>：
+1. 合力 = 100 − 80 = 20 N ⇒ a = 20/8 = <strong>2.5 m/s²</strong>
+2. v = at = 2.5 × 2 = <strong>5 m/s</strong>
+3. h = ½at² = ½ × 2.5 × 4 = <strong>5 m</strong></p>
+<p><strong>💥 陷阱</strong>：把 100 N 直接除以 8 得 12.5 m/s²。竖直方向必须减去重力。</p>
+<p><strong>变式</strong>：若拉力减为 80 N，物体怎样运动？（匀速，a = 0）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 质量 2 kg、合力 6 N，加速度多大？② 判断：加速度方向一定与速度方向相同。</p>
+<blockquote>
+<p>答案：① 3 m/s²　② ✗（减速时相反）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-4.3 牛顿第三定律</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅰ · 考频低 ｜ 前置 A-3.2 ｜ 关联 A-4.6</em></p>
+<p><strong>⚡ 先猜</strong>：鸡蛋碰石头，鸡蛋碎了。是石头受到的力更大吗？</p>
+<h3>30 秒概述</h3>
+<p>作用力与反作用力<strong>大小相等、方向相反、作用在两个物体上</strong>，同时产生、同时消失。所以鸡蛋和石头受到的力一样大，碎的原因是鸡蛋"扛不住"。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>作用力与反作用力作用在同一个物体上。</li>
+<li>作用力与反作用力大小相等、方向相反。</li>
+<li>作用力与反作用力可以相互抵消。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（两个物体）　2. ✓　3. ✗（不同物体，不能抵消）</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>牛顿第三定律</strong>：两物体间的作用力与反作用力总是大小相等、方向相反、作用在同一条直线上</li>
+<li>三个"同时"：同时产生、同时变化、同时消失</li>
+<li>性质相同（都是弹力、都是摩擦力……）</li>
+</ul>
+<p><strong>与平衡力的区别</strong>：平衡力作用在<strong>同一物体</strong>上、可以抵消；作用力与反作用力作用在<strong>两个物体</strong>上、不能抵消。</p>
+<p><strong>易错边界</strong>
+1. 把作用力与反作用力当成平衡力
+2. 认为"主动施力的一方受力更大"
+3. 认为作用力先产生、反作用力后产生</p>
+<h3>例题 1 · L1 基础</h3>
+<p>判断下列哪一对力是作用力与反作用力：
+A. 书受的重力与桌面对书的支持力
+B. 书对桌面的压力与桌面对书的支持力
+C. 书受的重力与书对桌面的压力
+D. 马拉车的力与车受到的摩擦力</p>
+<p><strong>解析</strong>：
+A：都作用在书上 ⇒ 平衡力
+B：书压桌面、桌面支持书，作用在两个物体上 ⇒ <strong>作用力与反作用力</strong> ✓
+C：一个是重力（地球施）、一个是压力（书施），施力物体不同 ⇒ 不是一对
+D：不是相互作用 ⇒ 不是</p>
+<p><strong>💥 陷阱</strong>：选 A。重力和支持力确实大小相等方向相反，但都作用在书上，是平衡力。</p>
+<p><strong>变式</strong>：书静止在桌面上，重力和支持力大小相等，能说它们是一对平衡力吗？（可以）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>马拉车前进时，马拉车的力与车拉马的力大小相等，为什么车还能前进？</p>
+<p><strong>解析</strong>：
+1. 马拉车的力与车拉马的力是一对作用力与反作用力，<strong>大小相等</strong>，但分别作用在车和马身上
+2. 车能否前进，看<strong>车受到的合力</strong>：马拉车的力 &gt; 车受到的摩擦力 ⇒ 车加速
+3. 马能否前进，看<strong>马受到的合力</strong>：地面对马的静摩擦 &gt; 车对马的拉力 ⇒ 马加速</p>
+<p><strong>💥 陷阱</strong>：认为"马拉车的力大于车拉马的力，所以能前进"。两力永远相等，决定运动的是各自受到的<strong>合力</strong>。</p>
+<p><strong>变式</strong>：若马拉车的力恰好等于车受到的摩擦，车怎样运动？（匀速或静止）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>电梯中的人站在体重计上。电梯静止时读数 500 N。
+(1) 人对体重计的压力与人的重力是一对什么力？
+(2) 电梯加速上升时，压力大于还是小于重力？为什么？
+(3) 压力与体重计对人的支持力是什么关系？</p>
+<p><strong>解析</strong>：
+(1) 压力作用在体重计上、重力作用在人身上，施力物体不同 ⇒ <strong>不是</strong>一对作用力与反作用力，也不是平衡力（性质不同、作用物体不同）
+(2) 加速上升：合力向上 ⇒ 支持力 N &gt; 重力 G ⇒ 读数变大（超重）；由第三定律，压力与 N 大小相等 ⇒ 压力也变大
+(3) 压力与支持力作用在两个物体上、大小相等方向相反 ⇒ <strong>作用力与反作用力</strong></p>
+<p><strong>💥 陷阱</strong>：(1) 答"作用力与反作用力"。压力和重力既不同体、也不同性质。</p>
+<p><strong>变式</strong>：电梯匀速上升时读数多少？（500 N）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 作用力与反作用力能否抵消？② 判断：先有作用力，后有反作用力。</p>
+<blockquote>
+<p>答案：① 不能　② ✗（同时）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-4.4 两类动力学问题</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-4.2、A-2 ｜ 关联 A-3.3　★</em></p>
+<p><strong>⚡ 先猜</strong>：已知物体受的力，能直接算出它 2 s 后的位移吗？</p>
+<h3>30 秒概述</h3>
+<p>不能——中间必须先过一座桥：<strong>加速度</strong>。受力 → 求 a → 再用运动学公式求位移；反过来，运动 → 求 a → 再求力。所有动力学题都是这两条路的往返。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>加速度是连接"力"与"运动"的桥梁。</li>
+<li>已知物体的运动情况，可以反推出它受到的力。</li>
+<li>第一类问题的关键是先求加速度。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✓　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>第一类</strong>（已知力求运动）：受力分析 → F合 → a = F合/m → 运动学公式</li>
+<li><strong>第二类</strong>（已知运动求力）：运动学 → a → F合 = ma → 求某个力</li>
+<li>运动学工具：v = v₀ + at、x = v₀t + ½at²、v² − v₀² = 2ax</li>
+</ul>
+<p><strong>适用条件</strong>：a 恒定（若 a 变化，需分段）。</p>
+<p><strong>易错边界</strong>
+1. 跳过 a 直接用力算位移
+2. 受力分析漏力（尤其摩擦力、支持力）
+3. 分段时把上一段的 a 用到下一段</p>
+<h3>例题 1 · L1 基础</h3>
+<p>质量 2 kg 的物体静止在水平面上，受 10 N 水平拉力，动摩擦因数 0.2（g = 10）。求 2 s 末的速度和 2 s 内的位移。</p>
+<p><strong>解析</strong>：
+1. 摩擦力 f = μmg = 4 N ⇒ 合力 = 6 N
+2. a = 6/2 = <strong>3 m/s²</strong>
+3. v = at = <strong>6 m/s</strong>；x = ½at² = ½×3×4 = <strong>6 m</strong></p>
+<p><strong>💥 陷阱</strong>：用 10 N 直接求 a = 5 m/s²，位移算成 10 m。漏了摩擦。</p>
+<p><strong>变式</strong>：若 2 s 后撤去拉力，物体还能滑多远？（a = −2 m/s²，x = v²/2a = 9 m）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>质量 2 kg 的物体以 10 m/s 在水平面上滑行，经 4 s 停下。求它受到的摩擦力。</p>
+<p><strong>解析</strong>（第二类：由运动求力）：
+1. a = (0 − 10)/4 = <strong>−2.5 m/s²</strong>（大小 2.5）
+2. 合力 = 摩擦力 ⇒ f = ma = 2 × 2.5 = <strong>5 N</strong>，方向与运动方向相反</p>
+<p><strong>💥 陷阱</strong>：把 10 m/s 和 4 s 直接相乘当位移。要先求加速度。</p>
+<p><strong>变式</strong>：动摩擦因数多大？（μ = f/mg = 0.25）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>质量 2 kg 的物体从倾角 37° 的斜面顶端由静止下滑，动摩擦因数 0.25（g = 10）。求 2 s 内的位移；若要让物体匀速下滑，动摩擦因数应为多少？</p>
+<p><strong>解析</strong>：
+1. a = g(sin37° − μcos37°) = 10(0.6 − 0.2) = <strong>4 m/s²</strong>
+2. x = ½at² = ½ × 4 × 4 = <strong>8 m</strong>
+3. 匀速 ⇒ a = 0 ⇒ sin37° = μcos37° ⇒ μ = tan37° = <strong>0.75</strong></p>
+<p><strong>💥 陷阱</strong>：第 (3) 问用 mg sinθ = μmg 去算，得 μ = 0.6。正压力是 mg cosθ。</p>
+<p><strong>变式</strong>：若 μ = 0.5，2 s 内位移多少？（a = 2 m/s²，x = 4 m）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 两类问题的桥梁是什么？② 判断：已知运动求力，要先求加速度。</p>
+<blockquote>
+<p>答案：① 加速度　② ✓</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-4.5 超重与失重</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅱ · 考频中 ｜ 前置 A-4.2 ｜ 关联 A-4.6</em></p>
+<p><strong>⚡ 先猜</strong>：电梯加速上升时，人的重力变大了吗？</p>
+<h3>30 秒概述</h3>
+<p>重力一点没变，变的是<strong>视重</strong>（支持力或拉力）。判断超重还是失重，只看<strong>加速度的方向</strong>：a 向上 ⇒ 超重，a 向下 ⇒ 失重，a = g ⇒ 完全失重。跟速度方向毫无关系。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>超重时，物体受到的重力变大了。</li>
+<li>失重时，物体的加速度方向向下。</li>
+<li>完全失重时，物体对支持面的压力为零。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✗（重力不变，视重变大）　2. ✓　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>超重</strong>（a 向上）：N − mg = ma ⇒ <strong>N = m(g + a)</strong></li>
+<li><strong>失重</strong>（a 向下）：mg − N = ma ⇒ <strong>N = m(g − a)</strong></li>
+<li><strong>完全失重</strong>（a = g）：<strong>N = 0</strong></li>
+</ul>
+<p><strong>判断口诀</strong>：只看 a 的方向，不看 v 的方向。
+- 加速上升、减速下降 ⇒ a 向上 ⇒ 超重
+- 加速下降、减速上升 ⇒ a 向下 ⇒ 失重</p>
+<p><img alt="电梯超重" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IEwtNC41LTHjgIDnlLXmoq/otoXph43vvIhhIOWQkeS4iu+8iTwvdGV4dD4KPHJlY3QgeD0iMTUwIiB5PSI1NSIgd2lkdGg9IjE3MCIgaGVpZ2h0PSIxODUiIGZpbGw9IiNmN2Y5ZmIiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjIzNSIgeTE9IjU1IiB4Mj0iMjM1IiB5Mj0iMzAiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMjE2IiB5PSIxNDAiIHdpZHRoPSIzOCIgaGVpZ2h0PSI3MiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjM1IiB5MT0iMTQwIiB4Mj0iMjM1IiB5Mj0iOTgiIHN0cm9rZT0iIzZiNzI4MCIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI20tZ3JheSkiLz48dGV4dCB4PSIyNDMiIHk9IjEwNiIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMyI+TjwvdGV4dD48bGluZSB4MT0iMjM1IiB5MT0iMjEyIiB4Mj0iMjM1IiB5Mj0iMjQ4IiBzdHJva2U9IiNjMDM5MmIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLXJlZCkiLz48dGV4dCB4PSIyNDMiIHk9IjIzNiIgZmlsbD0iI2MwMzkyYiIgZm9udC1zaXplPSIxMyI+RzwvdGV4dD48bGluZSB4MT0iMzMwIiB5MT0iMTkwIiB4Mj0iMzMwIiB5Mj0iMTMwIiBzdHJva2U9IiMxZjZmZWIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiA0IiBtYXJrZXItZW5kPSJ1cmwoI20tYmx1ZSkiLz48dGV4dCB4PSIzMzgiIHk9IjE2OCIgZmlsbD0iIzFmNmZlYiIgZm9udC1zaXplPSIxMyI+YTwvdGV4dD48dGV4dCB4PSIxNiIgeT0iNDAiIGZpbGw9IiM2YjcyODAiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+5Yqg6YCf5LiK5Y2H77yaTiDvvJ4gR++8jOinhumHjeWPmOWkp++8iOi2hemHje+8iTwvdGV4dD4KPC9zdmc+Cg==" /></p>
+<p><strong>适用条件</strong>：只适用于竖直方向有加速度的情形；水平加速不产生超重失重。</p>
+<p><strong>易错边界</strong>
+1. "上升就超重"——减速上升是失重
+2. "超重就是重力变大"——重力不变
+3. "完全失重就是不受重力"——仍受重力，只是无支持力</p>
+<h3>例题 1 · L1 基础</h3>
+<p>质量 50 kg 的人站在电梯里的体重计上，电梯以 2 m/s² 加速上升（g = 10）。求体重计读数。</p>
+<p><strong>解析</strong>：
+a 向上 ⇒ 超重：N = m(g + a) = 50 × 12 = <strong>600 N</strong>
+读数（视重）= 600 N &gt; 重力 500 N</p>
+<p><strong>💥 陷阱</strong>：答 500 N。加速上升时支持力必须大于重力，才有向上的合力。</p>
+<p><strong>变式</strong>：若电梯减速上升（a = 2 m/s² 向下），读数多少？（400 N）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>承上题，电梯以 2 m/s² 的加速度<strong>减速上升</strong>。求体重计读数，并说明人处于什么状态。</p>
+<p><strong>解析</strong>：
+1. 减速上升 ⇒ 加速度方向<strong>向下</strong> ⇒ 失重
+2. N = m(g − a) = 50 × 8 = <strong>400 N</strong>
+3. 状态：失重（视重小于重力）</p>
+<p><strong>💥 陷阱</strong>：看到"上升"就套超重公式。判断依据是 a 的方向，不是 v 的方向。</p>
+<p><strong>变式</strong>：若电梯减速下降（a 向上），是超重还是失重？（超重，N = 600 N）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>电梯从静止上升：0～2 s 匀加速到 4 m/s；2～8 s 匀速；8～10 s 匀减速到停止。质量 50 kg 的人站在体重计上（g = 10）。求三段中体重计的读数。</p>
+<p><strong>解析</strong>：
+1. 0～2 s：a = 2 m/s² 向上 ⇒ N = 50(10 + 2) = <strong>600 N</strong>（超重）
+2. 2～8 s：a = 0 ⇒ N = <strong>500 N</strong>（正常）
+3. 8～10 s：a = −2 m/s²（向下）⇒ N = 50(10 − 2) = <strong>400 N</strong>（失重）</p>
+<p><strong>💥 陷阱</strong>：第三段用"减速"直接判"失重"是对的，但有人把 a 代成 +2 得 600 N——减速上升的 a 向下，必须取负。</p>
+<p><strong>变式</strong>：若电梯自由下落（缆绳断裂），读数多少？（0，完全失重）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 失重时加速度方向？② 判断：完全失重时物体不受重力。</p>
+<blockquote>
+<p>答案：① 向下　② ✗（仍受重力）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-4.6 连接体问题</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-4.2 ｜ 关联 A-3.7　★</em></p>
+<p><strong>⚡ 先猜</strong>：两物块用绳连接，拉力 F 作用在右边，绳的拉力等于 F 吗？</p>
+<h3>30 秒概述</h3>
+<p>不等于。绳的拉力只"分给"了它要拉的那部分质量。标准解法两步：<strong>整体求加速度，隔离求内力</strong>。整体法看不见内力，隔离法才看得见。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>加速度相同时，可以把连接体当成一个整体求加速度。</li>
+<li>绳的拉力一定等于外力 F。</li>
+<li>求绳的拉力必须用隔离法。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✗（只有被拉物体质量为 0 时）　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li>整体：<strong>a = F合/(m₁ + m₂)</strong></li>
+<li>隔离（前面的物体）：<strong>T = m₁a</strong>（若该物体只受绳拉力和摩擦力）</li>
+<li>一般式：T = m₁/(m₁+m₂) × F（光滑水平、F 作用在 m₂ 上）</li>
+</ul>
+<p><img alt="连接体" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IEwtNC42LTLjgIDov57mjqXkvZPvvJrlhYjmlbTkvZPmsYIgYe+8jOWGjemalOemu+axgue7s+WKmzwvdGV4dD4KPGxpbmUgeDE9IjcwIiB5MT0iMjE1IiB4Mj0iNDIwIiB5Mj0iMjE1IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMi41Ii8+PGxpbmUgeDE9IjcwIiB5MT0iMjE1IiB4Mj0iNjEiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9Ijg4IiB5MT0iMjE1IiB4Mj0iNzkiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjEwNiIgeTE9IjIxNSIgeDI9Ijk3IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxMjQiIHkxPSIyMTUiIHgyPSIxMTUiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjE0MiIgeTE9IjIxNSIgeDI9IjEzMyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTYwIiB5MT0iMjE1IiB4Mj0iMTUxIiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxNzgiIHkxPSIyMTUiIHgyPSIxNjkiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjE5NiIgeTE9IjIxNSIgeDI9IjE4NyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjE0IiB5MT0iMjE1IiB4Mj0iMjA1IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyMzIiIHkxPSIyMTUiIHgyPSIyMjMiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjI1MCIgeTE9IjIxNSIgeDI9IjI0MSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjY4IiB5MT0iMjE1IiB4Mj0iMjU5IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyODYiIHkxPSIyMTUiIHgyPSIyNzciIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjMwNCIgeTE9IjIxNSIgeDI9IjI5NSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzIyIiB5MT0iMjE1IiB4Mj0iMzEzIiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzNDAiIHkxPSIyMTUiIHgyPSIzMzEiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjM1OCIgeTE9IjIxNSIgeDI9IjM0OSIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzc2IiB5MT0iMjE1IiB4Mj0iMzY3IiB5Mj0iMjI3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzOTQiIHkxPSIyMTUiIHgyPSIzODUiIHkyPSIyMjciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjQxMiIgeTE9IjIxNSIgeDI9IjQwMyIgeTI9IjIyNyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48cmVjdCB4PSIxMTUiIHk9IjE1MCIgd2lkdGg9IjcyIiBoZWlnaHQ9IjY1IiBmaWxsPSIjZjZmNmYyIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjE0MCIgeT0iMTkwIiBmaWxsPSIjMzMzMzMzIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPm3igoE8L3RleHQ+PHJlY3QgeD0iMjU1IiB5PSIxNTAiIHdpZHRoPSI3MiIgaGVpZ2h0PSI2NSIgZmlsbD0iI2VlZjJmNyIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyODAiIHk9IjE5MCIgZmlsbD0iIzMzMzMzMyIgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj5t4oKCPC90ZXh0PjxsaW5lIHgxPSIxODciIHkxPSIxODIiIHgyPSIyNTUiIHkyPSIxODIiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjMyNyIgeTE9IjE4MiIgeDI9IjQwNSIgeTI9IjE4MiIgc3Ryb2tlPSIjMWY2ZmViIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1ibHVlKSIvPjx0ZXh0IHg9IjM2MCIgeT0iMTcyIiBmaWxsPSIjMWY2ZmViIiBmb250LXNpemU9IjEzIj5GPC90ZXh0Pjx0ZXh0IHg9IjE2IiB5PSI0MCIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj7kuKTnianlnZfnlKjnu7Pov57mjqXvvIzmlbTkvZPliqDpgJ/luqbnm7jlkIw8L3RleHQ+Cjwvc3ZnPgo=" /></p>
+<p><strong>适用条件</strong>：各物体<strong>加速度相同</strong>（相对静止或绳绷直一起运动）。</p>
+<p><strong>易错边界</strong>
+1. 认为 T = F
+2. 隔离时漏掉摩擦力
+3. 竖直连接体忘记重力</p>
+<h3>例题 1 · L1 基础</h3>
+<p>光滑水平面上，质量 2 kg 的 A 与质量 3 kg 的 B 用轻绳相连，水平力 F = 10 N 作用在 B 上向右拉。求加速度和绳的拉力。</p>
+<p><strong>解析</strong>：
+1. 整体：a = 10/(2+3) = <strong>2 m/s²</strong>
+2. 隔离 A（只受绳拉力）：T = m_A a = 2 × 2 = <strong>4 N</strong></p>
+<p><strong>💥 陷阱</strong>：答 T = 10 N。绳只拉动 A，只需 4 N。</p>
+<p><strong>变式</strong>：若 F 改作用在 A 上向左拉，T 是多少？（隔离 B：T = 3 × 2 = 6 N）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>质量 1 kg 的 A 在上、2 kg 的 B 在下，用轻绳连接。用 36 N 的力向上拉 A，整体竖直上升（g = 10）。求加速度和绳的拉力。</p>
+<p><strong>解析</strong>：
+1. 整体：F合 = 36 − (1+2)×10 = 6 N ⇒ a = 6/3 = <strong>2 m/s²</strong>
+2. 隔离 B：T − m_B g = m_B a ⇒ T = 2(10 + 2) = <strong>24 N</strong></p>
+<p><strong>💥 陷阱</strong>：隔离 B 时忘记 B 的重力，得 T = m_B a = 4 N。</p>
+<p><strong>变式</strong>：若拉力为 30 N，加速度和 T 各是多少？（a = 0，T = 20 N，匀速）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>光滑水平面上，A（2 kg）在左、B（3 kg）在右，用轻绳相连。
+(1) 用 20 N 的力向右拉 B，求 T；
+(2) 用 20 N 的力向左拉 A，求 T；
+(3) 两次结果不同，说明什么？</p>
+<p><strong>解析</strong>：
+1. (1) a = 20/5 = 4 m/s²；隔离 A：T = 2 × 4 = <strong>8 N</strong>
+2. (2) a = 4 m/s²；隔离 B：T = 3 × 4 = <strong>12 N</strong>
+3. (3) 绳的拉力取决于"绳要拉动的质量"，与外力作用点有关：<strong>T = m_被拉/(m总) × F</strong></p>
+<p><strong>💥 陷阱</strong>：认为"同样的力，T 应该一样"。作用点变了，绳拉的质量变了，T 就变。</p>
+<p><strong>变式</strong>：F = 20 N 作用在 B 上，但两物体与地面摩擦因数都是 0.2，T 是多少？
+（a = (20 − 10)/5 = 2 m/s²；隔离 A：T − 4 = 2×2 ⇒ T = 8 N）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 整体法用来求什么？② 判断：绳的拉力总等于外力 F。</p>
+<blockquote>
+<p>答案：① 加速度　② ✗</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-4.7 瞬时性问题</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅱ · 考频中 ｜ 前置 A-4.2、A-3.2 ｜ 关联 A-3.2</em></p>
+<p><strong>⚡ 先猜</strong>：剪断悬挂小球的绳，小球的加速度立刻变成 g 吗？如果下面还连着一根弹簧呢？</p>
+<h3>30 秒概述</h3>
+<p>关键区别只有一句：<strong>绳和杆的弹力可以突变，弹簧和橡皮绳的弹力不能突变</strong>。因为弹簧要恢复形变需要时间，剪断瞬间它的形变量还是原来的。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>剪断瞬间，弹簧的弹力来不及改变。</li>
+<li>剪断瞬间，绳的拉力可以立刻变为零。</li>
+<li>剪断瞬间的加速度由当时的合力决定。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✓　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li><strong>绳/杆</strong>：形变极小 ⇒ 力可突变（剪断即消失）</li>
+<li><strong>弹簧/橡皮绳</strong>：形变明显 ⇒ 力不能突变（大小保持）</li>
+<li>解题：剪断瞬间 → 分析剩余力 → 求合力 → a = F/m</li>
+</ul>
+<p><strong>适用条件</strong>：只问"瞬间"的加速度，不涉及后续运动。</p>
+<p><strong>易错边界</strong>
+1. 认为剪断后弹簧力立刻消失
+2. 忘记重力仍然存在
+3. 把"速度为零"当成"合力为零"</p>
+<h3>例题 1 · L1 基础</h3>
+<p>小球用细绳悬挂在天花板上静止。剪断绳的瞬间，小球的加速度多大？方向如何？</p>
+<p><strong>解析</strong>：剪断后小球只受重力 ⇒ 合力 = mg ⇒ a = <strong>g</strong>，方向竖直向下</p>
+<p><strong>💥 陷阱</strong>：答 a = 0（"瞬间还没动"）。加速度由合力决定，与速度无关。</p>
+<p><strong>变式</strong>：若小球还受空气阻力，剪断瞬间 a 是多少？（略小于 g）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>小球挂在竖直弹簧下端，弹簧上端用绳系在天花板上，系统静止。剪断上端绳的瞬间，小球的加速度多大？</p>
+<p><strong>解析</strong>：
+1. 剪断前：弹簧被拉长，对球的作用力<strong>向上</strong>，大小等于重力 mg；球受重力 mg 向下 ⇒ 平衡
+2. 剪断瞬间：绳的拉力消失，但弹簧的形变来不及恢复 ⇒ 弹力仍为 <strong>mg 向上</strong>
+3. 球受合力 = mg（向上）− mg（向下）= 0 ⇒ <strong>a = 0</strong></p>
+<p><strong>💥 陷阱</strong>：答 a = g，以为"失去支撑就是自由落体"。弹簧还托着球，此刻它一点没加速。</p>
+<p><strong>变式</strong>：若改为剪断弹簧与球之间的连接，球的加速度多大？（弹簧的力消失，只受重力 ⇒ a = g）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>两个小球 A、B 用轻弹簧相连，A 用细绳悬挂，系统静止（m_A = 2m，m_B = m）。剪断悬挂 A 的细绳的瞬间，求 A、B 的加速度。</p>
+<p><strong>解析</strong>：
+1. 剪断前：弹簧拉力 = m_B g = mg（拉 B 向上、拉 A 向下）
+2. 剪断瞬间：绳的拉力消失，弹簧力<strong>不变</strong>
+3. <strong>B</strong>：受重力 mg 向下、弹簧拉力 mg 向上 ⇒ 合力 0 ⇒ <strong>a_B = 0</strong>
+4. <strong>A</strong>：受重力 2mg 向下、弹簧拉力 mg 向下 ⇒ 合力 3mg ⇒ <strong>a_A = 3g</strong> 向下</p>
+<p><strong>💥 陷阱</strong>：认为两球加速度都是 g。弹簧把两球"绑"在一起，剪断瞬间张力还在，A 被额外往下拽。</p>
+<p><strong>变式</strong>：若 A、B 之间改用细绳连接，剪断上端绳瞬间两球加速度各是多少？（都是 g）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 弹簧的弹力能突变吗？② 判断：剪断瞬间加速度一定等于 g。</p>
+<blockquote>
+<p>答案：① 不能　② ✗</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-4.8 传送带模型</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-3.3、A-4.4 ｜ 关联 A-2 ｜ ★</em></p>
+<p><strong>⚡ 先猜</strong>：把物块轻轻放到向右运动的传送带上，它受到的摩擦力向哪边？</p>
+<h3>30 秒概述</h3>
+<p>摩擦力看<strong>相对运动</strong>。物块刚放上去速度为 0，带在向右走 ⇒ 物块相对带向左 ⇒ 摩擦力向右，<strong>是动力</strong>。当物块加速到与带同速，相对运动消失，摩擦力随之消失，之后随带匀速。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>传送带对物块的摩擦力可以是动力。</li>
+<li>物块与传送带共速后，摩擦力变为零（水平带）。</li>
+<li>物块会一直加速直到离开传送带。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✓　3. ✗（共速后匀速）</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li>加速阶段：a = μg（水平带）</li>
+<li><strong>关键判断</strong>：加速到带速所需的位移 x₁ = v带²/(2μg)，与带长 L 比较</li>
+<li>x₁ &lt; L ⇒ 先加速后匀速</li>
+<li>x₁ ≥ L ⇒ 全程加速</li>
+<li>共速后：摩擦力为零，匀速运动</li>
+</ul>
+<p><img alt="水平传送带" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IEwtNC44LTHjgIDmsLTlubPkvKDpgIHluKbvvJrmkanmk6blipvlj6/ku6XmmK/liqjlips8L3RleHQ+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjE4NSIgcj0iMjQiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMzQ1IiBjeT0iMTg1IiByPSIyNCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMTUwIiB5MT0iMTYxIiB4Mj0iMzQ1IiB5Mj0iMTYxIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMi41Ii8+PGxpbmUgeDE9IjE1MCIgeTE9IjIwOSIgeDI9IjM0NSIgeTI9IjIwOSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIuNSIvPjxyZWN0IHg9IjIxNSIgeT0iMTMxIiB3aWR0aD0iNTIiIGhlaWdodD0iMzAiIGZpbGw9IiNmNmY2ZjIiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjMwMCIgeTE9IjExNSIgeDI9IjM4MCIgeTI9IjExNSIgc3Ryb2tlPSIjMWY2ZmViIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1ibHVlKSIvPjx0ZXh0IHg9IjMzMCIgeT0iMTA2IiBmaWxsPSIjMWY2ZmViIiBmb250LXNpemU9IjEzIj7luKbpgJ8gdjwvdGV4dD48bGluZSB4MT0iMjcyIiB5MT0iMTUyIiB4Mj0iMzQwIiB5Mj0iMTUyIiBzdHJva2U9IiMxYTdmMzciIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLWdyZWVuKSIvPjx0ZXh0IHg9IjI5OCIgeT0iMTQ0IiBmaWxsPSIjMWE3ZjM3IiBmb250LXNpemU9IjEzIj5mPC90ZXh0Pjx0ZXh0IHg9IjE2IiB5PSI0MCIgZmlsbD0iIzZiNzI4MCIgZm9udC1zaXplPSIxMiIgdGV4dC1hbmNob3I9InN0YXJ0IiBmb250LXdlaWdodD0ibm9ybWFsIj7nianlnZfliJ3pgJ/kuLrpm7bvvIzluKblkJHlj7Pov5DliqjvvJrmkanmk6blipvlkJHlj7PvvIzmmK/liqjlips8L3RleHQ+Cjwvc3ZnPgo=" /></p>
+<p><strong>适用条件</strong>：水平传送带；物块与带之间 μ 恒定。</p>
+<p><strong>易错边界</strong>
+1. 认为摩擦力方向总和带运动方向相同（物块比带快时相反）
+2. 忘记判断"是否在带上就共速"
+3. 共速后仍算摩擦力</p>
+<h3>例题 1 · L1 基础</h3>
+<p>水平传送带以 2 m/s 匀速向右运动，长 4 m。把物块轻放在左端，μ = 0.2（g = 10）。求物块从左端到右端的时间。</p>
+<p><strong>解析</strong>：
+1. a = μg = <strong>2 m/s²</strong>
+2. 加速到 2 m/s：t₁ = 2/2 = 1 s，x₁ = ½×2×1 = <strong>1 m</strong> &lt; 4 m ⇒ 之后匀速
+3. 剩余 3 m：t₂ = 3/2 = 1.5 s
+4. 总时间 = 1 + 1.5 = <strong>2.5 s</strong></p>
+<p><strong>💥 陷阱</strong>：全程用匀加速算，得 t = 2 s。物体 1 m 后就已经和带同速了。</p>
+<p><strong>变式</strong>：若带长只有 1 m，物块到达右端时速度多大？（v = √(2×2×1) = 2 m/s，恰好共速）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>物块以 4 m/s 滑上以 2 m/s 同向运动的水平传送带，带长 4 m，μ = 0.2。求物块在带上的运动时间。</p>
+<p><strong>解析</strong>：
+1. 物块比带快 ⇒ 相对带向前 ⇒ 摩擦力向<strong>后</strong>，a = −2 m/s²
+2. 减速到 2 m/s：t₁ = (4−2)/2 = 1 s，x₁ = (4+2)/2 × 1 = <strong>3 m</strong> &lt; 4 m
+3. 剩余 1 m 匀速：t₂ = 0.5 s
+4. 总时间 = <strong>1.5 s</strong></p>
+<p><strong>💥 陷阱</strong>：认为摩擦力总是向右（与带同向）。物块更快时，摩擦力阻碍它。</p>
+<p><strong>变式</strong>：若物块初速 6 m/s，带长 4 m，能否在带上共速？（x₁ = (36−4)/4 = 8 m &gt; 4 m，不能）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>水平传送带长 5 m，以 4 m/s 匀速向右运动。物块轻放在左端，μ = 0.2（g = 10）。
+(1) 物块在带上做什么运动？
+(2) 物块从左端到右端用多长时间？
+(3) 若把带速提高到 6 m/s，时间如何变化？</p>
+<p><strong>解析</strong>：
+1. (1) 先匀加速（a = 2 m/s²），共速后匀速
+2. (2) 加速到 4 m/s：t₁ = 2 s，x₁ = ½×2×4 = <strong>4 m</strong> &lt; 5 m ⇒ 剩 1 m 匀速
+   t₂ = 1/4 = 0.25 s ⇒ 总 <strong>2.25 s</strong>
+3. (3) 带速 6 m/s：加速到 6 需 3 s、走 9 m &gt; 5 m ⇒ <strong>全程加速</strong>
+   x = 5 = ½×2×t² ⇒ t = √5 ≈ <strong>2.24 s</strong>（此时速度 √10 ≈ 3.2 m/s，未达到带速）</p>
+<p><strong>💥 陷阱</strong>：第 (3) 问仍按"先加速后匀速"算。带速提高后，物块在带上根本来不及达到带速。</p>
+<p><strong>变式</strong>：带速多大时，物块恰好到右端时与带共速？（v² = 2×2×5 = 20 ⇒ v ≈ 4.5 m/s）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 物块与带共速后，水平带上的摩擦力是多少？② 判断：传送带对物块的摩擦力总是动力。</p>
+<blockquote>
+<p>答案：① 0　② ✗（物块比带快时是阻力）</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>A-4.9 板块模型</h2>
+<p><em>力学 › 第4章 牛顿运动定律 ｜ Ⅱ · 考频</em><em>高</em><em> ｜ 前置 A-4.6、A-3.3 ｜ 关联 A-2.7　★</em></p>
+<p><strong>⚡ 先猜</strong>：物块滑上长木板，木板一定不动吗？</p>
+<h3>30 秒概述</h3>
+<p>不一定。物块给木板一个摩擦力，木板就会加速——地面光滑时尤其明显。板块题的标准流程：<strong>分别对块和板列牛顿第二定律</strong>，求两个加速度，再找"共速"时刻。相对位移决定板要多长。</p>
+<h3>30 秒自评</h3>
+<ol>
+<li>地面光滑时，物块在木板上滑动，木板也会动。</li>
+<li>板块之间的摩擦力大小等于 μmg。</li>
+<li>相对滑动时，物块与木板的加速度可以不同。</li>
+</ol>
+<blockquote>
+<p><strong>答案</strong>：1. ✓　2. ✓（正压力 = mg）　3. ✓</p>
+</blockquote>
+<h3>🔑 原理与公式</h3>
+<ul>
+<li>物块：−μmg = m a₁ ⇒ a₁ = −μg</li>
+<li>木板：μmg = M a₂ ⇒ a₂ = μmg/M</li>
+<li>共速时刻：由 v₁ = v₂ 求解</li>
+<li>相对位移：<strong>s_rel = v₀²/[2(μg + μmg/M)]</strong>，即板的最短长度</li>
+</ul>
+<p><img alt="板块模型" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjgwIiB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZm9udC1mYW1pbHk9IlBpbmdGYW5nIFNDLCBIaXJhZ2lubyBTYW5zIEdCLCBNaWNyb3NvZnQgWWFIZWksIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiPgo8ZGVmcz48bWFya2VyIGlkPSJtLXJlZCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjYzAzOTJiIi8+PC9tYXJrZXI+PG1hcmtlciBpZD0ibS1ibHVlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxZjZmZWIiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyZWVuIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiMxYTdmMzciLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWdyYXkiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOSIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPjxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzZiNzI4MCIvPjwvbWFya2VyPjxtYXJrZXIgaWQ9Im0tb3JhbmdlIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj48cGF0aCBkPSJNMCwwIEwxMCw1IEwwLDEwIHoiIGZpbGw9IiNiNDUzMDkiLz48L21hcmtlcj48bWFya2VyIGlkPSJtLWluayIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+PHBhdGggZD0iTTAsMCBMMTAsNSBMMCwxMCB6IiBmaWxsPSIjMzMzMzMzIi8+PC9tYXJrZXI+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDgwIiBoZWlnaHQ9IjI4MCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSIwLjUiIHk9IjAuNSIgd2lkdGg9IjQ3OSIgaGVpZ2h0PSIyNzkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIvPgo8dGV4dCB4PSIxNiIgeT0iMjYiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9IjYwMCI+5Zu+IEwtNC45LTHjgIDmnb/lnZfmqKHlnovvvJrmkanmk6blipvorqnmnKjmnb/kuZ/liqjotbfmnaU8L3RleHQ+CjxsaW5lIHgxPSI2MCIgeTE9IjIzNSIgeDI9IjQzMCIgeTI9IjIzNSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIuNSIvPjxsaW5lIHgxPSI2MCIgeTE9IjIzNSIgeDI9IjUxIiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSI3OCIgeTE9IjIzNSIgeDI9IjY5IiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSI5NiIgeTE9IjIzNSIgeDI9Ijg3IiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxMTQiIHkxPSIyMzUiIHgyPSIxMDUiIHkyPSIyNDciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjEzMiIgeTE9IjIzNSIgeDI9IjEyMyIgeTI9IjI0NyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTUwIiB5MT0iMjM1IiB4Mj0iMTQxIiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIxNjgiIHkxPSIyMzUiIHgyPSIxNTkiIHkyPSIyNDciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjE4NiIgeTE9IjIzNSIgeDI9IjE3NyIgeTI9IjI0NyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjA0IiB5MT0iMjM1IiB4Mj0iMTk1IiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyMjIiIHkxPSIyMzUiIHgyPSIyMTMiIHkyPSIyNDciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjI0MCIgeTE9IjIzNSIgeDI9IjIzMSIgeTI9IjI0NyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMjU4IiB5MT0iMjM1IiB4Mj0iMjQ5IiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIyNzYiIHkxPSIyMzUiIHgyPSIyNjciIHkyPSIyNDciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjI5NCIgeTE9IjIzNSIgeDI9IjI4NSIgeTI9IjI0NyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzEyIiB5MT0iMjM1IiB4Mj0iMzAzIiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzMzAiIHkxPSIyMzUiIHgyPSIzMjEiIHkyPSIyNDciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjM0OCIgeTE9IjIzNSIgeDI9IjMzOSIgeTI9IjI0NyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMzY2IiB5MT0iMjM1IiB4Mj0iMzU3IiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzODQiIHkxPSIyMzUiIHgyPSIzNzUiIHkyPSIyNDciIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjQwMiIgeTE9IjIzNSIgeDI9IjM5MyIgeTI9IjI0NyIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iNDIwIiB5MT0iMjM1IiB4Mj0iNDExIiB5Mj0iMjQ3IiBzdHJva2U9IiM5Y2EzYWYiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjEwMCIgeT0iMTgwIiB3aWR0aD0iMjkwIiBoZWlnaHQ9IjQyIiBmaWxsPSIjZWVmMmY3IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjExMiIgeT0iMjA4IiBmaWxsPSIjMzMzMzMzIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtd2VpZ2h0PSJub3JtYWwiPumVv+acqOadvyBNPC90ZXh0PjxyZWN0IHg9IjIwMCIgeT0iMTM2IiB3aWR0aD0iNjQiIGhlaWdodD0iNDQiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjE0IiB5PSIxNjQiIGZpbGw9IiMzMzMzMzMiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+bTwvdGV4dD48bGluZSB4MT0iMjY4IiB5MT0iMTU4IiB4Mj0iMzQwIiB5Mj0iMTU4IiBzdHJva2U9IiMxZjZmZWIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLWJsdWUpIi8+PHRleHQgeD0iMzAwIiB5PSIxNTAiIGZpbGw9IiMxZjZmZWIiIGZvbnQtc2l6ZT0iMTMiPnbigoA8L3RleHQ+PGxpbmUgeDE9IjIwMCIgeTE9IjE3NiIgeDI9IjE1MCIgeTI9IjE3NiIgc3Ryb2tlPSIjMWE3ZjM3IiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjbS1ncmVlbikiLz48dGV4dCB4PSIxNTgiIHk9IjE2OCIgZmlsbD0iIzFhN2YzNyIgZm9udC1zaXplPSIxMyI+ZjwvdGV4dD48bGluZSB4MT0iMjY0IiB5MT0iMTc2IiB4Mj0iMzE0IiB5Mj0iMTc2IiBzdHJva2U9IiNiNDUzMDkiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNtLW9yYW5nZSkiLz48dGV4dCB4PSIyODgiIHk9IjE2OCIgZmlsbD0iI2I0NTMwOSIgZm9udC1zaXplPSIxMyI+ZuKAsjwvdGV4dD48dGV4dCB4PSIxNiIgeT0iNDAiIGZpbGw9IiM2YjcyODAiIGZvbnQtc2l6ZT0iMTIiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+54mp5Z2X5ruR5LiK5pyo5p2/77ya5Lik6ICF5Yqg6YCf5bqm5LiN5ZCM77yM55u05Yiw5YWx6YCfPC90ZXh0Pgo8L3N2Zz4K" /></p>
+<p><strong>适用条件</strong>：板块间有相对滑动；地面是否光滑要看清。</p>
+<p><strong>易错边界</strong>
+1. 认为木板不动
+2. 共速后不再判断两者是否一起运动
+3. 相对位移算成"物块的位移"</p>
+<h3>例题 1 · L1 基础</h3>
+<p>质量 1 kg 的物块以 4 m/s 滑上静止在光滑地面上的长木板（质量 2 kg），动摩擦因数 0.2（g = 10）。求物块和木板各自的加速度。</p>
+<p><strong>解析</strong>：
+1. 物块：f = μmg = 2 N，方向与运动相反 ⇒ a₁ = −2/1 = <strong>−2 m/s²</strong>
+2. 木板：受物块给的摩擦力 2 N，方向向右 ⇒ a₂ = 2/2 = <strong>1 m/s²</strong></p>
+<p><strong>💥 陷阱</strong>：只算物块，认为木板不动。木板受到摩擦力就会加速。</p>
+<p><strong>变式</strong>：若地面也粗糙（μ地 = 0.1），木板还动吗？（地面最大静摩擦 = 0.1×30 = 3 N &gt; 2 N ⇒ 不动）</p>
+<h3>例题 2 · L2 常考</h3>
+<p>承上题。求两者达到共同速度的时间和共同速度；木板至少多长？</p>
+<p><strong>解析</strong>：
+1. 共速：4 − 2t = 0 + 1t ⇒ t = <strong>4/3 s ≈ 1.33 s</strong>，v = <strong>1.33 m/s</strong>
+2. 相对位移 = 物块位移 − 木板位移
+   物块：(4 + 1.33)/2 × 1.33 ≈ 3.56 m；木板：(0 + 1.33)/2 × 1.33 ≈ 0.89 m
+   s_rel ≈ <strong>2.67 m</strong>
+3. 公式验证：s_rel = v₀²/[2(a₁+a₂)] = 16/(2×3) = 2.67 m ✓</p>
+<p><strong>💥 陷阱</strong>：用物块位移 3.56 m 当板长。板长只需要"相对位移"那么多。</p>
+<p><strong>变式</strong>：若木板长 2 m，物块会滑出去吗？（会，2.67 &gt; 2）</p>
+<h3>例题 3 · L3 综合</h3>
+<p>质量 2 kg 的木板放在光滑水平面上，质量 1 kg 的物块放在木板上，两者间动摩擦因数 0.2。用 9 N 的水平力拉木板（g = 10）。
+(1) 判断物块与木板是否相对滑动；
+(2) 若滑动，求各自加速度。</p>
+<p><strong>解析</strong>：
+1. 假设一起运动：a = 9/3 = 3 m/s²
+   物块所需摩擦力 f = m a = 3 N
+   最大静摩擦 f_max = μmg = 2 N &lt; 3 N ⇒ <strong>假设不成立，发生相对滑动</strong>
+2. 滑动后：
+   物块：a₁ = μg = <strong>2 m/s²</strong>
+   木板：a₂ = (9 − 2)/2 = <strong>3.5 m/s²</strong></p>
+<p><strong>💥 陷阱</strong>：直接用整体法算 a = 3 m/s² 就交卷。整体法只在"不相对滑动"时成立，必须先验证。</p>
+<p><strong>变式</strong>：F 多大时两者恰好不滑动？（f = 2 N ⇒ a = 2 m/s² ⇒ F = 3×2 = 6 N）</p>
+<h3>⏱️ 限时挑战（90 秒）</h3>
+<p>① 板块共速后可能怎样？② 判断：物块在木板上滑动时，木板一定静止。</p>
+<blockquote>
+<p>答案：① 一起匀速或一起加速（取决于外力）　② ✗</p>
+</blockquote>
+<p><strong>本节分流</strong>：3 对 → 例 3 + 变式；2 对 → 易错 + 例 2；≤1 → 顺序学
+<strong>够用标准</strong>：高一 → 例 1；高二 → 例 2；高三 → 例 3 + 变式</p>
+<hr />
+<h2>本章公式总表</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>公式</th>
+<th>含义</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>F合 = ma</td>
+<td>牛顿第二定律</td>
+<td>惯性系、宏观低速</td>
+</tr>
+<tr>
+<td>2</td>
+<td>a = (F − f)/m</td>
+<td>水平面加速</td>
+<td>f 为摩擦力</td>
+</tr>
+<tr>
+<td>3</td>
+<td>a = g(sinθ − μcosθ)</td>
+<td>斜面下滑</td>
+<td>无其他外力</td>
+</tr>
+<tr>
+<td>4</td>
+<td>N = m(g + a)</td>
+<td>超重</td>
+<td>a 向上</td>
+</tr>
+<tr>
+<td>5</td>
+<td>N = m(g − a)</td>
+<td>失重</td>
+<td>a 向下</td>
+</tr>
+<tr>
+<td>6</td>
+<td>T = m₁/(m₁+m₂) · F</td>
+<td>连接体绳力</td>
+<td>光滑水平、F 作用于 m₂</td>
+</tr>
+<tr>
+<td>7</td>
+<td>a = μg</td>
+<td>传送带加速</td>
+<td>水平带、相对滑动</td>
+</tr>
+<tr>
+<td>8</td>
+<td>x₁ = v带²/(2μg)</td>
+<td>共速位移</td>
+<td>判断是否全程加速</td>
+</tr>
+<tr>
+<td>9</td>
+<td>a₁ = −μg，a₂ = μmg/M</td>
+<td>板块加速度</td>
+<td>地面光滑</td>
+</tr>
+<tr>
+<td>10</td>
+<td>s_rel = v₀²/[2(μg + μmg/M)]</td>
+<td>板最短长度</td>
+<td>板块相对滑动</td>
+</tr>
+</tbody>
+</table>
+<h2>本章易错清单</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>错误</th>
+<th>正确</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>力是维持运动的原因</td>
+<td>力是改变运动状态的原因</td>
+</tr>
+<tr>
+<td>2</td>
+<td>速度大惯性大</td>
+<td>惯性只看质量</td>
+</tr>
+<tr>
+<td>3</td>
+<td>用某个力代替合力</td>
+<td>F 必须是合力</td>
+</tr>
+<tr>
+<td>4</td>
+<td>a 与 v 同向</td>
+<td>a 与 F合 同向</td>
+</tr>
+<tr>
+<td>5</td>
+<td>作用力反作用力可抵消</td>
+<td>作用于两个物体，不能抵消</td>
+</tr>
+<tr>
+<td>6</td>
+<td>上升即超重</td>
+<td>看 a 的方向</td>
+</tr>
+<tr>
+<td>7</td>
+<td>超重时重力变大</td>
+<td>重力不变，视重变</td>
+</tr>
+<tr>
+<td>8</td>
+<td>绳拉力等于外力 F</td>
+<td>T = m₁/(m₁+m₂)·F</td>
+</tr>
+<tr>
+<td>9</td>
+<td>剪断瞬间弹簧力消失</td>
+<td>弹簧力不突变</td>
+</tr>
+<tr>
+<td>10</td>
+<td>传送带摩擦力总是动力</td>
+<td>物块更快时是阻力</td>
+</tr>
+<tr>
+<td>11</td>
+<td>板块中木板不动</td>
+<td>木板受摩擦会加速</td>
+</tr>
+<tr>
+<td>12</td>
+<td>整体法不验证就用于板块</td>
+<td>先验证是否相对滑动</td>
+</tr>
+</tbody>
+</table>
+<h2>本章关系边</h2>
+<table>
+<thead>
+<tr>
+<th>起点</th>
+<th>终点</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A-4.1</td>
+<td>A-4.2</td>
+<td>前置</td>
+</tr>
+<tr>
+<td>A-4.2</td>
+<td>A-4.4</td>
+<td>派生（两类问题）</td>
+</tr>
+<tr>
+<td>A-4.2</td>
+<td>A-4.5</td>
+<td>应用（超失重）</td>
+</tr>
+<tr>
+<td>A-4.2</td>
+<td>A-4.6</td>
+<td>应用（连接体）</td>
+</tr>
+<tr>
+<td>A-3.2</td>
+<td>A-4.7</td>
+<td>前置（弹力突变）</td>
+</tr>
+<tr>
+<td>A-3.3</td>
+<td>A-4.8</td>
+<td>前置（摩擦力作动力）</td>
+</tr>
+<tr>
+<td>A-4.6</td>
+<td>A-4.9</td>
+<td>综合（板块）</td>
+</tr>
+<tr>
+<td>A-4.2</td>
+<td>A-5 曲线运动</td>
+<td>综合（向心力）</td>
+</tr>
+</tbody>
+</table></div></html>
