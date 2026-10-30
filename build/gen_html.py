@@ -72,6 +72,29 @@ def restore_math(html, store):
     return re.sub(r"\u27e6M(\d+)\u27e7", rep, html)
 
 
+
+RAD_RE = re.compile(r"([√∛∜])\s*\(([^()]{1,40})\)|([√∛∜])\s*([0-9A-Za-z]+)")
+
+
+def fix_radicals(html):
+    """兜底：把公式外散落的 √(...) 单独转成行内数学，避免出现难看的裸根号。"""
+    parts = re.split(r"(\$[^$]*\$)", html)
+    for i, seg in enumerate(parts):
+        if seg.startswith("$"):
+            continue
+        IDX = {"√": "", "∛": "[3]", "∜": "[4]"}
+
+        def rep(m):
+            sym = m.group(1) or m.group(3)
+            arg = m.group(2) or m.group(4)
+            try:
+                return "$" + chr(92) + "sqrt" + IDX[sym] + "{" + mathfmt.to_latex(arg) + "}$"
+            except Exception:
+                return m.group(0)
+        parts[i] = RAD_RE.sub(rep, seg)
+    return "".join(parts)
+
+
 def main():
     d = json.loads(DATA.read_text(encoding="utf-8"))
     cards, edges, units = [], [], []
@@ -88,7 +111,7 @@ def main():
             md = re.sub(r"^\s*\*[^*\n]+\*\s*$", "", md, count=1, flags=re.M)
             md_wrapped, store = fmt_html(md)
             html = markdown.markdown(md_wrapped, extensions=["tables", "fenced_code", "sane_lists"])
-            html = restore_math(html, store)
+            html = fix_radicals(restore_math(html, store))
             html = inline_svg(html)
             key = re.sub(r"\s+", "", html)
             cards.append({"id": c["id"], "name": c["name"], "unit": u["title"],
@@ -103,7 +126,7 @@ def main():
                 md_parts.append("## " + e["title"] + "\n\n" + e["body"])
             aw, astore = fmt_html("\n\n".join(md_parts))
             ah = markdown.markdown(aw, extensions=["tables", "fenced_code", "sane_lists"])
-            ah = restore_math(ah, astore)
+            ah = fix_radicals(restore_math(ah, astore))
             ah = inline_svg(ah)
             cards.append({"id": short, "name": "附录：自评 · 公式 · 易错 · 关系",
                           "unit": u["title"], "u": ui, "i": 900, "html": ah,

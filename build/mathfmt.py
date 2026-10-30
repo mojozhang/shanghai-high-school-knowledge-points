@@ -74,6 +74,8 @@ def _readable(s: str) -> bool:
             continue
         if c in GREEK or c in SYMBOLS or c in SUB or c in SUP:
             continue
+        if c in "√∛∜":
+            continue
         if 0x0300 <= ord(c) <= 0x036F:
             continue
         return False
@@ -98,12 +100,14 @@ def to_latex(s: str) -> str:
     while i < len(s):
         if s[i] in RAD:
             j = i + 1
-            if j < len(s) and s[j] == "(":
+            if j < len(s) and s[j] in "([{":
+                open_ch = s[j]
+                close_ch = {"(": ")", "[": "]", "{": "}"}[open_ch]
                 depth, k = 0, j
                 while k < len(s):
-                    if s[k] == "(":
+                    if s[k] == open_ch:
                         depth += 1
-                    elif s[k] == ")":
+                    elif s[k] == close_ch:
                         depth -= 1
                         if depth == 0:
                             break
@@ -142,6 +146,13 @@ def to_latex(s: str) -> str:
     for k in sorted(SYMBOLS, key=len, reverse=True):
         s = s.replace(k, SYMBOLS[k] + " ")
 
+    # 6.5 合并相邻上下标（v_H₂ 曾被拆成 v_{H}_{2}）
+    prev = None
+    while prev != s:
+        prev = s
+        s = re.sub(r"_\{([^{}]*)\}_\{([^{}]*)\}", r"_{\1\2}", s)
+        s = re.sub(r"\^\{([^{}]*)\}\^\{([^{}]*)\}", r"^{\1\2}", s)
+
     # 7. 函数名正体
     for fn in ["sin", "cos", "tan", "cot", "sec", "csc", "max", "min", "ln", "lg", "log"]:
         s = re.sub(r"(?<![\\A-Za-z])" + fn + r"\b", lambda m: r"\mathrm{" + m.group(0) + "}", s)
@@ -179,7 +190,7 @@ def needs_render(s: str) -> bool:
 
 SPAN_RE = re.compile(
     r"[A-Za-z0-9₀-₉⁰-⁹²³α-ωΑ-Ω√∝=+\-−×÷/()\[\].,·_{} \t"
-    r"≤≥≈≠<>→⇒%°′≪≫⇄∛∜\u0300-\u036f]{2,}")
+    r"≤≥≈≠<>→⇒%°′≪≫⇄∛∜:\u0300-\u036f]{2,}")
 
 
 def spans(text: str, whole: bool = False):
@@ -205,10 +216,14 @@ def spans(text: str, whole: bool = False):
         frag = text[a:b]
         if not frag or any(ch in frag for ch in "，。\n"):
             continue
-        if not _readable(frag):
+        # 末尾若是运算符（常因后面紧跟 **加粗** 而截断），回退到运算符之前
+        while frag and frag[-1] in "=+−-/\\×÷^_ ":
+            b -= 1
+            frag = text[a:b]
+        if not frag or not _readable(frag):
             continue
-        if frag[-1] in "_^=+−-/\\":
-            continue          # 截断在运算符上的片段不可用
+        if not any(k in frag for k in "=√∝≪≫≈"):
+            continue
         out.append((a, b, frag))
     return out
 
